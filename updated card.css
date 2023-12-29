@@ -1,0 +1,118 @@
+:root {
+    --tx: #100F0F;
+    --tx-2:#6F6E69;
+    --tx-3:#B7B5AC;
+    --ui:#E6E4D9;
+    --ui-2:#DAD8CE;
+    --ui-3:#CECDC3;
+    --bg: #FFFCF0;
+    --bg-2: #F2F0E5;
+    --red:#AF3029;
+    --orange:#BC5215;
+    --yellow:#AD8301;
+    --green:#66800B;
+    --cyan:#24837B;
+    --blue:#205EA6;
+    --purple:#5E409D;
+    --pink:#A02F6F;
+
+    --night-tx: #CECDC3;
+    --night-tx-2: #878580;
+    --night-tx-3: #575653;
+    --night-ui: #282726;
+    --night-ui-2:#343331;
+    --night-ui-3:#403E3C;
+    --night-bg: #100F0F;
+    --night-bg-2: #1C1B1A;
+    --night-red:#D14D41;
+    --night-orange:#DA702C;
+    --night-yellow:#D0A215;
+    --night-green:#879A39;
+    --night-cyan:#3AA99F;
+    --night-blue:#4385BE;
+    --night-purple:#8B7EC8;
+    --night-pink:#CE5D97;
+	--base-font-size: 1em;
+}
+/* APPLY To ALL PLATFORMS*/
+.card {
+    font-size: var(--base-font-size);
+    font-family: helvetica, arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--tx);
+    background-color: var(--bg);
+    word-wrap: break-word;
+    padding: 3%;
+}
+
+/*Set Colours*/
+.card.nightMode {
+    color: var(--night-tx);
+    font-weight:500;
+    background-color:var(--night-bg-2);
+}
+
+/*Pinyin */
+.tone1 {color: var(--red);} /* Red */
+.tone2 {color: var(--orange);} /* Orange */
+.tone3 {color: var(--green);} /* Green */
+.tone4 {color: var(--blue);} /* Blue */
+.tone5 {color: var(--tx-2);} /* Gray */
+.nightMode .tone1 {color: var(--night-red);} /* Red */
+.nightMode .tone2 {color: var(--night-orange);} /* Orange */
+.nightMode .tone3 {color: var(--night-green);} /* Green */
+.nightMode .tone4 {color: var(--night-blue);} /* Blue */
+.nightMode .tone5 {color: var(--night-tx-2);} /* Gray */
+.nightMode .tags {color: var(--night-tx-3);}
+.nightMode .comment {color: var(--night-tx-2);}
+.nightMode .example {color: var(--night-tx-2);} 
+
+/* FONT SELECTIONS */
+.win .chinese {font-family: KaiTi, "MS Mincho", "ＭＳ 明朝", serif;}
+.mac .chinese {font-family: "Kaiti SC","Kaiti TC","Noto Serif TC", "Noto Serif SC";}
+.mobile .chinese {font-family: HYQIHei, serif;}
+
+/* Enable Traditional and Simplified */
+.trad {font-variant-east-asian: traditional;}
+.simp {font-variant-east-asian: simplified;}
+
+/* STYLING */
+.comment {
+    font-size: 1rem;
+    color: var(--tx-2);
+} 
+.tags { /* Top Info and Answer Box */
+    color:var(--tx-3);
+    text-align:right;
+    font-size:0.9rem;
+    padding-bottom:8px;
+} 
+
+/* Misc Styling */
+.english {
+    font-size:1.2rem;
+    line-height: 1.2;
+}
+.example {
+    display:table;
+    color: var(--tx-2);
+    font-size:1.2rem;
+    line-height: 1.2;
+    text-align:left;
+}
+
+.example br:nth-of-type(3n+2){ /* Add spacing between examples */
+    display: flex;
+    height: 0rem;
+}
+.pinyin {font-size: 1.5rem;}
+
+/* Hanzi */
+.chinese {font-size: 2rem;}
+.chinese ul {
+    display: inline-flex;
+    list-style: none;
+    padding: 1%;
+}
+.chinese ul li:first-child{margin-right: 3px;}
