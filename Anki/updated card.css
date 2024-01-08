@@ -32,11 +32,18 @@
     --night-blue:#4385BE;
     --night-purple:#8B7EC8;
     --night-pink:#CE5D97;
-	--base-font-size: 1em;
+    /* Calculated from https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=1080&minRatio=1.25&maxFontSize=20&maxWidth=1800&maxRatio=1.33&steps=xs%2C+s%2C+base%2Cm%2Clg%2Cxl%2Cxxl&baseStep=base&prefix=font-size&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1080 */
+    --font-size-xs: clamp(0.6rem, 0.06vw + 0.56rem, 0.63rem);
+    --font-size-s: clamp(0.8rem, 0.19vw + 0.67rem, 0.89rem);
+    --font-size-base: clamp(1.06rem, 0.42vw + 0.78rem, 1.25rem);
+    --font-size-m: clamp(1.41rem, 0.78vw + 0.89rem, 1.76rem);
+    --font-size-lg: clamp(1.88rem, 1.35vw + 0.97rem, 2.49rem);
+    --font-size-xl: clamp(2.5rem, 2.23vw + 0.99rem, 3.5rem);
+    --font-size-xxl: clamp(3.32rem, 3.59vw + 0.9rem, 4.94rem);
 }
 /* APPLY To ALL PLATFORMS*/
 .card {
-    font-size: var(--base-font-size);
+    font-size: var(--font-size-base);
     font-family: helvetica, arial, sans-serif;
     line-height: 1.5;
     text-align: center;
@@ -50,7 +57,7 @@
 .card.nightMode {
     color: var(--night-tx);
     font-weight:500;
-    background-color:var(--night-bg-2);
+    background-color:var(--night-bg);
 }
 
 /*Pinyin */
@@ -66,53 +73,52 @@
 .nightMode .tone5 {color: var(--night-tx-2);} /* Gray */
 .nightMode .tags {color: var(--night-tx-3);}
 .nightMode .comment {color: var(--night-tx-2);}
-.nightMode .example {color: var(--night-tx-2);} 
+.nightMode .example {color: var(--night-tx-2);border-block-end:2px solid var(--night-ui-2);} 
 
-/* FONT SELECTIONS */
+/* .Chinese Class */
+.chinese {font-size: var(--font-size-lg);}
 .win .chinese {font-family: KaiTi, "MS Mincho", "ＭＳ 明朝", serif;}
 .mac .chinese {font-family: "Kaiti SC","Kaiti TC","Noto Serif TC", "Noto Serif SC";}
 .mobile .chinese {font-family: HYQIHei, serif;}
 
 /* Enable Traditional and Simplified */
-.trad {font-variant-east-asian: traditional;}
-.simp {font-variant-east-asian: simplified;}
+.trad {font-variant-east-asian: traditional;font-size:var(--font-size-xl);}
+.simp {font-variant-east-asian: simplified;font-size:var(--font-size-xl);}
 
-/* STYLING */
-.comment {
-    font-size: 1rem;
+/* MORE STYLING */
+.pinyin {font-size: var(--font-size-m);}
+
+.comment { /*Note of classifiers or varitients*/
+    font-size: var(--font-size-s);
     color: var(--tx-2);
 } 
 .tags { /* Top Info and Answer Box */
     color:var(--tx-3);
     text-align:right;
-    font-size:0.9rem;
+    font-size:var(--font-size-s);
     padding-bottom:8px;
 } 
 
 /* Misc Styling */
 .english {
-    font-size:1.2rem;
+    font-size:var(--font-size-base);
     line-height: 1.2;
 }
 .example {
-    display:table;
     color: var(--tx-2);
-    font-size:1.2rem;
+    font-size:var(--font-size-base);
     line-height: 1.2;
     text-align:left;
+    margin-top:5%;
+    min-height: calc(var(--font-size-base)*3);
+    height:calc(var(--font-size-base)*11);
+    overflow-y: auto;
+    border-block-end:1px solid var(--ui-2);
+    border-end-start-radius:4vh;
+    border-end-end-radius:4vh;
 }
 
 .example br:nth-of-type(3n+2){ /* Add spacing between examples */
-    display: flex;
-    height: 0rem;
+   display: flex;
+		height: 0rem;
 }
-.pinyin {font-size: 1.5rem;}
-
-/* Hanzi */
-.chinese {font-size: 2rem;}
-.chinese ul {
-    display: inline-flex;
-    list-style: none;
-    padding: 1%;
-}
-.chinese ul li:first-child{margin-right: 3px;}
