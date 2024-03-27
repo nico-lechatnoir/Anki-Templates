@@ -1,0 +1,40 @@
+:root {
+/* Calculated from 
+https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=1080&minRatio=1.25&maxFontSize=20&maxWidth=1800&maxRatio=1.333&steps=xxs%2Cxs%2Csm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1277 */
+
+  --fs-xxs: clamp(0.58rem, -0.11vw + 0.65rem, 0.53rem);
+  --fs-xs: clamp(0.72rem, -0.04vw + 0.74rem, 0.7rem);
+  --fs-sm: clamp(0.9rem, 0.08vw + 0.84rem, 0.94rem);
+  --fs-base: clamp(1.13rem, 0.28vw + 0.94rem, 1.25rem);
+  --fs-md: clamp(1.41rem, 0.58vw + 1.02rem, 1.67rem);
+  --fs-lg: clamp(1.76rem, 1.03vw + 1.06rem, 2.22rem);
+  --fs-xl: clamp(2.2rem, 1.7vw + 1.05rem, 2.96rem);
+  --fs-xxl: clamp(2.75rem, 2.67vw + 0.95rem, 3.95rem);
+  --fs-xxxl: clamp(3.43rem, 4.06vw + 0.69rem, 5.26rem);
+
+  /* Font Stacks */
+  --font-ui: system-ui, sans-serif; /* UI font stack */
+  --font-sans-serif: "Helvetica Neue", Helvetica, Inter, Roboto, Arial, sans-serif; /* Sans-Serif Font Stack */
+  --font-serif: Georgia, "Times New Roman", Times, serif; /* Serif Font Stack */
+  --font-monospace: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono",ui-monospace, monospace; /* Monospace Font Stack */
+  --font-math: MJXZERO, MJXTEX, STIXGeneral, "Arial Unicode MS", serif; /*Math Font Stack*/
+}
+
+.card {
+	padding:3%;
+  font-family: var(--font-sans-serif);
+  font-size: var(--fs-md);
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.mobile:not(.ipad) .card {font-size: var(--fs-base);}
+
+.tags {
+  color:grey;
+  text-align:right;
+  font-size:var(--fs-sm);
+	font-family: var(--font-ui);
+  padding-bottom:8px;
+}

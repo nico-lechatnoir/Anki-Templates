@@ -31,18 +31,24 @@ MAJOR = {
 MINOR = [['Ace of Wands', 'Two of Wands', 'Three of Wands', 'Four of Wands', 'Five of Wands', 'Six of Wands', 'Seven of Wands', 'Eight of Wands', 'Nine of Wands', 'Ten of Wands', 'Page of Wands', 'Knight of Wands', 'Queen of Wands', 'King of Wands'], ['Ace of Cups', 'Two of Cups', 'Three of Cups', 'Four of Cups', 'Five of Cups', 'Six of Cups', 'Seven of Cups', 'Eight of Cups', 'Nine of Cups', 'Ten of Cups', 'Page of Cups', 'Knight of Cups', 'Queen of Cups', 'King of Cups'], ['Ace of Swords', 'Two of Swords', 'Three of Swords', 'Four of Swords', 'Five of Swords', 'Six of Swords', 'Seven of Swords', 'Eight of Swords', 'Nine of Swords', 'Ten of Swords', 'Page of Swords', 'Knight of Swords', 'Queen of Swords', 'King of Swords'], ['Ace of Pentacles', 'Two of Pentacles', 'Three of Pentacles', 'Four of Pentacles', 'Five of Pentacles', 'Six of Pentacles', 'Seven of Pentacles', 'Eight of Pentacles', 'Nine of Pentacles', 'Ten of Pentacles', 'Page of Pentacles', 'Knight of Pentacles', 'Queen of Pentacles', 'King of Pentacles']]
 
 MAJORCARD = """---
+created:
+modified:
+cssclasses: tarot-cards
+title: {card}
+aliases:
 Arcana: Major
-Name: {card}
-Order: {ord}
+Tarot-Order: {ord}
+Image:
+tags: tarot/MajorArcana
 ---
-#tarot #MajorArcana
+
 # {card}
 ## Description
 ## Upright
 ## Reversed
 
 # My Notes
-### My Pulls
+## My Pulls
 
 ```dataview
 LIST "Pull Type: " + pull-type
@@ -52,19 +58,25 @@ SORT file.ctime
 """
 
 MINORCARD = """---
+created:
+modified:
+cssclasses: tarot-cards
+title: {card}
+aliases:
 Arcana: Minor
 Suit: {suit}
-Name: {cardname}
-Order: {ord}
+Tarot-Order: {ord}
+Image:
+tags: tarot/MinorArcana/{suit}
 ---
-#tarot #MinorArcana #{suit}
+
 # {cardname}
 ## Description
 ## Upright
 ## Reversed
 
 # My Notes
-### My Pulls
+## My Pulls
 
 ```dataview
 LIST "Pull Type: " + pull-type
@@ -81,12 +93,14 @@ def create_list():
             suit_list.append(n +" of " + s)
         MINOR.append(suit_list)
     print(MINOR)
-path = #r'C:\Users\timmi\Documents\Major'
+
+path = r'/Users/xiutimmins/Documents/Obsidian/Personal/Tarot'
 def create_major_card():
     for i in range(len(MAJOR)):
         f_name = MAJOR.get(i) + ".md"
         with open(os.path.join(path, f_name), 'w') as fp:
             fp.write(MAJORCARD.format(card = MAJOR.get(i), ord = MAJOR.get("num", i)))
+    return "Minor Cards Created"
 
 def create_minor_card():
     for s in range(len(SUITS)):
@@ -96,8 +110,7 @@ def create_minor_card():
             with open(os.path.join(path, f_name), 'w') as fp:
                 fp.write(MINORCARD.format(suit = SUITS[s], cardname = MINOR[s][n], ord = num))
                 num += 1
-    
-    return "complete"
-#create_minor_card()
+    return "Major Cards Created"
 
-print(len(MINOR))
+create_major_card()
+create_minor_card()
