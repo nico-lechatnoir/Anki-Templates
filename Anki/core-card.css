@@ -1,15 +1,16 @@
 :root {
 	/* Calculated from 
-	https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=1080&minRatio=1.25&maxFontSize=20&maxWidth=1800&maxRatio=1.333&steps=xxs%2Cxs%2Csm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1277 */
-	--fs-xxs: clamp(0.58rem, -0.11vw + 0.65rem, 0.53rem);
-	--fs-xs: clamp(0.72rem, -0.04vw + 0.74rem, 0.7rem);
-	--fs-sm: clamp(0.9rem, 0.08vw + 0.84rem, 0.94rem);
-	--fs-base: clamp(1.13rem, 0.28vw + 0.94rem, 1.25rem);
-	--fs-md: clamp(1.41rem, 0.58vw + 1.02rem, 1.67rem);
-	--fs-lg: clamp(1.76rem, 1.03vw + 1.06rem, 2.22rem);
-	--fs-xl: clamp(2.2rem, 1.7vw + 1.05rem, 2.96rem);
-	--fs-xxl: clamp(2.75rem, 2.67vw + 0.95rem, 3.95rem);
-	--fs-xxxl: clamp(3.43rem, 4.06vw + 0.69rem, 5.26rem);
+	https://www.fluid-type-scale.com/calculate?minFontSize=18&minWidth=1080&minRatio=1.25&maxFontSize=20&maxWidth=1800&maxRatio=1.333&steps=xxs%2Cxs%2Csm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1080
+	*/
+	--fs-xxs: clamp(9.22px, -0.11vi + 10.37px, 8.44px);
+	--fs-xs: clamp(11.52px, -0.04vi + 11.92px, 11.26px);
+	--fs-sm: clamp(14.4px, 0.08vi + 13.49px, 15px);
+	--fs-base: clamp(18px, 0.28vi + 15px, 20px);
+	--fs-md: clamp(22.5px, 0.58vi + 16.26px, 26.66px);
+	--fs-lg: clamp(28.13px, 1.03vi + 17.01px, 35.54px);
+	--fs-xl: clamp(35.16px, 1.7vi + 16.83px, 47.37px);
+	--fs-xxl: clamp(43.95px, 2.67vi + 15.14px, 63.15px);
+	--fs-xxxl: clamp(54.93px, 4.06vi + 11.07px, 84.17px);
 
 	/* Font Stacks */
 	--font-ui: system-ui, sans-serif; /* UI font stack */
@@ -20,7 +21,7 @@
 }
 
 .card {
-	padding:3%;
+	padding:3% 1%;
 	font-family: var(--font-sans-serif);
 	font-size: var(--fs-md);
 	text-align: center;
@@ -35,5 +36,5 @@
 	text-align:right;
 	font-size:var(--fs-sm);
 	font-family: var(--font-ui);
-	padding-bottom:8px;
+	padding-bottom:10px;
 }
