@@ -1,0 +1,62 @@
+:root {
+	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝", serif;
+	--font-cn-mob:"Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
+}
+/* Basic Styling */
+.card {
+	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-ui);
+	font-size: var(--fs-base);
+	font-variant-east-asian: simplified;
+	text-align: center;
+	color: black;
+	background-color: white;
+}
+.mobile .card {font-family: var(--font-sans-serif), var(--font-cn-mob);}
+
+.spacerSmall {height: 5px;}
+.spacerMedium {height: 12px;}
+.spacer { height: 20px;}
+.hint {color: gray}
+a {color:#205EA6;}
+
+/* Chinese Fonts*/
+.hanzi {
+	font-family: var(--font-cn-pc);
+    font-size: var(--fs-xl);
+}
+
+.pinyin{color: gray;}
+.notes {
+	font-size: var(--fs-md);
+	color: gray;
+}
+
+.english {font-size: var(--fs-md);}
+
+/* ONLY for IS Valid Card Types */
+.invalid, .valid {
+	font-size: var(--fs-lg);
+	font-weight: bold;
+}
+
+.valid::after {
+	content: "Correct!";
+	color: green;
+}
+
+.invalid::before {
+	content: "Not Correct!";
+	color: red;
+}
+
+/* Footer Section part of lessonInfo div */
+.pattern {font-size: var(--fs-md);}
+.article {font-size: var(--fs-base);}
+
+.article::before, .pattern::before {
+	font-size:var(--fs-sm);
+	color: grey;
+	margin-right: 5px;
+}
+.pattern::before{content: "Pattern:";}
+.article::before{content: "Link:";}

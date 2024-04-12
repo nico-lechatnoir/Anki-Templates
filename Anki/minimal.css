@@ -113,7 +113,13 @@ html:not(.mobile) .card { padding: 0.5em; }
   color: var(--text-fg-faint);
   font-size: var(--font-size-regular);
 }
-
+.back-notes { /* Notes always show as smaller in front and back*/
+	color:var(--text-fg-faint);
+	font-size: calc(var(--font-size-regular)*0.85);
+  margin-top: 0.5em;
+}
+mjx-math {font-size:0.8em;}
+.example {font-style:italic;}
 /* -------------------------------------------------- CLOZE */
 .cloze {
   background-color: var(--cloze-bg);
@@ -131,7 +137,7 @@ html:not(.mobile) .card { padding: 0.5em; }
 .mobile .prettify-deck { margin: 1em; }
 
 .prettify-subdeck {
-  text-decoration: underline;
+  text-decoration: none;
   text-overflow: ellipsis;
   overflow: hidden;
 }

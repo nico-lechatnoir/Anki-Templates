@@ -1,0 +1,98 @@
+/* Chinese Fonts*/
+.win :lang(zh) {font-family: KaiTi, "MS Mincho", "ＭＳ 明朝", serif;}
+.mac :lang(zh-HK) {font-family: "Kaiti TC", STKaiti, "Noto Serif TC", serif;}
+.mac :lang(zh-CN) {font-family: "Kaiti SC", STKaiti, "Noto Serif SC", serif;}
+
+.mobile :lang(zh-HK) {font-family: "Noto Serif TC", "Noto Serif Trad", HYQIHei, serif;}
+.mobile :lang(zh-CN) {font-family: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;}
+
+/* Ensure Traditional and Simplified */
+:lang(zh-CN) {font-variant-east-asian: simplified;}
+:lang(zh-HK) {font-variant-east-asian: traditional;}
+
+/* RUBY */
+ruby rt {
+	visibility: hidden;
+	font-variant-east-asian: ruby;
+}
+ruby:hover rt {visibility: visible;}
+/* HANZI */
+.hanzi {font-size:var(--fs-xxl);}
+.mobile .hanzi {font-size:var(--fs-xl);}
+
+/* ENGLISH */
+.english {line-height: 1.2;}
+.english :is(ol, ol li) {
+	list-style-type: none;
+	text-align:center;
+	font-size: var(--fs-base);
+	margin: 0;
+	padding: 0;
+	color: var(--tx);
+}
+.eng-classifer { /*Noun, Adj Pleco*/
+    display: block;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+    color: var(--tx-3);
+}
+/* PINYIN */
+.pinyin a.hint{font-style:italic;}
+.tone1 {color: var(--red);} /* Red */
+.tone2 {color: var(--orange);} /* Orange */
+.tone3 {color: var(--green);} /* Green */
+.tone4 {color: var(--blue);} /* Blue */
+.tone5 {color: var(--tx-2);} /* Gray */
+
+/* ALSO */
+.also {font-size:var(--fs-md);}
+.classifier {font-size: var(--fs-lg);}
+
+/* Before */
+.classifier::before, .also::before, .example::before {
+	font-size: var(--fs-sm);
+	display: block-inline;
+	color: var(--tx-3);
+	font-variant: small-caps;
+	margin-right: 0.2em;
+}
+.classifier::before {content: "Cl:";}
+.also::before{content: "Alt:";}
+
+/* EXAMPLES */
+.example::before {display: block;content: "Ex:";}
+.example {
+	font-size: var(--fs-base);
+    color: var(--tx-2);
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 1rem;
+    min-height: calc(var(--fs-base)*4.5);
+    max-height: clamp(calc(var(--fs-base)*7), calc(var(--fs-base)*16), 35vh);
+    overflow-y: auto;
+    border-block-end: 2px inset var(--ui);
+    border-end-start-radius:3%;
+    border-end-end-radius:3%;
+}
+
+.example br:nth-of-type(3n+2){ /* Add spacing between examples */
+    display: flex;
+    height: 0rem;
+}
+
+/* COMMENT */
+.replay-button svg {
+	width: 20px;
+	height: 20px;
+	margin:0;
+}
+.replay-button svg circle {fill: var(--ui-2);}
+.replay-button svg path {fill: var(--tx-2);}
+.comment a {
+	font-size: var(--fs-sm);
+	color: var(--tx-2);
+	text-decoration:underline;
+}
