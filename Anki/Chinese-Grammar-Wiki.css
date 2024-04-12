@@ -1,41 +1,49 @@
+@import url("core-card.css");
 :root {
 	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝", serif;
+	--font-cn-mob:"Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
 }
-/* Basic Styling */
+/* Universal Styling */
 .card {
 	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-ui);
 	font-size: var(--fs-base);
-	font-variant-east-asian: simplified proportional-width;
+	font-variant-east-asian: simplified;
 	text-align: center;
 	color: black;
 	background-color: white;
 }
-.mobile .card {font-family: var(--font-sans-serif), "Noto Serif SC", HYQIHei, serif;}
-
-.spacerSmall {height: 5px;}
-.spacerMedium {height: 12px;}
-.spacer { height: 20px;}
+.mobile .card {font-family: var(--font-sans-serif), var(--font-cn-mob);}
 .hint {color: gray}
 a {color:#205EA6;}
 
+/* Spacing */
+.front {margin-top:20px;}
+.front > div + div,
+.lessonInfo > div + div {margin-top:10px 0;}
+
+hr#answer{margin:1.5rem 0;}
+
+/* FRONT */
 /* Chinese Fonts*/
 .hanzi {
 	font-family: var(--font-cn-pc);
-    font-size: var(--fs-xl);
+  font-size: var(--fs-xl);
 }
-
-.pinyin{color: gray;}
-.notes {
-	font-size: var(--fs-md);
-	color: gray;
+ruby rt {
+	visibility: hidden;
+	font-variant-east-asian: ruby;
 }
+ruby:hover rt {visibility: visible;}
 
-.english { font-size: var(--fs-md); }
+.pinyin, .english {color: gray;}
 
 /* ONLY for IS Valid Card Types */
+.header {margin-bottom: 20px;}
+
 .invalid, .valid {
 	font-size: var(--fs-lg);
 	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 .valid::after {
@@ -48,7 +56,8 @@ a {color:#205EA6;}
 	color: red;
 }
 
-/* Footer Section part of lessonInfo div */
+/* BACK -- lessonInfo div */
+.notes {font-size: var(--fs-md);}
 .pattern {font-size: var(--fs-md);}
 .article {font-size: var(--fs-base);}
 

@@ -12,7 +12,8 @@ date-modified: 2024-04-12T13:25:00
 
     <div class="english">{{English}}</div>
     <div class="pinyin">{{Pinyin}} <br>
-      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}{{Sound (Mandarin)}}
+      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}
+      {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
     </div>
 </div>
 
@@ -53,7 +54,8 @@ date-modified: 2024-04-12T13:25:00
     
     <div class="english">{{English}}</div>
     <div class="pinyin">{{Pinyin}} <br>
-      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}{{Sound (Mandarin)}}
+      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}
+      {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
     </div>
   </div>
 
@@ -109,8 +111,9 @@ date-modified: 2024-04-12T13:25:00
     
     <div class="hanzi"><span lang="zh-CN">{{Color Hanzi}}</span><span lang="zh-HK"> | {{Color Traditional}}</span></div>
     
-    <div class="pinyin">{{Pinyin}}<br>
-      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}{{Sound (Mandarin)}}
+    <div class="pinyin">{{Pinyin}} <br>
+      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}
+      {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
     </div>
   </div>
 </div>
@@ -151,7 +154,8 @@ date-modified: 2024-04-12T13:25:00
     <div class="hanzi"><span lang="zh-CN">{{Color Hanzi}}</span><span lang="zh-HK"> | {{Color Traditional}}</span></div>
     
     <div class="pinyin">{{Pinyin}} <br>
-      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}{{Sound (Mandarin)}}
+      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}
+      {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
     </div>
   </div>
   <hr class="prettify-divider prettify-divider--answer" id="answer" />
@@ -203,7 +207,7 @@ date-modified: 2024-04-12T13:25:00
   <div class="prettify-field prettify-field--front">
     {{#Tags}}<div class="prettify-tags">{{Tags}}</div>{{/Tags}}
     
-    <div class="hanzi"><span lang="zh-CN">{{Color Hanzi}}</span><span lang="zh-HK"> | {{Color Traditional}}</span></div>
+    <div class="hanzi"><span lang="zh-CN">{{Simplified}}</span><span lang="zh-HK"> | {{Traditional}}</span></div>
   </div>
 </div>
 
@@ -248,7 +252,10 @@ date-modified: 2024-04-12T13:25:00
     
   <div class="prettify-field prettify-field--back">
     <div class="english">{{English}}</div>
-    <div class="pinyin">{{Pinyin}}<br>{{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}{{Sound (Mandarin)}}</div>
+    <div class="pinyin">{{Pinyin}} <br>
+      {{^Sound (Mandarin)}}{{tts zh_CN speed=0.9:Simplified}}{{/Sound (Mandarin)}}
+      {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
+    </div>
 
     <span lang="zh-CN">
       {{#Also Written}}<div class="also">{{Also Written}}</div>{{/Also Written}}
