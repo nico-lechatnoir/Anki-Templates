@@ -303,9 +303,9 @@ View:
  - [Chinese Vocab Card](Chinese-Vocab.css)
 
 ```css
+@import url("core-card.css"); /* Import font sizing and stacks */
 @import url("flexoki-theme.css"); /* Import Flexoki Colours */
-@import url("core-card.css"); /*Import font sizing* and families */
-@import url("Chinese-Vocab.css"); /*Import font sizing* and families */
+@import url("Chinese-Vocab.css"); /*Import vocab styling */
 
 .card {
   cursor: default;
