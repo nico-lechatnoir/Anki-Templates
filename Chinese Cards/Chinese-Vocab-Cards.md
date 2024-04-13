@@ -9,7 +9,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Front English + Pinyin
 
-![Card 1-Front](Chinese Cards/images/Chinese-Vocab-Card-1-Front.png)
+<img src="images/Chinese-Vocab-Card-1-Front.png" width="600"/>
 
 ```html
 <div class="prettify-flashcard">
@@ -53,8 +53,8 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 ```
 
 ### Back Hanzi, Alternates, Classifer, Examples
-![Card 1 Back](Chinese Cards/images/Chinese-Vocab-Card-1-Back.png)
 
+<img src="images/Chinese-Vocab-Card-1-Back.png" width="600"/>
 
 ```html
 <div class="prettify-flashcard">
@@ -115,7 +115,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Front Hanzi + Pinyin
 
-![Card 2-Front](Chinese Cards/images/Chinese-Vocab-Card-2-Front.png)
+<img src="images/Chinese-Vocab-Card-2-Front.png" width="600"/>
 
 ```html
 <div class="prettify-flashcard">
@@ -161,7 +161,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Back English, Alternates, Classifer, Examples
 
-![Card 2 Back](Chinese Cards/images/Chinese-Vocab-Card-2-Back.png)
+<img src="images/Chinese-Vocab-Card-2-Back.png" width="600"/>
 
 ```html
 <div class="prettify-flashcard">
@@ -218,9 +218,9 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ## Card 3
 
-###-Front Hanzi
+### Front Hanzi
 
-![Card 3-Front](Chinese Cards/images/Chinese-Vocab-Card-3-Front.png)
+<img src="images/Chinese-Vocab-Card-3-Front.png" width="600"/>
 
 ```html
 <div class="prettify-flashcard">
@@ -262,7 +262,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Back Pinyin, Engish, Alternates, Classifer, Examples
 
-![Card 3 Back](Chinese Cards/images/Chinese-Vocab-Card-3-Back.png)
+<img src="images/Chinese-Vocab-Card-3-Back.png" width="600"/>
 
 ```html
 <div class="prettify-flashcard">
@@ -321,11 +321,11 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 ## Card Styling
 
 ### Chinese Vocab
-Card Styling is based off of a modified [Prettify Minimal Theme](minimal.css) or click [here](https://github.com/pranavdeshai/anki-prettify/tree/9d1a9cad9c047e3be4f804fc1958c93b132977ae/themes/minimal) for the source repo.
+Card Styling is based off of a modified [Prettify Minimal Theme](../Core-Templates/minimal.css) or click [here](https://github.com/pranavdeshai/anki-prettify/tree/9d1a9cad9c047e3be4f804fc1958c93b132977ae/themes/minimal) for the source repo.
 
 View:
- - [Core Card css](core-card.css)
- - [Flexoki Theme css](flexoki-theme.css)
+ - [Core Card css](../Core-Templates/core-card.css)
+ - [Flexoki Theme css](../Core-Templates/flexoki-theme.css)
  - [Chinese Vocab Card](Chinese-Vocab.css)
 
 ```css

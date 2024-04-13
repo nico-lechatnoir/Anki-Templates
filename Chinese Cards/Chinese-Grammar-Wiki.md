@@ -8,9 +8,10 @@ These cards were modified from this [deck](https://ankiweb.net/shared/info/78255
 # Card 1 Translation
 This Card will only generate if the `Example Type` Field is not filled.
 
-<img src="images/Chinese-Grammar-Translation-Front.png" width="500"/>
+## Front
 
-## Front 
+<img src="images/Chinese-Grammar-Translation-Front.png" width="600"/>
+
 ```html
 {{^Example Type}}
 <div class=tags>{{Tags}}</div> 
@@ -51,7 +52,7 @@ This Card will only generate if the `Example Type` Field is not filled.
 
 ## Back
 
-<img src="images/Chinese-Grammar-Translation-Back.png" width="500"/>
+<img src="images/Chinese-Grammar-Translation-Back.png" width="600"/>
 
 ```html
 {{#Tags}}<div class="tags">{{Tags}}</div>{{/Tags}}
@@ -108,7 +109,7 @@ This Card will only generate if the `Example Type` Field is filled.
 
 ## Front 
 
-<img src="images/Chinese-Grammar-Is-Valid-Front.png" width="500"/>
+<img src="images/Chinese-Grammar-Is-Valid-Front.png" width="600"/>
 
 ```html
 {{#Example Type}}
@@ -151,7 +152,7 @@ This Card will only generate if the `Example Type` Field is filled.
 
 ## Back
 
-<img src="images/Chinese-Grammar-Is-Valid-Back.png" width="500"/>
+<img src="images/Chinese-Grammar-Is-Valid-Back.png" width="600"/>
 
 ```html
 {{#Tags}}<div class="tags">{{Tags}}</div>{{/Tags}}
@@ -208,7 +209,7 @@ This Card will only generate if the `Example Type` Field is filled.
 
 View:
  - [Core Card CSS](../Core-Templates/core-card.css)
- - [Chinese Grammar Wiki Card](../Core-Templates/Chinese-Grammar-Wiki.css)
+ - [Chinese Grammar Wiki Card](Chinese-Grammar-Wiki.css)
 
 ```css
 @import url("core-card.css");
