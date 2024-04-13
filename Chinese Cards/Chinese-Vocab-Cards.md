@@ -9,7 +9,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Front English + Pinyin
 
-![Card 1 Front](Chinese Vocab Card 1 Front.png)
+![Card 1-Front](Chinese Cards/images/Chinese-Vocab-Card-1-Front.png)
 
 ```html
 <div class="prettify-flashcard">
@@ -53,8 +53,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 ```
 
 ### Back Hanzi, Alternates, Classifer, Examples
-
-![Card 1 Back](Chinese Vocab Card 1 Back.png)
+![Card 1 Back](Chinese Cards/images/Chinese-Vocab-Card-1-Back.png)
 
 
 ```html
@@ -116,7 +115,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Front Hanzi + Pinyin
 
-![Card 2 Front](Chinese Vocab Card 2 Front.png)
+![Card 2-Front](Chinese Cards/images/Chinese-Vocab-Card-2-Front.png)
 
 ```html
 <div class="prettify-flashcard">
@@ -162,7 +161,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Back English, Alternates, Classifer, Examples
 
-![Card 2 Back](Chinese Vocab Card 2 Back.png)
+![Card 2 Back](Chinese Cards/images/Chinese-Vocab-Card-2-Back.png)
 
 ```html
 <div class="prettify-flashcard">
@@ -219,9 +218,9 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ## Card 3
 
-### Front Hanzi
+###-Front Hanzi
 
-![Card 3 Front](Chinese Vocab Card 3 Front.png)
+![Card 3-Front](Chinese Cards/images/Chinese-Vocab-Card-3-Front.png)
 
 ```html
 <div class="prettify-flashcard">
@@ -263,7 +262,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ### Back Pinyin, Engish, Alternates, Classifer, Examples
 
-![Card 3 Back](Chinese Vocab Card 3 Back.png)
+![Card 3 Back](Chinese Cards/images/Chinese-Vocab-Card-3-Back.png)
 
 ```html
 <div class="prettify-flashcard">

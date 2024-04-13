@@ -4,26 +4,29 @@ This is my small collection of Anki Templates and links to any other helpful res
 # Templates
 
 ## My Cards
-### [Chinese Vocab Cards](Chinese-Vocab-Cards.md)
+### [Chinese Vocab Cards](Chinese Cards/Chinese-Vocab-Cards.md)
 **Contains 3 Cards**
-1. Tests Hanzi
-2. Tests Meaning
-3. Tests Pinyin and Meaning
 
+|Card|Front|Back|
+|---|---|---|
+|**Tests Hanzi**|![Chinese Vocab Card Test Hanzi Front](Chinese Cards/images/Chinese-Vocab-Card-1-Front.png)|![Chinese Vocab Card test hanzi back](Chinese Cards/images/Chinese-Vocab-Card-1-Back.png)|
+|**Tests Meaning**|![Chinese Vocab Card Test Meaning Front](Chinese Cards/images/Chinese-Vocab-Card-2-Front.png)|![Chinese Vocab Card Test Meaning Back](Chinese Cards/images/Chinese-Vocab-Card-2-Back.png)|
+|**Tests Pinyin & Meaning**|![Chinese Vocab Card Test Pinyin and Meaning Front](Chinese Cards/images/Chinese-Vocab-Card-3-Front.png)|![Chinese Vocab Card Test Pinyin and Meaning Back](Chinese Cards/images/Chinese-Vocab-Card-3-Back.png)|
 
-![Chinese Vocab Card test hanzi back](Chinese Vocab Card 1 Back.png)
-Shows the back of Card 1
-
-### [Chinese Grammar Wiki](Chinese-Grammar-Wiki.md)
+### [Chinese Grammar Wiki](Chinese Cards/Chinese-Grammar-Wiki.md)
 **Contains 2 Cards:**
 
 1. Example sentances
-![Translation Card Front](Chinese Grammar Translation Front.png)
-![Chinese Grammar Translation Back](Chinese Grammar Translation Back.png)
+   
+|Front|Back|
+|---|---|
+|![Chinese Grammar Translation Front](Chinese Cards/images/Chinese-Grammar-Translation-Front.png)|![Chinese Grammar Translation Back](Chinese Cards/images/Chinese-Grammar-Translation-Back.png)|
 
 2. Asks if the sentence is valid
-![Is Valid Front](Chinese Grammar Is Valid Front.png)
-![Is Valid Back](Chinese Grammar Is Valid Back.png)
+
+|Front|Back|
+|---|---|
+|![Is Valid Front](Chinese Cards/images/Chinese-Grammar-Is-Valid-Front.png)|![Is Valid Back](Chinese Grammar Is Valid Back.png)|
 
 ## General Templates
 - [General Card Styling](core-card.css)
