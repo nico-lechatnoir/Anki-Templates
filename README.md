@@ -18,15 +18,10 @@ This is my small collection of Anki Templates and links to any other helpful res
 
 1. Example sentances
    
-|Front|Back|
-|---|---|
-|![Chinese Grammar Translation Front](Chinese%20Cards/images/Chinese-Grammar-Translation-Front.png)|![Chinese Grammar Translation Back](Chinese%20Cards/images/Chinese-Grammar-Translation-Back.png)|
-
-2. Asks if the sentence is valid
-
-|Front|Back|
-|---|---|
-|![Is Valid Front](Chinese%20Cards/images/Chinese-Grammar-Is-Valid-Front.png)|![Is Valid Back](Chinese Grammar Is Valid Back.png)|
+|Card|Front|Back|
+|---|---|---|
+|**Example Sentences**|![Chinese Grammar Translation Front](Chinese%20Cards/images/Chinese-Grammar-Translation-Front.png)|![Chinese Grammar Translation Back](Chinese%20Cards/images/Chinese-Grammar-Translation-Back.png)|
+|**Asks if the sentence is valid**|![Is Valid Front](Chinese%20Cards/images/Chinese-Grammar-Is-Valid-Front.png)|![Is Valid Back](Chinese%20Cards/images/Chinese-Grammar-Is-Valid-Back.png)|
 
 ## General Templates
 - [General Card Styling](Core-Templates/core-card.css)

@@ -7,7 +7,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ## Card 1
 
-### Front English + Pinyin
+### Front: English + Pinyin
 
 <img src="images/Chinese-Vocab-Card-1-Front.png" width="600"/>
 
@@ -52,7 +52,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 </script>
 ```
 
-### Back Hanzi, Alternates, Classifer, Examples
+### Back: Hanzi, Alternates, Classifer, Examples
 
 <img src="images/Chinese-Vocab-Card-1-Back.png" width="600"/>
 
@@ -113,7 +113,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ## Card 2
 
-### Front Hanzi + Pinyin
+### Front: Hanzi + Pinyin
 
 <img src="images/Chinese-Vocab-Card-2-Front.png" width="600"/>
 
@@ -159,7 +159,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 </script>
 ```
 
-### Back English, Alternates, Classifer, Examples
+### Back: English, Alternates, Classifer, Examples
 
 <img src="images/Chinese-Vocab-Card-2-Back.png" width="600"/>
 
@@ -218,7 +218,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ## Card 3
 
-### Front Hanzi
+### Front: Hanzi
 
 <img src="images/Chinese-Vocab-Card-3-Front.png" width="600"/>
 
@@ -260,7 +260,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 </script>
 ```
 
-### Back Pinyin, Engish, Alternates, Classifer, Examples
+### Back: Pinyin, Engish, Alternates, Classifer, Examples
 
 <img src="images/Chinese-Vocab-Card-3-Back.png" width="600"/>
 

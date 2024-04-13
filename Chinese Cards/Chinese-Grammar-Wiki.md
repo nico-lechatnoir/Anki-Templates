@@ -8,7 +8,7 @@ These cards were modified from this [deck](https://ankiweb.net/shared/info/78255
 # Card 1 Translation
 This Card will only generate if the `Example Type` Field is not filled.
 
-## Front
+## Front:
 
 <img src="images/Chinese-Grammar-Translation-Front.png" width="600"/>
 
@@ -50,7 +50,7 @@ This Card will only generate if the `Example Type` Field is not filled.
 {{/Example Type}}
 ```
 
-## Back
+## Back:
 
 <img src="images/Chinese-Grammar-Translation-Back.png" width="600"/>
 
@@ -107,7 +107,7 @@ This Card will only generate if the `Example Type` Field is not filled.
 
 This Card will only generate if the `Example Type` Field is filled.
 
-## Front 
+## Front: 
 
 <img src="images/Chinese-Grammar-Is-Valid-Front.png" width="600"/>
 
@@ -150,7 +150,7 @@ This Card will only generate if the `Example Type` Field is filled.
 {{/Example Type}}
 ```
 
-## Back
+## Back:
 
 <img src="images/Chinese-Grammar-Is-Valid-Back.png" width="600"/>
 
