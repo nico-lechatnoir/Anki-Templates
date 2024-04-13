@@ -1,11 +1,18 @@
 ---
-date-modified: 
+date-modified: 2024-04-13T09:07
 ---
-# Anki Cards
+# Chinese Grammar Wiki Cards
+
+These cards were modified from this [deck](https://ankiweb.net/shared/info/782551504) and link to AllSet Learning's [Chinese Grammar Wiki](https://resources.allsetlearning.com/chinese/grammar/Main_Page)
 
 # Card 1 Translation
+This Card will only generate if the `Example Type` Field is not filled.
+
+![Translation Card Front](Chinese Grammar Translation Front.png)
+
 ## Front 
 ```html
+{{^Example Type}}
 <div class=tags>{{Tags}}</div> 
 <div class="front">
   <div class="hanzi">{{中文}}</div>
@@ -39,9 +46,13 @@ date-modified:
     tagsContainerEl.innerHTML = html
   }
 </script>
+{{/Example Type}}
 ```
 
 ## Back
+
+![Translation Card Back](Chinese Grammar Translation Back.png)
+
 ```html
 {{#Tags}}<div class="tags">{{Tags}}</div>{{/Tags}}
 <div class="front">
@@ -96,6 +107,9 @@ date-modified:
 This Card will only generate if the `Example Type` Field is filled.
 
 ## Front 
+
+![Is Valid Front](Chinese Grammar Is Valid Front.png)
+
 ```html
 {{#Example Type}}
   {{#Tags}}<div class="tags">{{Tags}}</div>{{/Tags}}
@@ -136,6 +150,9 @@ This Card will only generate if the `Example Type` Field is filled.
 ```
 
 ## Back
+
+![Is Valid Back](Chinese Grammar Is Valid Back.png)
+
 ```html
 {{#Tags}}<div class="tags">{{Tags}}</div>{{/Tags}}
 <div class="front">
@@ -190,7 +207,7 @@ This Card will only generate if the `Example Type` Field is filled.
 ## Chinese Grammar
 
 View:
- - [Core Card css](core-card.css)
+ - [Core Card CSS](core-card.css)
  - [Chinese Grammar Wiki Card](Chinese-Grammar-Wiki.css)
 
 ```css

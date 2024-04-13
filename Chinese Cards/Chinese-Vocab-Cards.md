@@ -1,10 +1,16 @@
 ---
 date-modified: 2024-04-12T13:25:00
 ---
-# Anki Cards
+# Mandarin Vocab Cards
 
-# Card 1 
-## Front English + Pinyin
+Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://github.com/Gustaf-C/anki-chinese-support-3)
+
+## Card 1
+
+### Front English + Pinyin
+
+![Card 1 Front](Chinese Vocab Card 1 Front.png)
+
 ```html
 <div class="prettify-flashcard">
   <div class="prettify-field prettify-field--front">
@@ -46,7 +52,11 @@ date-modified: 2024-04-12T13:25:00
 </script>
 ```
 
-## Back Hanzi, Alternates, Classifer, Examples
+### Back Hanzi, Alternates, Classifer, Examples
+
+![Card 1 Back](Chinese Vocab Card 1 Back.png)
+
+
 ```html
 <div class="prettify-flashcard">
   <div class="prettify-field prettify-field--front">
@@ -102,8 +112,12 @@ date-modified: 2024-04-12T13:25:00
 </script>
 ```
 
-# Card 2 
-## Front Hanzi + Pinyin
+## Card 2
+
+### Front Hanzi + Pinyin
+
+![Card 2 Front](Chinese Vocab Card 2 Front.png)
+
 ```html
 <div class="prettify-flashcard">
   <div class="prettify-field prettify-field--front">
@@ -146,7 +160,10 @@ date-modified: 2024-04-12T13:25:00
 </script>
 ```
 
-## Back English, Alternates, Classifer, Examples
+### Back English, Alternates, Classifer, Examples
+
+![Card 2 Back](Chinese Vocab Card 2 Back.png)
+
 ```html
 <div class="prettify-flashcard">
   <div class="prettify-field prettify-field--front">
@@ -200,8 +217,12 @@ date-modified: 2024-04-12T13:25:00
 </script>
 ```
 
-# Card 3
-## Front Hanzi 
+## Card 3
+
+### Front Hanzi
+
+![Card 3 Front](Chinese Vocab Card 3 Front.png)
+
 ```html
 <div class="prettify-flashcard">
   <div class="prettify-field prettify-field--front">
@@ -240,7 +261,10 @@ date-modified: 2024-04-12T13:25:00
 </script>
 ```
 
-## Back Pinyin, Engish, Alternates, Classifer, Examples
+### Back Pinyin, Engish, Alternates, Classifer, Examples
+
+![Card 3 Back](Chinese Vocab Card 3 Back.png)
+
 ```html
 <div class="prettify-flashcard">
   <div class="prettify-field prettify-field--front">
@@ -295,9 +319,10 @@ date-modified: 2024-04-12T13:25:00
 </script>
 ```
 
-# Card Styling
-## Chinese Vocab
-Card Styling is based off of a modified [Prettify Minimal Theme](minimal.css) or click [here](https://github.com/pranavdeshai/anki-prettify/tree/9d1a9cad9c047e3be4f804fc1958c93b132977ae/themes/minimal) for the original code.
+## Card Styling
+
+### Chinese Vocab
+Card Styling is based off of a modified [Prettify Minimal Theme](minimal.css) or click [here](https://github.com/pranavdeshai/anki-prettify/tree/9d1a9cad9c047e3be4f804fc1958c93b132977ae/themes/minimal) for the source repo.
 
 View:
  - [Core Card css](core-card.css)
