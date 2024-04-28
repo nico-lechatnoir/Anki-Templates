@@ -1,8 +1,6 @@
 # Minimal Style Notes
 
-Changes that have been made to the [Minimal](minimal.css) template, adapted from [pranavdeshai/anki-prettify/themes/minimal](https://github.com/pranavdeshai/anki-prettify/tree/9d1a9cad9c047e3be4f804fc1958c93b132977ae/themes/minimal). There are two notes types, Basic with a *optional* reversal and a Cloze Note.
-
-Both card types use the same file and changes to it will effect both cards. Major changes include fluid typography settings, allowing iPads to have same margins as desktops. All styling should be called as `@import url('minimal.css');` from the card styling options and should be stored in the media folder.
+The [Minimal](minimal.css) template was adapted from [pranavdeshai/anki-prettify/themes/minimal](https://github.com/pranavdeshai/anki-prettify/tree/9d1a9cad9c047e3be4f804fc1958c93b132977ae/themes/minimal). There are two notes types, Basic with a *optional* reversal and a Cloze Note. Both card types use the same file and changes to it will effect both cards. Major changes include fluid typography settings and allowing iPads to have same margins as desktops. All styling should be called as `@import url('minimal.css');` from the card styling options and should be stored in the media folder.
 
 ## Note Types
 
