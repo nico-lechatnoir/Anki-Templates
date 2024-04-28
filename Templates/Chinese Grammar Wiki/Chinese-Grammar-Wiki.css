@@ -12,7 +12,7 @@
 	color: black;
 	background-color: white;
 }
-.mobile .card {font-family: var(--font-sans-serif), var(--font-cn-mob);}
+.mobile .card {font-family: var(--font-sans-serif), var(--font-cn-mob), var(--font-ui);}
 .hint {color: gray}
 a {color:#205EA6;}
 
@@ -25,10 +25,9 @@ hr#answer{margin:1.5rem 0;}
 
 /* FRONT */
 /* Chinese Fonts*/
-.hanzi {
-	font-family: var(--font-cn-pc);
-  font-size: var(--fs-xl);
-}
+.hanzi {font-size: var(--fs-xl);}
+.mobile .hanzi {font-size: var(--fs-lg);}
+
 ruby rt {
 	visibility: hidden;
 	font-variant-east-asian: ruby;

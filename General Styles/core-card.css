@@ -1,0 +1,57 @@
+:root {
+	/* Calculated from 
+	https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=320&minRatio=1.25&maxFontSize=20&maxWidth=1240&maxRatio=1.333&steps=xxs%2Cxs%2Csm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1240
+	*/
+	--fs-xxs: clamp(0.512rem, 0.0274vi + 0.5065rem, 0.5277rem);
+	--fs-xs: clamp(0.64rem, 0.1104vi + 0.6179rem, 0.7035rem);
+	--fs-sm: clamp(0.8rem, 0.2395vi + 0.7521rem, 0.9377rem);
+	--fs-base: clamp(1rem, 0.4348vi + 0.913rem, 1.25rem);
+	--fs-md: clamp(1.25rem, 0.7239vi + 1.1052rem, 1.6663rem);
+	--fs-lg: clamp(1.5625rem, 1.1454vi + 1.3334rem, 2.2211rem);
+	--fs-xl: clamp(1.9531rem, 1.7524vi + 1.6026rem, 2.9607rem);
+	--fs-xxl: clamp(2.4414rem, 2.6178vi + 1.9178rem, 3.9467rem);
+	--fs-xxxl: clamp(3.0518rem, 3.842vi + 2.2834rem, 5.2609rem);
+
+	/* Font Stacks */
+	--font-ui: system-ui, sans-serif; /* UI font stack */
+	--font-sans-serif: "Helvetica Neue", Helvetica, Inter, Roboto, Arial, sans-serif; /* Sans-Serif Font Stack */
+	--font-serif: Georgia, "Times New Roman", Times, serif; /* Serif Font Stack */
+	--font-monospace: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono",ui-monospace, monospace; /* Monospace Font Stack */
+	--font-math: MJXZERO, MJXTEX, STIXGeneral, "Arial Unicode MS", serif; /*Math Font Stack*/
+}
+
+
+.card {
+	padding:3% 1%;
+	font-family:  var(--font-sans-serif), var(---font-ui);
+	font-size: var(--fs-md);
+	text-align: center;
+	color: black;
+	background-color: white;
+}
+
+.mobile:not(.ipad) .card {font-size: var(--fs-base);}
+
+.tags {
+	color:grey;
+	text-align:right;
+	font-size:var(--fs-sm);
+	font-family: var(--font-ui);
+	padding-bottom:16px;
+}
+
+.replay-button svg {
+	width: 20px;
+	height: 20px;
+	margin:1px;
+	opacity: 0.75;
+}
+.mobile:not(.ipad) .replay-button svg {
+	width: 14px;
+	height: 14px;
+}
+
+span#FSRS_status{
+	text-align: center;
+	margin-top: 2em !important;
+}

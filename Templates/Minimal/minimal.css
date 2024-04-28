@@ -8,15 +8,17 @@ Links:
 - Buy Me a Coffee: https://www.buymeacoffee.com/pranavdeshai
 - Ko-fi: https://ko-fi.com/pranavdeshai
 
+
 /* -------------------------------------------------- PREFERENCES */
+
 :root {
   --card-max-width: 40em;
   --card-text-align: left;
-  --font-size-large: clamp(22.5px, 0.58vi + 16.26px, 26.66px);
-  --font-size-regular: clamp(18px, 0.28vi + 15px, 20px);/* 16px; */
-  --font-size-small: clamp(14.4px, 0.08vi + 13.49px, 15px); /* 14px; */
-  --font-family: "Inter", -apple-system, sytem-ui, BlinkMacSystemFont, Segoe UI,
-    Roboto, Helvetica, Arial, sans-serif;
+  --font-family: Inter, -apple-system, sytem-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, system-ui, sans-serif;
+  --fs-sm: clamp(0.8rem, 0.2395vi + 0.7521rem, 0.9377rem);
+	--fs-base: clamp(1rem, 0.4348vi + 0.913rem, 1.25rem);
+	--fs-md: clamp(1.25rem, 0.7239vi + 1.1052rem, 1.6663rem);
+	--fs-lg: clamp(1.5625rem, 1.1454vi + 1.3334rem, 2.2211rem);
   --img-width: 50%;
   --img-brightness: 0.75;
   --img-filter: none;
@@ -81,21 +83,22 @@ Links:
 .card {
   cursor: default;
   padding: 0.5em 0;
+  font-family: var(--font-family);
+  font-size: var(--fs-base);
 }
 
 html:not(.mobile) .card { padding: 0.5em; }
 .card::-webkit-scrollbar { display: none; }
-
+.hint {color: var(--text-fg-faint);}
 /* -------------------------------------------------- FLASHCARD */
 .prettify-flashcard {
   background-color: var(--card-bg);
   border-radius: 8px;
   border: 1px solid var(--card-border);
-  box-shadow: var(--card-box-shadow) 0px 7px 14px 0px,
-    var(--card-box-shadow) 0px 3px 6px 0px;
+  box-shadow: var(--card-box-shadow) 0px 7px 14px 0px, var(--card-box-shadow) 0px 3px 6px 0px;
   color: var(--text-fg);
   font-family: var(--font-family);
-  font-size: var(--font-size-regular);
+  font-size: var(--fs-base);
   line-height: 1.5;
   margin: 0 auto;
   max-width: var(--card-max-width);
@@ -107,19 +110,25 @@ html:not(.mobile) .card { padding: 0.5em; }
 
 /* -------------------------------------------------- FIELDS */
 .prettify-field { margin: 2rem; }
-.mobile .prettify-field { margin: 1rem; }
-.prettify-field--front{font-size: var(--font-size-large);}
-.prettify-field--back {
+.mobile:not(.ipad) .prettify-field { margin: 1rem; }
+.prettify-field--front{font-size: var(--fs-md);}
+.prettify-field--back {color: var(--text-fg-faint);}
+
+/* -------------------------------------------------- MY FIELDS */
+.example {
+  font-style:italic;
+  margin-top: 8px;
   color: var(--text-fg-faint);
-  font-size: var(--font-size-regular);
 }
-.back-notes { /* Notes always show as smaller in front and back*/
-	color:var(--text-fg-faint);
-	font-size: calc(var(--font-size-regular)*0.85);
-  margin-top: 0.5em;
+.prettify-field--front .example { /* Examples are always small text*/
+	font-size: var(--fs-base);
 }
-mjx-math {font-size:0.8em;}
-.example {font-style:italic;}
+.example .hint {color:var(--text-fg-selected);}
+
+/* Only Applies to Cloze Cards */
+.prettify-field--front .term {font-weight: bold;}
+.prettify-field--front .def {font-size: var(--fs-base);}
+
 /* -------------------------------------------------- CLOZE */
 .cloze {
   background-color: var(--cloze-bg);
@@ -131,10 +140,10 @@ mjx-math {font-size:0.8em;}
   margin: 2rem;
   display: flex;
   color: var(--text-fg-faint);
-  font-size: var(--font-size-small);
+  font-size: var(--fs-sm);
   white-space: nowrap;
 }
-.mobile .prettify-deck { margin: 1em; }
+.mobile:not(.ipad) .prettify-deck { margin: 1rem; }
 
 .prettify-subdeck {
   text-decoration: none;
@@ -147,10 +156,10 @@ mjx-math {font-size:0.8em;}
   margin: 0.5em 2em 2em;
   display: flex;
   flex-flow: row wrap;
-  font-size: var(--font-size-small);
+  font-size: var(--fs-sm);
 }
 
-.mobile .prettify-tags { margin: 1em; }
+.mobile:not(.ipad) .prettify-tags { margin: 0.5em 1em 1em; }
 
 .prettify-tag {
   all: initial;
@@ -158,7 +167,7 @@ mjx-math {font-size:0.8em;}
   border-radius: 0.2em;
   color: var(--tag-fg);
   display: inline;
-  font-size: var(--font-size-small);
+  font-size: var(--fs-sm);
   font-family: var(--font-family);
   margin: 0 0.5em 0.5em 0;
   padding: 0.25em;
@@ -181,7 +190,7 @@ mjx-math {font-size:0.8em;}
   padding: 0;
 }
 
-.prettify-divider--answer { margin: 0 0 1em; }
+.prettify-divider--answer { margin: 0; }
 
 /* -------------------------------------------------- IMAGES */
 img {
@@ -227,29 +236,12 @@ table {
   max-width: 100%;
 }
 
-table thead {
-  background-color: var(--card-border);
-}
-
-table tr:nth-of-type(even) {
-  background-color: var(--card-border);
-}
-
-table tr:first-child th:first-child {
-  border-top-left-radius: 0.25em;
-}
-
-table tr:first-child th:last-child {
-  border-top-right-radius: 0.25em;
-}
-
-table tr:last-child td:first-child {
-  border-bottom-left-radius: 0.25em;
-}
-
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 0.25em;
-}
+table thead {background-color: var(--card-border);}
+table tr:nth-of-type(even) {background-color: var(--card-border);}
+table tr:first-child th:first-child {border-top-left-radius: 0.25em;}
+table tr:first-child th:last-child {border-top-right-radius: 0.25em;}
+table tr:last-child td:first-child {border-bottom-left-radius: 0.25em;}
+table tr:last-child td:last-child {border-bottom-right-radius: 0.25em;}
 
 table th {
   border-bottom: solid 1px var(--text-bg-selected);
@@ -258,9 +250,7 @@ table th {
   padding: 0.5em;
 }
 
-table th:last-child {
-  border-right: solid 1px var(--text-bg-selected);
-}
+table th:last-child {border-right: solid 1px var(--text-bg-selected);}
 
 table td {
   border-bottom: solid 1px var(--text-bg-selected);
@@ -268,9 +258,7 @@ table td {
   padding: 0.5em;
 }
 
-table td:last-of-type {
-  border-right: solid 1px var(--text-bg-selected);
-}
+table td:last-of-type {border-right: solid 1px var(--text-bg-selected);}
 
 /* -------------------------------------------------- HYPERLINKS */
 a, a:visited {
@@ -284,41 +272,12 @@ a:hover, a:active {
 }
 
 /* -------------------------------------------------- FORMATTING */
+p {margin-block-start: 0.5em;margin-block-end: 0.5em;}
+mjx-math {font-size:0.8em;}
+
 b {color: var(--bold-fg);}
 i { color: var(--italic-fg); }
 b > i,
 i > b { color: var(--bold-italic-fg); }
 u {color: var(--underline-fg);}
 pre {white-space: normal;}
-
-/* -------------------------------------------------- CUSTOM FONTS
-@font-face {
-  font-family: Inter;
-  src: local("Inter-Regular"), url("_Inter-Regular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  src: local("Inter-Bold"), url("_Inter-Bold.woff2") format("wofff2");
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: Inter;
-  src: local("Inter-Italic"), url("_Inter-Italic.woff2") format("wofff2");
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  src: local("Inter-BoldItalic"),
-    url("_Inter-BoldItalic.woff2") format("wofff2");
-  font-style: italic;
-  font-weight: bold;
-} */
-
-/* -------------------------------------------------- END OF THEME */
