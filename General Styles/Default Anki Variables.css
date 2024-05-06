@@ -1,0 +1,177 @@
+/*
+Standard Anki Variables and Color Settings for both Light and Dark Modes  
+More documentation: https://docs.ankiweb.net/templates/styling.html
+*/
+
+:root{
+    --font-size: 15px;
+    --border-radius: 5px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 15px;
+    --transition: 180ms;
+    --transition-medium: 500ms;
+    --transition-slow: 1000ms;
+    --blur: 20px;
+}
+
+/* ===================================== LIGHT MODE COLOURS */
+:root{
+    --fg: #020202;
+    --fg-subtle: #737373;
+    --fg-disabled: #858585;
+    --fg-faint: #afafaf;
+    --fg-link: #1d4ed8;
+    --canvas: #f5f5f5;
+    --canvas-elevated: white;
+    --canvas-inset: white;
+    --canvas-overlay: #fcfcfc;
+    --canvas-code: white;
+    --canvas-glass: rgba(255, 255, 255, 0.4);
+    --border: #c4c4c4;
+    --border-subtle: #e4e4e4;
+    --border-strong: #858585;
+    --border-focus: #3b82f6;
+    --button-bg: #fcfcfc;
+    --button-gradient-start: white;
+    --button-gradient-end: #fcfcfc;
+    --button-hover-border: #999999;
+    --button-disabled: rgba(214, 214, 214, 0.5);
+    --button-primary-bg: #306bec;
+    --button-primary-gradient-start: #3b82f6;
+    --button-primary-gradient-end: #306bec;
+    --button-primary-disabled: #93c5fd;
+    --scrollbar-bg: #d6d6d6;
+    --scrollbar-bg-hover: #c4c4c4;
+    --scrollbar-bg-active: #afafaf;
+    --shadow: #c4c4c4;
+    --shadow-inset: #454545;
+    --shadow-subtle: #737373;
+    --shadow-focus: #6366f1;
+    --accent-card: #60a5fa;
+    --accent-note: #22c55e;
+    --accent-danger: #ef4444;
+    --flag-1: #ef4444;
+    --flag-2: #fb923c;
+    --flag-3: #4ade80;
+    --flag-4: #3b82f6;
+    --flag-5: #e879f9;
+    --flag-6: #2dd4bf;
+    --flag-7: #a855f7;
+    --state-new: #3b82f6;
+    --state-learn: #dc2626;
+    --state-review: #16a34a;
+    --state-buried: #f59e0b;
+    --state-suspended: #facc15;
+    --state-marked: #6366f1;
+    --highlight-bg: rgba(37, 99, 235, 0.5);
+    --highlight-fg: black;
+    --selected-bg: rgba(214, 214, 214, 0.5);
+    --selected-fg: black;
+    color-scheme: light;
+}
+
+/* ===================================== NIGHT MODE COLOURS */
+:root.nightMode{
+    --fg: #fcfcfc;
+    --fg-subtle: #858585;
+    --fg-disabled: #737373;
+    --fg-faint: #545454;
+    --fg-link: #bfdbfe;
+    --canvas: #2c2c2c;
+    --canvas-elevated: #363636;
+    --canvas-inset: #2c2c2c;
+    --canvas-overlay: #2c2c2c;
+    --canvas-code: #252525;
+    --canvas-glass: rgba(54, 54, 54, 0.4);
+    --border: #202020;
+    --border-subtle: #252525;
+    --border-strong: #020202;
+    --border-focus: #3b82f6;
+    --button-bg: #404040;
+    --button-gradient-start: #4a4a4a;
+    --button-gradient-end: #404040;
+    --button-hover-border: #141414;
+    --button-disabled: rgba(69, 69, 69, 0.5);
+    --button-primary-bg: #2652cf;
+    --button-primary-gradient-start: #2f67e1;
+    --button-primary-gradient-end: #2652cf;
+    --button-primary-disabled: #4484ed;
+    --scrollbar-bg: #454545;
+    --scrollbar-bg-hover: #545454;
+    --scrollbar-bg-active: #636363;
+    --shadow: #141414;
+    --shadow-inset: #202020;
+    --shadow-subtle: #363636;
+    --shadow-focus: #6366f1;
+    --accent-card: #93c5fd;
+    --accent-note: #4ade80;
+    --accent-danger: #f87171;
+    --flag-1: #f87171;
+    --flag-2: #fdba74;
+    --flag-3: #86efac;
+    --flag-4: #60a5fa;
+    --flag-5: #f0abfc;
+    --flag-6: #5eead4;
+    --flag-7: #c084fc;
+    --state-new: #93c5fd;
+    --state-learn: #f87171;
+    --state-review: #22c55e;
+    --state-buried: #92400e;
+    --state-suspended: #fef9c3;
+    --state-marked: #a855f7;
+    --highlight-bg: rgba(147, 197, 253, 0.5);
+    --highlight-fg: white;
+    --selected-bg: rgba(147, 197, 253, 0.5);
+    --selected-fg: white;
+    color-scheme: dark;
+}
+
+
+/* ===================================== TYPE IN THE ANSWER */
+#typeans { font-size: 30px !important; }  /* Use to override the size of typing  box */
+
+/* Color Selections for Typed Results */
+.typeBad {
+    color: #000;
+    background: #faa;
+}
+.typeGood {
+    background: #afa;
+    color: #000;
+}
+/* Not supported on Anki Mobile */
+.typeMissed {
+    color: #000;
+    background: #ccc;
+}
+/* ===================================== CLOZE */
+.cloze {
+    font-weight: bold;
+    color: blue;
+}
+
+/* ===================================== IMAGE OCCLUSION */
+#image-occlusion-canvas {
+    --inactive-shape-color: #ffeba2;
+    --active-shape-color: #ff8e8e;
+    --inactive-shape-border: 1px #212121;
+    --active-shape-border: 1px #212121;
+}
+
+/* Button Togggles view for all Image Occlusions on Back of Card */
+button#toggle {
+    margin: 1em .5em;
+    --canvas: #fff;
+    -webkit-appearance: none;
+    background: var(--canvas);
+    border-radius: var(--border-radius);
+    padding: 3px 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0px 1px 3px var(--border-subtle);
+    font-family: Helvetica;
+}
+
+.night-mode button#toggle {
+    --canvas: #606060;
+    --fg: #eee;
+}

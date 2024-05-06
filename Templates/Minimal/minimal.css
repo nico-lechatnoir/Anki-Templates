@@ -153,13 +153,13 @@ html:not(.mobile) .card { padding: 0.5em; }
 
 /* -------------------------------------------------- TAGS */
 .prettify-tags {
-  margin: 0.5em 2em 2em;
+  margin: 0em 2rem 2rem;
   display: flex;
   flex-flow: row wrap;
   font-size: var(--fs-sm);
 }
 
-.mobile:not(.ipad) .prettify-tags { margin: 0.5em 1em 1em; }
+.mobile:not(.ipad) .prettify-tags { margin: 0em 1rem 1rem; }
 
 .prettify-tag {
   all: initial;
@@ -171,7 +171,6 @@ html:not(.mobile) .card { padding: 0.5em; }
   font-family: var(--font-family);
   margin: 0 0.5em 0.5em 0;
   padding: 0.25em;
-  transition: all 0.25s;
   word-break: break-word;
 }
 
