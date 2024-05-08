@@ -4,7 +4,7 @@ These cards were modified from this [shared deck](https://ankiweb.net/shared/inf
 
 All styling should be called as `@import url('Chinese-Grammar-Wiki.css');` from the card styling options and should be stored in the media folder. It will also internally call the [Core Card CSS](/General%20Styles/core-card.css) to set basic styling settings, font sizes, and families and it will also need to be downloaded.
 
-Download the modified deck [here](Chinese Grammar Wiki.apkg).
+Download the modified deck [here](Chinese%20Grammar%20Wiki.apkg) and the original deck can be found on the Anki [website](https://ankiweb.net/shared/info/782551504). 
 
 ## Card 1 Translation
 
