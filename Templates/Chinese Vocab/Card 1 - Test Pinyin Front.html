@@ -13,13 +13,15 @@
 <script type="text/javascript" src="_minimalTags.js"></script>
 
 <script type="text/javascript">
+(function () {
     // Checks to see if Traditional Characters are different and inserts if not same
-    var simp = '{{Simplified}}';
-    var trad = '{{Traditional}}';
+    let simp = '{{Simplified}}';
+    let trad = '{{Traditional}}';
     if (simp != trad) {
-        var add = document.getElementById('conditionalContent');
-        add.innerHTML += '<span lang="zh-Hant"> | {{Traditional}}</span>';
+    var add = document.getElementById('conditionalContent');
+    add.innerHTML += '<span lang="zh-Hant"> | {{Traditional}}</span>';
     }
+})()
 </script>
 
 <script type="text/javascript">
