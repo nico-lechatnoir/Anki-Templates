@@ -1,7 +1,8 @@
 @import url("core-card.css");
 :root {
-	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝", serif;
-	--font-cn-mob:"Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
+	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝",
+		serif;
+	--font-cn-mob: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
 }
 /* Universal Styling */
 .card {
@@ -12,34 +13,58 @@
 	color: black;
 	background-color: white;
 }
-.mobile .card {font-family: var(--font-sans-serif), var(--font-cn-mob), var(--font-ui);}
-.hint {color: gray}
-a {color:#205EA6;}
+.mobile .card {
+	font-family: var(--font-sans-serif), var(--font-cn-mob), var(--font-ui);
+}
+.hint {
+	color: gray;
+}
+a {
+	color: #205ea6;
+}
 
 /* Spacing */
-.front {margin-top:20px;}
+.front {
+	margin-top: 20px;
+}
 .front > div + div,
-.lessonInfo > div + div {margin-top:10px 0;}
+.lessonInfo > div + div {
+	margin-top: 10px 0;
+}
 
-hr#answer{margin:1.5rem 0;}
+hr#answer {
+	margin: 1.5rem 0;
+}
 
 /* FRONT */
 /* Chinese Fonts*/
-.hanzi {font-size: var(--fs-xl);}
-.mobile .hanzi {font-size: var(--fs-lg);}
+.hanzi {
+	font-size: var(--fs-xl);
+}
+.mobile .hanzi {
+	font-size: var(--fs-lg);
+}
 
 ruby rt {
 	visibility: hidden;
 	font-variant-east-asian: ruby;
 }
-ruby:hover rt {visibility: visible;}
+ruby:hover rt {
+	visibility: visible;
+}
 
-.pinyin, .english {color: gray;}
+.pinyin,
+.english {
+	color: gray;
+}
 
 /* ONLY for IS Valid Card Types */
-.header {margin-bottom: 20px;}
+.header {
+	margin-bottom: 20px;
+}
 
-.invalid, .valid {
+.invalid,
+.valid {
 	font-size: var(--fs-lg);
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -56,14 +81,25 @@ ruby:hover rt {visibility: visible;}
 }
 
 /* BACK -- lessonInfo div */
-.notes {font-size: var(--fs-md);}
-.pattern {font-size: var(--fs-md);}
-.article {font-size: var(--fs-base);}
+.notes {
+	font-size: var(--fs-md);
+}
+.pattern {
+	font-size: var(--fs-md);
+}
+.article {
+	font-size: var(--fs-base);
+}
 
-.article::before, .pattern::before {
-	font-size:var(--fs-sm);
+.article::before,
+.pattern::before {
+	font-size: var(--fs-sm);
 	color: grey;
 	margin-right: 5px;
 }
-.pattern::before{content: "Pattern:";}
-.article::before{content: "Link:";}
+.pattern::before {
+	content: "Pattern:";
+}
+.article::before {
+	content: "Link:";
+}
