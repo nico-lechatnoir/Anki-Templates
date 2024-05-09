@@ -3,263 +3,382 @@
 
 /*#region =========================================== Card Styling */
 .card {
-  cursor: default;
-  padding: 0.5em 0;
-  background-color: #F2F0E5;
+	cursor: default;
+	padding: 0.5em 0;
+	background-color: #f2f0e5;
 }
-.card.nightMode {background-color: var(--bg-2);}
+.card.nightMode {
+	background-color: var(--bg-2);
+}
 
-html:not(.mobile) .card {padding: 0.5em;}
-.card::-webkit-scrollbar {display: none;}
+html:not(.mobile) .card {
+	padding: 0.5em;
+}
+.card::-webkit-scrollbar {
+	display: none;
+}
 /* -------------------------------------------------- FLASHCARD */
 .prettify-flashcard {
-  background-color: var(--bg);
-  border-radius: 8px;
-  border: 1px solid var(--ui);
-  box-shadow: var(--ui) 0px 7px 14px 0px, var(--ui) 0px 3px 6px 0px;
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: 40em;
-  text-align: center;
-  word-wrap: break-word;
-  color: var(--tx);
-  font-family: var(--font-sans-serif);
-  font-size: var(--fs-base);
+	background-color: var(--bg);
+	border-radius: 8px;
+	border: 1px solid var(--ui);
+	box-shadow: var(--ui) 0px 7px 14px 0px, var(--ui) 0px 3px 6px 0px;
+	line-height: 1.5;
+	margin: 0 auto;
+	max-width: 40em;
+	text-align: center;
+	word-wrap: break-word;
+	color: var(--tx);
+	font-family: var(--font-sans-serif, sans-serif);
+	font-size: var(--fs-base);
 }
-.nightMode .prettify-flashcard {box-shadow: none;}
-.prettify-flashcard ::selection {background-color: var(--ui-2);}
+.nightMode .prettify-flashcard {
+	box-shadow: none;
+}
+.prettify-flashcard ::selection {
+	background-color: var(--ui-2);
+}
 
 /* -------------------------------------------------- FIELDS */
-.prettify-field {margin: 2rem;}
-.mobile:not(.ipad) .prettify-field {margin: 1rem;}
+.prettify-field {
+	margin: 2rem;
+}
+.mobile:not(.ipad) .prettify-field {
+	margin: 1rem;
+}
 
 /* -------------------------------------------------- CARD TYPE AND TAGS */
 .header {
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  color:  var(--tx-2);
-  font-size: var(--fs-sm);
-  font-family: var(--font-sans-serif), var(--font-ui);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	color: var(--tx-2);
+	font-size: var(--fs-sm);
+	font-family: var(--font-sans-serif, var(--font-ui));
 }
-.card-type{flex-basis: content;}
+
+.card-type {
+	flex-basis: content;
+}
 
 .prettify-tags {
-  display: flex;
-  flex-flow: row-reverse;
-  flex-grow:2;
-  flex-basis: content;
+	display: flex;
+	flex-flow: row-reverse;
+	flex-grow: 2;
+	flex-basis: content;
 }
 
 .prettify-tag {
-  all: initial;
-  background-color: var(--bg-2);
-  border-radius: 0.2em;
-  display: inline;
-  margin-left: 0.5em;
-  padding: 0.25em;
-  word-break: break-word;
-  color:  var(--tx-2);
-  font-size: var(--fs-sm);
-  font-family: var(--font-sans-serif), var(--font-ui);
+	all: initial;
+	background-color: var(--bg-2);
+	border-radius: 0.2em;
+	display: inline;
+	margin-left: 0.5em;
+	padding: 0.25em;
+	word-break: break-word;
+	color: var(--tx-2);
+	font-size: var(--fs-sm);
+	font-family: var(--font-sans-serif, var(--font-ui));
 }
-
 
 /* -------------------------------------------------- DIVIDER */
 .prettify-divider {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1.5px dashed var(--ui-3);
-  margin: 1em;
-  padding: 0;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1.5px dashed var(--ui-3);
+	margin: 1em;
+	padding: 0;
 }
-.prettify-divider.answer {margin: 0;}
+.prettify-divider.answer {
+	margin: 0;
+}
 /*#endregion =========================================== */
 
 /*#region =========================================== Field Styling */
-ruby, ruby rt {font-variant-east-asian: ruby;}
-p {margin-block-start: 0px;margin-block-end: 0px;}
-a.hint{font-size: var(--fs-base); color: var(--tx-2);font-style:italic;}
+ruby,
+ruby rt {
+	font-variant-east-asian: ruby;
+}
+p {
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+a.hint {
+	font-size: var(--fs-base);
+	color: var(--tx-2);
+	font-style: italic;
+}
 
 /* Chinese Fonts*/
-.win :lang(zh) {font-family: KaiTi, "MS Mincho", "ＭＳ 明朝", serif;}
-.mac :lang(zh-Hant) {font-family: "Kaiti TC", STKaiti, "Noto Serif TC", serif;}
-.mac :lang(zh-CN) {font-family: "Kaiti SC", STKaiti, "Noto Serif SC", serif;}
-.mobile :lang(zh-Hant) {font-family: "Noto Serif TC", "Noto Serif Trad", HYQIHei, serif;}
-.mobile :lang(zh-CN) {font-family: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;}
+.win :lang(zh) {
+	font-family: KaiTi, "MS Mincho", "ＭＳ 明朝", serif;
+}
+.mac :lang(zh-Hant) {
+	font-family: "Kaiti TC", STKaiti, "Noto Serif TC", serif;
+}
+.mac :lang(zh-CN) {
+	font-family: "Kaiti SC", STKaiti, "Noto Serif SC", serif;
+}
+.mobile :lang(zh-Hant) {
+	font-family: "Noto Serif TC", "Noto Serif Trad", HYQIHei, serif;
+}
+.mobile :lang(zh-CN) {
+	font-family: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
+}
 
 /* Ensure Traditional and Simplified */
-:lang(zh-CN) {font-variant-east-asian: simplified;}
-:lang(zh-Hant) {font-variant-east-asian: traditional;}
+:lang(zh-CN) {
+	font-variant-east-asian: simplified;
+}
+:lang(zh-Hant) {
+	font-variant-east-asian: traditional;
+}
 
 /* HANZI */
 .hanzi {
-  font-size:var(--fs-xxl);
-  line-height: 1.3;
+	font-size: var(--fs-xxl);
+	line-height: 1.3;
 }
-.mobile .hanzi {font-size:var(--fs-xl);}
+.mobile .hanzi {
+	font-size: var(--fs-xl);
+}
 
 /* PINYIN */
-.pinyin {font-size: var(--fs-md);}
-.tone1 {color: var(--red);} /* Red */
-.tone2 {color: var(--orange);} /* Orange */
-.tone3 {color: var(--green);} /* Green */
-.tone4 {color: var(--blue);} /* Blue */
-.tone5 {color: var(--tx-2);} /* Gray */
+.pinyin {
+	font-size: var(--fs-md);
+}
+
+/* Red */
+.tone1 {
+	color: var(--red, red);
+}
+
+/* Orange */
+.tone2 {
+	color: var(--orange, orange);
+}
+
+/* Green */
+.tone3 {
+	color: var(--green, green);
+}
+
+/* Blue */
+.tone4 {
+	color: var(--blue, blue);
+}
+
+/* Gray */
+.tone5 {
+	color: var(--tx-2, grey);
+}
 
 /* ENGLISH */
 .english {
-  line-height: 1.2;
-  text-align: left;
-  font-size:var(--fs-base);
+	line-height: 1.2;
+	text-align: left;
+	font-size: var(--fs-base);
 }
 
 /*Noun, Adj Pleco*/
-.en-cl { 
-  display: block;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
-  font-weight: bold;
-  font-size: var(--fs-sm);
-  text-transform: uppercase;
-  color: var(--tx-3);
+.en-cl {
+	display: block;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	font-weight: bold;
+	font-size: var(--fs-sm);
+	text-transform: uppercase;
+	color: var(--tx-3);
 }
 
 /* Fades List numbers */
 .english :is(ol, ul) {
-  margin: 0;
-  padding-left: 1em;
+	margin: 0;
+	padding-left: 1em;
 }
-.english li::marker, .english:not(blockquote) > b{
-  color: var(--tx-3);
-  font-size: var(--fs-sm);
-  font-weight: 500;
+
+.english li::marker,
+.english:not(blockquote) > b {
+	color: var(--tx-3);
+	font-size: var(--fs-sm);
+	font-weight: 500;
 }
 
 /* Fades List Numbers in lists imported from Pleco as text */
 .english:not(blockquote) > b {
-  margin-right:4px;
-  margin-left: 1px;
+	margin-right: 4px;
+	margin-left: 1px;
 }
 
 /* Formats examples included with Pleco */
 .english blockquote {
-  border-left: 2px solid var(--ui);
-  margin-left: 1em;
-  padding-left: 1em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-size: var(--fs-sm);
-  color: var(--tx-2);
+	border-left: 2px solid var(--ui);
+	margin-left: 1em;
+	padding-left: 1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-size: var(--fs-sm);
+	color: var(--tx-2);
 }
 .keyword,
-.english blockquote b {color: var(--red); font-weight:bold;}
-.english blockquote > p:first-child{
-  color: var(--tx);
-  font-size: var(--fs-base);
+.english blockquote b {
+	color: var(--red);
+	font-weight: bold;
+}
+.english blockquote > p:first-child {
+	color: var(--tx);
+	font-size: var(--fs-base);
 }
 
-.english.only-hanzi blockquote > :not(p:first-child) {display:none;}
-.english.hide-bq blockquote {display:none;} 
+.english.only-hanzi blockquote > :not(p:first-child) {
+	display: none;
+}
+.english.hide-bq blockquote {
+	display: none;
+}
 
 /* ALSO */
-.also {font-size:var(--fs-md);}
-.classifier {font-size: var(--fs-md);}
+.also {
+	font-size: var(--fs-md);
+}
+.classifier {
+	font-size: var(--fs-md);
+}
 
-.classifier ruby rt {visibility: hidden;}
-.classifier ruby:hover rt {visibility: visible;}
+.classifier ruby rt {
+	visibility: hidden;
+}
+.classifier ruby:hover rt {
+	visibility: visible;
+}
 
 /* Before */
-.classifier::before, .also::before, .example::before {
-  font-size: var(--fs-sm);
-  display: block-inline;
-  color: var(--tx-3);
-  margin-right: 0.2em;
+.classifier::before,
+.also::before,
+.example::before {
+	font-size: var(--fs-sm);
+	display: block-inline;
+	color: var(--tx-3);
+	margin-right: 0.2em;
 }
-.classifier::before {content: "M:";}
-.also::before{content: "Alt:";}
+.classifier::before {
+	content: "M:";
+}
+.also::before {
+	content: "Alt:";
+}
 .notes {
-  text-align: left;
-  color: var(--tx-2);
-  font-size:var(--fs-base);
+	text-align: left;
+	color: var(--tx-2);
+	font-size: var(--fs-base);
 }
 /* EXAMPLES */
-.example::before {display: block; content: "Ex:";}
+.example::before {
+	display: block;
+	content: "Ex:";
+}
 .example {
-  color: var(--tx-2);
-  font-size:var(--fs-base);
-  line-height: 1.2;
-  text-align: left;
-  margin-top: 1rem;
-  min-height: calc(var(--fs-base)*4.5);
-  max-height: clamp(calc(var(--fs-base)*7), calc(var(--fs-base)*16), 35vh);
-  overflow-y: auto;
-  border-block-end: 2px inset var(--ui);
-  border-end-start-radius:5px;
-  border-end-end-radius:5px;
+	color: var(--tx-2);
+	font-size: var(--fs-base);
+	line-height: 1.2;
+	text-align: left;
+	margin-top: 1rem;
+	min-height: calc(var(--fs-base) * 4.5);
+	max-height: clamp(calc(var(--fs-base) * 7), calc(var(--fs-base) * 16), 35vh);
+	overflow-y: auto;
+	border-block-end: 2px inset var(--ui);
+	border-end-start-radius: 5px;
+	border-end-end-radius: 5px;
 }
 
 /* Centers Pinyin and offsets sound button */
 .centre {
-  position:relative;
-  text-align:center;
-  margin: 0 auto;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
 }
 .centre .sound {
-  position: absolute;
-  margin-left:var(--fs-sm);
+	position: absolute;
+	margin-left: var(--fs-sm);
 }
 
-.replay-button svg circle {fill: var(--ui-2);}
-.replay-button svg path {fill: var(--tx-2);}
-
+.replay-button svg circle {
+	fill: var(--ui-2);
+}
+.replay-button svg path {
+	fill: var(--tx-2);
+}
 
 /* Links to Dictionaries */
-.link {margin-top: var(--fs-sm);}
-.link a, .link > a {
-  font-size: var(--fs-sm);
-  color: var(--tx-2);
-  text-decoration: underline;
+.link {
+	margin-top: var(--fs-sm);
+}
+.link a,
+.link > a {
+	font-size: var(--fs-sm);
+	color: var(--tx-2);
+	text-decoration: underline;
 }
 
 /* Hide invalid links based on platform*/
-.mobile .desktop-only, .mobile-only {display:none;} 
-.mobile .mobile-only, .desktop-only {display:inline;}
-
+.mobile .desktop-only,
+.mobile-only {
+	display: none;
+}
+.mobile .mobile-only,
+.desktop-only {
+	display: inline;
+}
 
 /* Type the Answer */
 
-input#typeans{
-  box-sizing: border-box;
-  background-color: var(--ui);
-  border-color:var(--ui-2);
-  color: var(--tx);
-  font-size: var(--fs-md) !important;
-  width: fit-content;
-  max-width: 40%;
-  margin-top: var(--fs-xxs);
-  margin-bottom: var(--fs-xxs);
+input#typeans {
+	box-sizing: border-box;
+	background-color: var(--ui);
+	border-color: var(--ui-2);
+	color: var(--tx);
+	font-size: var(--fs-md) !important;
+	width: fit-content;
+	max-width: 40%;
+	margin-top: var(--fs-xxs);
+	margin-bottom: var(--fs-xxs);
 }
 
 /* Results */
-code#typeans:not(:has(*)) {display: none;}  /* Hides results if nothing is answered */
-#typearrow {background-color: var(--bg);}
-.typeMissed {color: var(--tx); background-color: var(--ui-3);}
-.typeBad {color: var(--tx); background-color: #D14D41;}
-.typeGood {color: var(--tx); background-color: #879A39;}
 
-/* Hides text if all text is Correct and displays a check mark instead */
-code#typeans > .typeGood:only-child {visibility: collapse;}
-code#typeans > .typeGood:only-child::after {
-  display: inline-flexbox;
-  visibility: visible;
-  position: relative;
-  content: "\2713";
-  color: var(--green);
-  font-size: var(--fs-md);
-  left: -1.5ch;
+/* Hides results if nothing is answered */
+code#typeans:not(:has(*)) {
+	display: none;
+}
+#typearrow {
+	background-color: var(--bg);
+}
+.typeMissed {
+	color: var(--tx);
+	background-color: var(--ui-3);
+}
+.typeBad {
+	color: var(--tx);
+	background-color: #d14d41;
+}
+.typeGood {
+	color: var(--tx);
+	background-color: #879a39;
 }
 
+/* Hides text if all text is Correct and displays a check mark instead */
+code#typeans > .typeGood:only-child {
+	visibility: collapse;
+}
+code#typeans > .typeGood:only-child::after {
+	display: inline-flexbox;
+	visibility: visible;
+	position: relative;
+	content: "\2713";
+	color: var(--green);
+	font-size: var(--fs-md);
+	left: -1.5ch;
+}
 
 /*#endregion =========================================== */

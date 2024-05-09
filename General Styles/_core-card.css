@@ -13,45 +13,46 @@
 	--fs-xxxl: clamp(3.0518rem, 3.842vi + 2.2834rem, 5.2609rem);
 
 	/* Font Stacks */
-	--font-ui: system-ui, sans-serif; /* UI font stack */
-	--font-sans-serif: "Helvetica Neue", Helvetica, Inter, Roboto, Arial, sans-serif; /* Sans-Serif Font Stack */
-	--font-serif: Georgia, "Times New Roman", Times, serif; /* Serif Font Stack */
-	--font-monospace: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono",ui-monospace, monospace; /* Monospace Font Stack */
-	--font-math: MJXZERO, MJXTEX, STIXGeneral, "Arial Unicode MS", serif; /*Math Font Stack*/
+	--font-ui: system-ui, sans-serif;
+	--font-sans-serif: "Helvetica Neue", Helvetica, Inter, Roboto, Arial, sans-serif;
+	--font-serif: Georgia, "Times New Roman", Times, serif;
+	--font-monospace: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
+	--font-math: MJXZERO, MJXTEX, STIXGeneral, "Arial Unicode MS", serif;
 }
-
 
 .card {
 	padding: 3% 1%;
-	font-family:  var(--font-sans-serif), var(---font-ui);
+	font-family: var(--font-sans-serif), var(--font-ui);
 	font-size: var(--fs-md);
 	text-align: center;
 	color: black;
 	background-color: white;
 }
 
-.mobile:not(.ipad) .card {font-size: var(--fs-base);}
+.mobile:not(.ipad) .card {
+	font-size: var(--fs-base);
+}
 
 .tags {
-	color:grey;
-	text-align:right;
-	font-size:var(--fs-sm);
+	color: grey;
+	text-align: right;
+	font-size: var(--fs-sm);
 	font-family: var(--font-ui);
-	padding-bottom:16px;
+	padding-bottom: var(--fs-base, 18px);
 }
 
 .replay-button svg {
-	width: 20px;
-	height: 20px;
-	margin:1px;
+	width: var(--fs-md, 22px);
+	height: var(--fs-md, 22px);
 	opacity: 0.75;
 }
+
 .mobile:not(.ipad) .replay-button svg {
-	width: 14px;
-	height: 14px;
+	width: var(--fs-sm, 12px);
+	height: var(--fs-sm, 12px);
 }
 
-span#FSRS_status{
+span#FSRS_status {
 	text-align: center;
 	margin-top: 2em !important;
 }
