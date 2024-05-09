@@ -14,7 +14,7 @@ Links:
 :root {
   --card-max-width: 40em;
   --card-text-align: left;
-  --font-family: Inter, -apple-system, sytem-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, system-ui, sans-serif;
+  --font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --fs-sm: clamp(0.8rem, 0.2395vi + 0.7521rem, 0.9377rem);
 	--fs-base: clamp(1rem, 0.4348vi + 0.913rem, 1.25rem);
 	--fs-md: clamp(1.25rem, 0.7239vi + 1.1052rem, 1.6663rem);
