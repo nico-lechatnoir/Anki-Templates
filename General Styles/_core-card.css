@@ -46,7 +46,6 @@
 	height: var(--fs-md, 22px);
 	opacity: 0.75;
 }
-
 .mobile:not(.ipad) .replay-button svg {
 	width: var(--fs-sm, 12px);
 	height: var(--fs-sm, 12px);

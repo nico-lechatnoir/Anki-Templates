@@ -79,7 +79,7 @@ html:not(.mobile) .card {
 	word-break: break-word;
 	color: var(--tx-2);
 	font-size: var(--fs-sm);
-	font-family: var(--font-sans-serif, var(--font-ui));
+	font-family: var(--font-sans-serif), var(--font-ui);
 }
 
 /* -------------------------------------------------- DIVIDER */
