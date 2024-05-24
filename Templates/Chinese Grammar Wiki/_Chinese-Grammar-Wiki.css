@@ -1,21 +1,18 @@
-@import url("core-card.css");
+@import url("_core-card.css");
 :root {
-	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝",
-		serif;
+	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝", serif;
 	--font-cn-mob: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
 }
 /* Universal Styling */
 .card {
-	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-ui);
+	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-cn-mob), var(--font-ui);
 	font-size: var(--fs-base);
 	font-variant-east-asian: simplified;
 	text-align: center;
 	color: black;
 	background-color: white;
 }
-.mobile .card {
-	font-family: var(--font-sans-serif), var(--font-cn-mob), var(--font-ui);
-}
+
 .hint {
 	color: gray;
 }
@@ -24,14 +21,6 @@ a {
 }
 
 /* Spacing */
-.front {
-	margin-top: 20px;
-}
-.front > div + div,
-.lessonInfo > div + div {
-	margin-top: 10px 0;
-}
-
 hr#answer {
 	margin: 1.5rem 0;
 }
@@ -41,7 +30,7 @@ hr#answer {
 .hanzi {
 	font-size: var(--fs-xl);
 }
-.mobile .hanzi {
+.mobile:not(.ipad) .hanzi {
 	font-size: var(--fs-lg);
 }
 
@@ -53,21 +42,21 @@ ruby:hover rt {
 	visibility: visible;
 }
 
-.pinyin,
-.english {
+.pinyin {
 	color: gray;
 }
 
 /* ONLY for IS Valid Card Types */
 .header {
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
+	color: grey;
 }
 
 .invalid,
 .valid {
 	font-size: var(--fs-lg);
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
 }
 
 .valid::after {
@@ -76,17 +65,15 @@ ruby:hover rt {
 }
 
 .invalid::before {
-	content: "Not Correct!";
+	content: "Wrong!";
 	color: red;
 }
 
 /* BACK -- lessonInfo div */
-.notes {
+.notes, .pattern {
 	font-size: var(--fs-md);
 }
-.pattern {
-	font-size: var(--fs-md);
-}
+
 .article {
 	font-size: var(--fs-base);
 }
@@ -95,7 +82,7 @@ ruby:hover rt {
 .pattern::before {
 	font-size: var(--fs-sm);
 	color: grey;
-	margin-right: 5px;
+	margin-right: 4px;
 }
 .pattern::before {
 	content: "Pattern:";

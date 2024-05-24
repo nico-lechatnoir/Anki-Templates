@@ -38,7 +38,7 @@
 	text-align: right;
 	font-size: var(--fs-sm);
 	font-family: var(--font-ui);
-	padding-bottom: var(--fs-base, 18px);
+	margin-bottom: var(--fs-base, 18px);
 }
 
 .replay-button svg {
