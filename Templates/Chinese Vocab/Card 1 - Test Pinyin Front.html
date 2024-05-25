@@ -1,39 +1,36 @@
 <div class="prettify-flashcard">
-    <div class="prettify-field prettify-field--front">
-        <div class="header">
-            <span class="card-type">{{Card}}</span>
-            {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-        </div>
-        <div class="hanzi" id="conditionalContent"><span lang=zh-CN>{{Simplified}}</span></div>
-        <div id="example0" class="english only-hanzi">{{English}}</div>
+  <div class="prettify-field prettify-field--front">
+    <div class="header">
+      <span class="card-type">{{Card}}</span>
+      {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
     </div>
+    <div class="hanzi" id="conditionalContent"><span lang=zh-CN>{{Simplified}}</span></div>
+    <div id="example0" class="english only-hanzi">{{English}}</div>
+  </div>
 </div>
-
 
 <script type="text/javascript" src="_minimalTags.js"></script>
 
 <script type="text/javascript">
-(function () {
+  (function () {
     // Checks to see if Traditional Characters are different and inserts if not same
     let simp = '{{Simplified}}';
     let trad = '{{Traditional}}';
     if (simp != trad) {
-    var add = document.getElementById('conditionalContent');
-    add.innerHTML += '<span lang="zh-Hant"> | {{Traditional}}</span>';
+      var add = document.getElementById('conditionalContent');
+      add.innerHTML += '<span lang="zh-Hant"> | {{Traditional}}</span>';
     }
-})()
+  })()
 </script>
 
 <script type="text/javascript">
-// Searches for vocab words and adds the .keyword class for extra styling
-(function () {
+  // Searches for vocab words and adds the .keyword class for extra styling
+  (function () {
     const NoSpace = /\s|&nbsp;/g;
     let simp = `{{Simplified}}`.trim().replaceAll(NoSpace,'');
     let trad = `{{Traditional}}`.trim().replaceAll(NoSpace,'');
     const reKeywords = new RegExp(String.raw`(<b>)?(\s?${simp}|${trad}\s?)(<\/b>)?`, "g");
-    let ex = document.getElementById('example0');
-    ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
-})()
-</script>
-
-
+      let ex = document.getElementById('example0');
+      ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
+    })()
+  </script>

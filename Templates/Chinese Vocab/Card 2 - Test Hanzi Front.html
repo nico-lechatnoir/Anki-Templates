@@ -10,8 +10,8 @@
         <a id="hintLength" class=hint href="#" style="display: none" onclick="this.style.display='none';document.getElementById('hintPinyin').style.display='inline-block';return false;"></a>
         <div id="hintPinyin" class=hint style="display: none">{{Pinyin}}</div>
       <span class="sound">
-        {{^Sound (Mandarin)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Mandarin)}}
-        {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
+        {{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}}
+        {{Sound (Male)}}{{Sound (Female)}}
       </span>
     </div>
     <span lang="zh-CN">{{type:Simplified}}</span>
@@ -19,7 +19,6 @@
 </div>
 
 <script type="text/javascript" src="_minimalTags.js"></script>
-
 <script type="text/javascript">
   (function () {
   // Helps to Create a 2 step hint showing length of words before Hanzi

@@ -1,63 +1,62 @@
 <div class="prettify-flashcard">
-    <div class="prettify-field prettify-field--front">
-        <div class="header">
-            <span class="card-type">{{Card}}</span>
-            {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-        </div>
-        <div id="example0" class="english">{{English}}</div>
-        <div class="pinyin centre">
-            <a class=hint href="#" onclick="this.style.display='none';document.getElementById('hintPinyin').style.display='inline-block';return false;">Pinyin</a><div id="hintPinyin" class=hint style="display:none">{{Pinyin}}</div>
-            <span class="sound">
-                {{^Sound (Mandarin)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Mandarin)}}
-                {{#Sound (Mandarin)}}{{Sound (Mandarin)}}{{/Sound (Mandarin)}}
-            </span>
-        </div>
-        <span lang="zh-CN">{{type:Simplified}}</span>
+  <div class="prettify-field prettify-field--front">
+    <div class="header">
+      <span class="card-type">{{Card}}</span>
+      {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
     </div>
-    
-    <hr class="prettify-divider answer" id="answer" />
-    
-    <div class="prettify-field prettify-field--back">
-        <div class=hanzi id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div> 
-        <span lang="zh-CN">
-            {{#Also Written}}<div class="also">{{Also Written}}</div>{{/Also Written}}
-            {{#Classifier}}<div class="classifier">{{Classifier}}</div>{{/Classifier}}
-            {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
-            {{#Ex}}<div id="example1" class="example">{{Ex}}</div>{{/Ex}}
-        </span>
-        <div class=link>
-            <a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}">MDBG</a>
-            <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}">Pleco</a>
-            <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to=">Tatoeba</a>
-        </div>
+    <div id="example0" class="english">{{English}}</div>
+    <div class="pinyin centre">
+      <span id="pinyin">{{Pinyin}}</span>
+      <span class="sound">
+        {{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}}
+        {{Sound (Male)}}{{Sound (Female)}}
+      </span>
     </div>
+    <span lang="zh-CN">{{type:Simplified}}</span>
+  </div>
+  
+  <hr class="prettify-divider answer" id="answer" />
+  
+  <div class="prettify-field prettify-field--back">
+    <div class=hanzi id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div> 
+    <span lang="zh-CN">
+      {{#Also Written}}<div class="also">{{Also Written}}</div>{{/Also Written}}
+      {{#Classifier}}<div class="classifier">{{Classifier}}</div>{{/Classifier}}
+      {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
+      {{#Ex}}<div id="example1" class="example">{{Ex}}</div>{{/Ex}}
+    </span>
+    <div class=link>
+      <a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}">MDBG</a>
+      <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}">Pleco</a>
+      <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to=">Tatoeba</a>
+    </div>
+  </div>
 </div>
-<script type="text/javascript" src="_minimalTags.js"></script>
 
+<script type="text/javascript" src="_minimalTags.js"></script>
 <script type="text/javascript">
 (function () {
-    // Checks to see if Traditional Characters are different and inserts if not same
-    var simp = '{{Simplified}}';
-    var trad = '{{Traditional}}';
-    if (simp != trad) {
-        var add = document.getElementById('conditionalContent');
-        add.innerHTML += '<span lang="zh-Hant"> | {{Color Traditional}}</span>';
-    }
+  // Checks to see if Traditional Characters are different and inserts if not same
+  var simp = '{{Simplified}}';
+  var trad = '{{Traditional}}';
+  if (simp != trad) {
+    var add = document.getElementById('conditionalContent');
+    add.innerHTML += '<span lang="zh-Hant"> | {{Color Traditional}}</span>';
+  }
 })()
 </script>
-
 <script type="text/javascript">
-    // Searches for pinyin and vocab words and adds the .keyword class for extra styling
-  (function () {
-    const NoSpace = /\s|&nbsp;/g;
-    let simp = `{{Simplified}}`.trim().replaceAll(NoSpace,'');
-    let trad = `{{Traditional}}`.trim().replaceAll(NoSpace,'');
-    let py = document.getElementById('hintPinyin').innerText.trim();
-    const reKeywords = new RegExp(String.raw`(<b>)?(\s?${simp}|${trad}|${py}\s?)(<\/b>)?`, "g");
-    for (var i = 0; i < 2; i++) { 
+// Searches for pinyin and vocab words and adds the .keyword class for extra styling
+(function () {
+  const NoSpace = /\s|&nbsp;/g;
+  let simp = `{{Simplified}}`.trim().replaceAll(NoSpace,'');
+  let trad = `{{Traditional}}`.trim().replaceAll(NoSpace,'');
+  let py = document.getElementById('pinyin').innerText.trim();
+  const reKeywords = new RegExp(String.raw`(<b>)?(\s?${simp}|${trad}|${py}\s?)(<\/b>)?`, "g");
+    let amount = document.querySelectorAll('[id^="example"]').length;	
+    for (var i = 0; i < amount; i++) { 
       var ex = document.getElementById('example'+[i]);
       ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
     }
   })()
-  </script>
-  
+</script>
