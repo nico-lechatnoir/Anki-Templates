@@ -1,7 +1,7 @@
 @import url("_core-card.css"); /* Import font sizing and stacks */
 @import url("_flexoki-theme.css"); /* Import Flexoki Colours */
 
-/*#region =========================================== Card Styling */
+/*#region =========================================== MINIMAL CARD STYLING */
 .card {
 	cursor: default;
 	padding: 0.5em 0;
@@ -55,7 +55,7 @@ html:not(.mobile) .card {
 	margin-bottom: 2rem;
 	color: var(--tx-2);
 	font-size: var(--fs-sm);
-	font-family: var(--font-sans-serif, var(--font-ui));
+	font-family: var(--font-sans-serif), var(--font-ui);
 }
 
 .card-type {
@@ -95,11 +95,7 @@ html:not(.mobile) .card {
 }
 /*#endregion =========================================== */
 
-/*#region =========================================== Field Styling */
-ruby,
-ruby rt {
-	font-variant-east-asian: ruby;
-}
+/*#region =========================================== FIELD STYLING */
 p {
 	margin-block-start: 0px;
 	margin-block-end: 0px;
@@ -108,6 +104,12 @@ a.hint {
 	font-size: var(--fs-base);
 	color: var(--tx-2);
 	font-style: italic;
+}
+
+/*#region ================================== HANZI AND PINYIN */
+ruby,
+ruby rt {
+	font-variant-east-asian: ruby;
 }
 
 /* Chinese Fonts*/
@@ -174,30 +176,36 @@ a.hint {
 	color: var(--tx-2, grey);
 }
 
-/* ENGLISH */
+/*#endregion =============================== */
+
+/*#region ================================== ENGLISH */
 .english {
-	line-height: 1.2;
+	line-height: 1.1;
 	text-align: left;
 	font-size: var(--fs-base);
 }
 
 /*Noun, Adj Pleco*/
 .en-cl {
-	display: block;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
 	font-weight: bold;
 	font-size: var(--fs-sm);
 	text-transform: uppercase;
 	color: var(--tx-3);
 }
 
-/* Fades List numbers */
-.english :is(ol, ul) {
-	margin: 0;
-	padding-left: 1em;
+span.en-cl {
+	margin-right: 1ch;
 }
 
+.mobile span.en-cl {
+	margin-right: 0.5ch;
+}
+
+/* Fades List numbers */
+.english :is(ol, ul) {
+	margin: 0.3em 0;
+	padding-left: 0.85em;
+}
 .english li::marker,
 .english:not(blockquote) > b {
 	color: var(--tx-3);
@@ -214,13 +222,18 @@ a.hint {
 /* Formats examples included with Pleco */
 .english blockquote {
 	border-left: 2px solid var(--ui);
-	margin-left: 1em;
+	margin-left: 0em;
 	padding-left: 1em;
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	font-size: var(--fs-sm);
 	color: var(--tx-2);
 }
+
+.mobile:not(.ipad) .english blockquote {
+	padding-left: 0.5em;
+}
+
 .keyword,
 .english blockquote b {
 	color: var(--red);
@@ -237,8 +250,9 @@ a.hint {
 .english.hide-bq blockquote {
 	display: none;
 }
+/*#endregion =============================== */
 
-/* ALSO */
+/*#region ================================== BACK SIDE INFO */
 .also {
 	font-size: var(--fs-md);
 }
@@ -273,6 +287,7 @@ a.hint {
 	color: var(--tx-2);
 	font-size: var(--fs-base);
 }
+
 /* EXAMPLES */
 .example::before {
 	display: block;
@@ -292,28 +307,11 @@ a.hint {
 	border-end-end-radius: 5px;
 }
 
-/* Centers Pinyin and offsets sound button */
-.centre {
-	position: relative;
-	text-align: center;
-	margin: 0 auto;
-}
-.centre .sound {
-	position: absolute;
-	margin-left: var(--fs-sm);
-}
-
-.replay-button svg circle {
-	fill: var(--ui-2);
-}
-.replay-button svg path {
-	fill: var(--tx-2);
-}
-
 /* Links to Dictionaries */
 .link {
 	margin-top: var(--fs-sm);
 }
+
 .link a,
 .link > a {
 	font-size: var(--fs-sm);
@@ -331,8 +329,31 @@ a.hint {
 	display: inline;
 }
 
-/* Type the Answer */
+/*#endregion =============================== */
 
+/*#region ================================== Sound */
+/* Centers Pinyin and offsets sound button */
+.centre {
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+}
+.centre .sound {
+	position: absolute;
+	margin-left: var(--fs-sm);
+}
+div.sound .replay-button{margin: 2px;}
+
+.replay-button svg circle {
+	fill: var(--ui-2);
+}
+.replay-button svg path {
+	fill: var(--tx-2);
+}
+
+/*#endregion =============================== */
+
+/*#region ================================== Type Answer */
 input#typeans {
 	box-sizing: border-box;
 	background-color: var(--ui);
@@ -367,7 +388,7 @@ code#typeans:not(:has(*)) {
 	background-color: #879a39;
 }
 
-/* Hides text if all text is Correct and displays a check mark instead */
+/* Hides text if completely Correct and displays a check mark instead */
 code#typeans > .typeGood:only-child {
 	visibility: collapse;
 }
@@ -380,5 +401,8 @@ code#typeans > .typeGood:only-child::after {
 	font-size: var(--fs-md);
 	left: -1.5ch;
 }
+/* Hides any comparisons */
+#typeans #typearrow, #typeans #typearrow ~ * {display:none}
+/*#endregion =============================== */
 
 /*#endregion =========================================== */

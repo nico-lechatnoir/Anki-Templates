@@ -47,8 +47,8 @@
 	opacity: 0.75;
 }
 .mobile:not(.ipad) .replay-button svg {
-	width: var(--fs-sm, 12px);
-	height: var(--fs-sm, 12px);
+	width: var(--fs-base, 1rem);
+	height: var(--fs-base, 1rem);
 }
 
 span#FSRS_status {
