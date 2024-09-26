@@ -1,27 +1,29 @@
 <div class="prettify-flashcard">
-  <div class="prettify-field prettify-field--front">
-    <div class="header">
-      <span class="card-type">{{Card}}</span>
-      {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-    </div>
-    <div class="hanzi" id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div>
-    <div class="pinyin">{{Pinyin}}</div>
-    <div class="sound">
-      {{^Sound (Male)}}{{^Sound (Female)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Female)}}{{/Sound (Male)}}
-      {{Sound (Male)}}{{Sound (Female)}}
-    </div>
+  <header id="header">
+    <span class="card-type">{{Card}}</span>
+    {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
+  </header>
+<div class="prettify-field prettify-field--front">
+  <div class="hanzi" id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div>
+  <div id="pinyin" class="pinyin">{{hint:Pinyin}}</div>
+  <div class="sound">
+    {{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}}
+    {{Sound (Male)}}{{Sound (Female)}}
   </div>
-</div>
 
+</div>
+</div>
+<div id="question_audio"></div>
 <script type="text/javascript" src="_minimalTags.js"></script>
+
 <script type="text/javascript">
-  (function () {
-    // Checks to see if Traditional Characters are different and inserts if not same
-    var simp = '{{Simplified}}';
-    var trad = '{{Traditional}}';
-    if (simp != trad) {
-      var add = document.getElementById('conditionalContent');
-      add.innerHTML += '<span lang="zh-Hant"> | {{Color Traditional}}</span>';
-    }
-  })()
+(function () {
+  // Checks to see if Traditional Characters are different and inserts if not same
+  var simp = '{{Simplified}}';
+  var trad = '{{Traditional}}';
+  if (simp !== trad) {
+    var add = document.getElementById('conditionalContent');
+    add.innerHTML += '<span lang="zh-Hant">|{{Color Traditional}}</span>';
+  }
+})()
 </script>

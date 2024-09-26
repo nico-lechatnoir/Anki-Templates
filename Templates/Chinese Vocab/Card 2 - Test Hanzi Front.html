@@ -1,28 +1,28 @@
 <div class="prettify-flashcard">
-  <div class="prettify-field prettify-field--front">
-    <div class="header">
-      <span class="card-type">{{Card}}</span>
-      {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-    </div>
-    <div id="example0" class="english hide-bq">{{English}}</div>
-    <div class="pinyin centre">
-      <a class=hint href="#" onclick="this.style.display='none';document.getElementById('hintLength').style.display='inline-block';return false;"># of Char</a>
-        <a id="hintLength" class=hint href="#" style="display: none" onclick="this.style.display='none';document.getElementById('hintPinyin').style.display='inline-block';return false;"></a>
-        <div id="hintPinyin" class=hint style="display: none">{{Pinyin}}</div>
-      <span class="sound">
-        {{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}}
-        {{Sound (Male)}}{{Sound (Female)}}
-      </span>
-    </div>
-    <span lang="zh-CN">{{type:Simplified}}</span>
+  <header id="header">
+    <span class="card-type">{{Card}}</span>
+    {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
+  </header>
+<div class="prettify-field prettify-field--front">
+  <div id="example0" class="english hide-bq">{{English}}</div>
+  <div class="pinyin">
+    <a class="hint" href="#" onclick="this.style.display='none'; document.getElementById('hintLength').style.display='inherit'; return false;"># of Char</a>
+    <a id="hintLength" class="hint" href="#" style="display:none" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inherit'; return false;"></a>
+    <p id="hintPinyin" class="hint" style="display:none">{{Pinyin}}</p>
   </div>
+      <div class="sound">
+    {{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}}
+
+{{Sound (Male)}}{{Sound (Female)}}</div>
+  <span lang="zh-CN">{{type:Simplified}}</span>
+</div>
 </div>
 
 <script type="text/javascript" src="_minimalTags.js"></script>
 <script type="text/javascript">
-  (function () {
-  // Helps to Create a 2 step hint showing length of words before Hanzi
-  let simp = `{{Simplified}}`.trim();
-  document.getElementById('hintLength').innerHTML = `${simp.length} Char(s)!`;
-  })()
+(function () {
+// Helps to Create a 2 step hint showing length of words before Hanzi
+let simp = `{{Simplified}}`.trim();
+document.getElementById('hintLength').innerHTML = `${simp.length} Char(s)`;
+})()
 </script>

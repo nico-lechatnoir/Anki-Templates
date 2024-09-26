@@ -1,0 +1,81 @@
+:root {
+	--fs-xs: clamp(0.64rem, 0.1104vi + 0.6179rem, 0.7035rem);
+	--fs-sm: clamp(0.8rem, 0.2395vi + 0.7521rem, 0.9377rem);
+	--fs-base: clamp(1rem, 0.4348vi + 0.913rem, 1.25rem);
+	--fs-md: clamp(1.25rem, 0.7239vi + 1.1052rem, 1.6663rem);
+	--fs-lg: clamp(1.5625rem, 1.1454vi + 1.3334rem, 2.2211rem);
+	--fs-xl: clamp(1.9531rem, 1.7524vi + 1.6026rem, 2.9607rem);
+	--fs-xxl: clamp(2.4414rem, 2.6178vi + 1.9178rem, 3.9467rem);
+
+	/* Font Stacks */
+	--font-ui: system-ui, sans-serif;
+	--font-sans-serif: "Helvetica Neue", Helvetica, Inter, Roboto, Arial, sans-serif;
+	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝", serif;
+	--font-cn-mob: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
+}
+
+.card {
+	font-family: var(--font-sans-serif), var(--font-ui);
+	font-size: var(--fs-md);
+	color: black;
+	background-color: white;
+	text-align: center;
+}
+
+.multi {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+button {
+	--border: #2c9de4;
+	--button-bg: transparent;
+	padding: 1rem;
+	margin: 0;
+	border: 2px solid;
+	color: var(--border);
+	font-size: var(--fs-xl) !important;
+	transition: 0.7s;
+	&:hover {
+		border: 2px solid var(--border);
+		box-shadow: 1px 3px 4px var(--border-strong);
+	}
+}
+
+button.good {
+	background-color: #35d73e;
+	border-color: #3aaf41;
+	color: white;
+	&:hover {
+		background: linear-gradient(180deg, #35d73e 0%, #3aaf41 100%);
+	}
+}
+
+button.bad {
+	background-color: #ed3f3f;
+	border-color: #d32f2f;
+	color: white;
+	&:hover {
+		background: linear-gradient(180deg, #ed3f3f 0%, #d32f2f 100%);
+	}
+}
+
+/* Change Font Size and Width of Buttons */
+:is(.win, .mac) .multi {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+@media screen and (width < 600px) {
+	.mac button {
+		font-size: var(--fs-lg) !important;
+	}
+}
+.mobile button {
+	font-size: var(--fs-lg) !important;
+}
+
+#hide {
+	display: none;
+}
