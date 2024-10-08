@@ -34,3 +34,14 @@
 		}
 	})();
 </script>
+<script>
+	(function () {
+		let isBack = document.getElementById('answer');
+		if (isBack) {
+			let hint = document.querySelector("div.pinyin > a.hint");
+			let py = document.querySelector("div.pinyin > div.hint");
+			hint.style.display = 'none';
+			py.style.display = 'block';
+		}
+	})()
+</script>
