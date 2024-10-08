@@ -3,33 +3,34 @@
     <span class="card-type">{{Card}}</span>
     {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
   </header>
-<div class="prettify-field prettify-field--front">
-  <div class="hanzi" id="conditionalContent"><span lang=zh-CN>{{Simplified}}</span></div>
-  <div id="example0" class="english only-hanzi">{{hint::English}}</div>
-</div>
-</div>
+  <div class="prettify-field prettify-field--front">
+    <div class="hanzi" id="conditionalContent"><span id='simp' lang=zh-CN>{{Simplified}}</span></div>
+    <div id="example0" class="english only-hanzi">{{hint::English}}</div>
+  </div>
 
-<script type="text/javascript" src="_minimalTags.js"></script>
 
-<script type="text/javascript">
-(function () {
-  // Checks to see if Traditional Characters are different and inserts if not same
-  let simp = '{{Simplified}}';
-  let trad = '{{Traditional}}';
-  if (simp !== trad) {
-    var add = document.getElementById('conditionalContent');
-    add.innerHTML += '<span lang="zh-Hant">|{{Traditional}}</span>';
-  }
-})()
+  <script type="text/javascript" src="_minimalTags.js"></script>
+<script>
+	(function () {
+		// Checks to see if Traditional Characters are different and inserts if not same
+		var simp = "{{Simplified}}";
+		var trad = "{{Traditional}}";
+		if (simp != trad) {
+			var add = document.getElementById("conditionalContent");
+			add.innerHTML += '<span lang="zh-Hant">|{{Traditional}}</span>';
+		}
+	})()
 </script>
-
-<script type="text/javascript">
-// Searches for vocab words and adds the .keyword class for extra styling
-(function () {
-  let simp = `{{Simplified}}`.trim();
-  let trad = `{{Traditional}}`.trim();
-  const reKeywords = new RegExp(String.raw`(<b>)?(\s?${simp}|${trad}\s?)(<\/b>)?`, "gi");
-    let ex = document.getElementById('example0');
-    ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
-  })()
+<script>
+	(function () {
+		// Searches for vocab words and adds the .keyword class for extra styling
+		const ex = document.getElementById("example0");
+		if (ex.getElementsByTagName("blockquote").length > 0) {
+			let simp = `{{Simplified}}`.trim();
+			let trad = `{{Traditional}}`.trim();
+			let py = `{{Pinyin}}`.replace(/<[^>]+>/gi, "").trim();
+			const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
+			ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
+		}
+	})();
 </script>
