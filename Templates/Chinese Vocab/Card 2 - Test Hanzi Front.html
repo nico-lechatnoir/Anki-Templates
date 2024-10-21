@@ -1,7 +1,6 @@
 <div class="prettify-flashcard">
 	<header>
 		<span class="card-type">{{Card}}</span>
-		{{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
 	</header>
 	<div class="prettify-field prettify-field--front">
 		<div id="example0" class="english hide-bq">{{English}}</div>
@@ -10,15 +9,13 @@
 			<a id="hintLength" class="hint" href="#" style="display: none" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inherit'; return false;"></a>
 			<p id="hintPinyin" class="hint" style="display: none">{{Pinyin}}</p>
 		</div>
-		<div class="sound">{{^Sound (Male)}}{{tts zh_CN speed=1:Traditional}}{{/Sound (Male)}} {{Sound (Male)}}{{Sound (Female)}}</div>
 		<span lang="zh-CN">{{type:Simplified}}</span>
 	</div>
 
-	<script type="text/javascript" src="_minimalTags.js"></script>
 	<script>
 		(function () {
 			// Helps to Create a 2 step hint showing length of words before Hanzi
-			let simp = `{{Simplified}}`.trim();
+			let simp = `{{text:Simplified}}`.trim();
 			document.getElementById("hintLength").innerHTML = `${simp.length} Char(s)`;
 		})();
 	</script>

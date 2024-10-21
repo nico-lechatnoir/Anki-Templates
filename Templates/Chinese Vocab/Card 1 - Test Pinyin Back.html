@@ -12,16 +12,19 @@
     {{Frequency}}
     {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
   </section>
+</div>
 <footer>
+{{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
   <div class="link">
-    <a class="desktop-only" id="MDBG"
-      href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}">MDBG</a>
-    <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}">Pleco</a>
-    <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to=">Tatoeba</a>
+    <a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}"><span>MDBG</span></a>
+    <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img alt="Pleco" src="_pleco.png"><span>Pleco</span></a>
+    <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img alt="Tatoeba" src="_tatoeba.png"><span>Tatoeba</span></a>
   </div>
 </footer>
+
 </div>
-</div>
+  <script type="text/javascript" src="_minimalTags.js"></script>
+
 <script type="text/javascript">
     (function () {
       let isBack = document.getElementById('answer');

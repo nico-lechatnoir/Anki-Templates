@@ -46,38 +46,68 @@ header, footer, .prettify-field {
 	margin: 1rem;
 }
 
-/* -------------------------------------------------- CARD TYPE AND TAGS */
+/* -------------------------------------------------- HEADER AND FOOTERS */
 header {
 	display: flex;
-	align-items: center;
+	flex-direction: row;
+	flex-wrap:nowrap;
+	align-items: left;
 	justify-content: space-between;
-	color: var(--tx-2);
-	font-size: var(--fs-sm);
-	font-family: var(--font-sans-serif), var(--font-ui);
 }
 
-.card-type {
-	flex-basis: content;
+footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap:nowrap;
+    justify-content: space-between;
+    align-items: center;
+	margin-top: 0;
 }
 
+.link,
 .prettify-tags {
 	display: flex;
-	flex-flow: row-reverse;
-	flex-grow: 2;
-	flex-basis: content;
 	gap: 0.5em;
+	align-items: baseline;
 }
 
 .prettify-tag {
 	all: initial;
 	background-color: var(--bg-2);
-	border-radius: 0.2em;
-	display: inline;
+	border-radius: 0.3em;
 	padding: 0.25em;
 	word-break: break-word;
-	color: var(--tx-2);
+}
+
+header, footer,
+.prettify-tag {
 	font-size: var(--fs-sm);
+	color: var(--tx-2);
 	font-family: var(--font-sans-serif), var(--font-ui);
+}
+
+.link * {
+	font-size: var(--fs-sm);
+	color: var(--tx-2);
+	font-family: var(--font-sans-serif), var(--font-ui);
+	text-decoration: underline;
+}
+
+.mobile .link img {
+	height:var(--fs-md);
+	width:var(--fs-md);
+	margin:0;
+}
+:not(.mobile) .link img,
+.mobile .link a > img+span {display:none;}
+/* Hide invalid links based on platform*/
+.mobile .desktop-only,
+.mobile-only {
+	display: none;
+}
+.mobile .mobile-only,
+.desktop-only {
+	display: inline;
 }
 
 /* -------------------------------------------------- DIVIDER */
@@ -110,7 +140,7 @@ ruby rt {
 	font-variant-east-asian: simplified ruby !important;
 }
 ruby rt {
-	visibility: hidden;
+	visibility: collapse;
 }
 ruby:hover rt {
 	visibility: visible;
@@ -196,7 +226,6 @@ ruby:hover rt {
 	text-transform: uppercase;
 	color: var(--tx-3);
 }
-
 div.en-cl {margin-top:1rem;}
 span.en-cl {margin-right: 1ch;}
 .mobile span.en-cl {margin-right: 0.5ch;}
@@ -246,15 +275,17 @@ span.en-cl {margin-right: 1ch;}
 .english.only-hanzi blockquote > :not(p:first-child) {
 	display: none;
 }
+.english.no-py blockquote:has(> p:nth-child(3)) > p:nth-child(2) {
+	display:none;
+}
+
 .english.hide-bq blockquote {
 	display: none;
 }
 
 /* Animations */
 .english blockquote > p {
-	transition: 
-		font-size 500ms ease-in-out,
-		color 500ms ease;
+	transition: var(--transition-medium) ease;
 }
 
 .english blockquote > :not(p:first-child):hover {color: var(--tx);}
@@ -267,55 +298,33 @@ section#moreInfo {
 	margin-top: var(--fs-base);
 }
 
-:is(.classifier, .also, .freq, .notes)::before {
-	font-size: var(--fs-base);
-	color: var(--tx-2);
+section#moreInfo *::before{
+	font-family: var(--font-sans-serif);
+	font-size: var(--fs-sm);
+	color: var(--tx-3);
+	font-weight: bold;
+	text-transform: uppercase;
 	margin-right: 1ch;
 }
+.moblie section#moreInfo *::before {margin-right: 0.5ch;}
 
 .classifier::before {content: "M:";}
 .also::before {content: "Alt:";}
 /* .freq::before {content: "Freq:";} */
-/* .notes::before {display:block; content: "Notes:";} */
+.compound::before {content: "Compound:";}
+.antonym::before {content: "Antonym:";}
+.variant::before {content: "Variant:";}
+
 
 .freq {
-	font-size: var(--fs-sm);
 	text-transform: capitalize;
-	color: var(--tx-2);
+	font-size: var(--fs-base);
 }
 .freq.freq-unknown{display:none;}
 
 .notes {
+	text-align: left;
 	font-size: var(--fs-base);
-	.cat, .en-cl, .antonym, .modif, .compound {
-		font-size: var(--fs-sm);
-		color: var(--tx-3);
-		margin-right:1ch;
-		text-transform: capitalize;
-	}
-}
-
-/* Links to Dictionaries */
-.link {
-	display:flex;
-	justify-content: center;
-	gap:0.7em;
-}
-
-.link > a {
-	font-size: var(--fs-sm);
-	color: var(--tx-2);
-	text-decoration: underline;
-}
-
-/* Hide invalid links based on platform*/
-.mobile .desktop-only,
-.mobile-only {
-	display: none;
-}
-.mobile .mobile-only,
-.desktop-only {
-	display: inline;
 }
 
 /*#endregion =============================== */

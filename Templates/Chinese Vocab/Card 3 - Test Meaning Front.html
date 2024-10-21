@@ -1,15 +1,14 @@
 <div class="prettify-flashcard">
 	<header id="header">
 		<span class="card-type">{{Card}}</span>
-		{{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
+		
 	</header>
 	<div class="prettify-field prettify-field--front">
 		<div class="hanzi" id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div>
 		<div id="pinyin" class="pinyin">{{hint:Pinyin}}</div>
 		<div class="sound">{{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}} {{Sound (Male)}}{{Sound (Female)}}</div>
+	<div id="example0" class="english only-bq only-hanzi">{{English}}</div>
 	</div>
-
-	<script type="text/javascript" src="_minimalTags.js"></script>
 	<script>
 		(function () {
 			// Checks to see if Traditional Characters are different and inserts if not same
@@ -20,4 +19,23 @@
 				add.innerHTML += '<span lang="zh-Hant">|{{Color Traditional}}</span>';
 			}
 		})();
+	</script>
+<script>
+	for (const el of document.querySelectorAll(".only-bq[id^=example]")) {
+		const quotes = el.querySelectorAll("blockquote");
+		el.replaceChildren();
+		for (let q of quotes) {el.appendChild(q);}
+}
+</script>
+
+<script>
+	for (const el of document.querySelectorAll('[id^=example]')){
+	  if (el.getElementsByTagName("blockquote").length > 0) {
+			let simp = `{{text:Simplified}}`.trim();
+			let trad = `{{text:Traditional}}`.trim();
+			let py = `{{text:Pinyin}}`.trim();
+			const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
+			el.innerHTML = el.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
+		  }
+	};
 	</script>
