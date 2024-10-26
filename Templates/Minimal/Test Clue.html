@@ -1,0 +1,15 @@
+<a id="abc" class="hint" href="#" onclick="getNum()"># Char(s)</a>
+<p id="hintPinyin" class="hint" style="display: none">{{Pinyin}}</p>
+<script>
+	function getNum() {
+		// Helps to Create a 2 step hint showing length of words before Hanzi
+		let clue = document.getElementById("abc");
+		if (clue.innerText.startsWith("#")) {
+			let simp = `{{text:Simplified}}`.trim().length;
+			clue.innerText = clue.innerText.replace("#", simp);
+		} else {
+			clue.style.display = "none";
+			document.getElementById("hintPinyin").style.display = "inline";
+		}
+	}
+</script>

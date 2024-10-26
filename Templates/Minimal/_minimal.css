@@ -197,9 +197,9 @@ html:not(.mobile) .card {
 }
 
 /* .prettify-tag:hover {
-  background-color: var(--tag-bg-active);
-  color: var(--tag-fg-active);
-  cursor: pointer;
+	background-color: var(--tag-bg-active);
+	color: var(--tag-fg-active);
+	cursor: pointer;
 } */
 
 /* -------------------------------------------------- DIVIDER */
@@ -337,4 +337,9 @@ u {
 }
 pre {
 	white-space: normal;
+}
+
+#FSRS_status {
+    margin: 2em 40% 0em !important;
+    min-width: max-content;
 }

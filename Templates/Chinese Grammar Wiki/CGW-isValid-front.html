@@ -1,36 +1,12 @@
 {{#Example Type}}
-  {{#Tags}}<div class="tags">{{Tags}}</div>{{/Tags}}
-  <div class="front">
-    <div class="header">Is this sentence grammatically correct?</div>
-    <div class="hanzi">{{中文}}</div>
-		<div>{{tts zh_CN:中文}}</div>
-  {{#Pinyin}}<div class="pinyin">{{hint::Pinyin}}</div>{{/Pinyin}}
+<div class="prettify-flashcard">
+<div class="prettify-field prettify-field--front">
+	<header>
+		<div id="question" class="question">Is this sentence grammatically correct?</div>
+		<div id="exType" class="{{Example Type}} isHidden"></div>
+	</header>
+	<div class="hanzi">{{中文}}</div>
+	<div class="pinyin">{{hint::Pinyin}}</div>
+	{{tts zh_CN hypertts_preset=Front_realtime_1 voices=HyperTTS:中文}}
 </div>
-<script>
-    // Split hierarchical tags
-    var tagsContainerEl = document.querySelectorAll('.tags > *')
-    if (tagsContainerEl.length > 0) {
-      var tags = []
-      tagsContainerEl.forEach((tagEl) => {
-        tagEl.classList.add('prettify-tag')
-        tags.push(tagEl.innerHTML)
-        tags.forEach((tag) => {
-          var childTag = tag.split('::').filter(Boolean)
-          tagEl.innerHTML = childTag[childTag.length - 1].trim()
-        })
-      })
-    } else {
-      tagsContainerEl = document.querySelector('.tags')
-      var tags = tagsContainerEl.innerHTML.split(' ').filter(Boolean)
-      var html = '|&nbsp;'
-      tags.forEach((tag) => {
-        var childTag = tag.split('::').filter(Boolean)
-        html +=
-          "<span class='prettify-tag'>" +
-          childTag[childTag.length - 1] + '&nbsp;|&nbsp;'
-          '</span>'
-      })
-      tagsContainerEl.innerHTML = html
-    }
-</script>
 {{/Example Type}}

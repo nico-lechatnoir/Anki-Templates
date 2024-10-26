@@ -1,10 +1,22 @@
 {{FrontSide}}
-
-<hr id=answer>
-{{#English}}<div class="english">{{English}}</div>{{/English}}
-
+<hr class="prettify-divider prettify-divider--answer" id="answer"/>
+<div class="prettify-field prettify-field--back">
+<div class="english">{{English}}</div>
 <div class="lessonInfo">
-    {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
-    {{#Grammar Construct}}<div class="pattern">{{Grammar Construct}}</div>{{/Grammar Construct}}
-    {{#Source URL}}<div class="article"><a href={{Source URL}}>{{Article Title}}</a></div>{{/Source URL}}
+    <div class="notes">{{Notes}}</div>
+    <div class="pattern">{{Grammar Construct}}</div>
+    <div class="article"><a href={{Source URL}}>{{Article Title}}</a></div>
 </div>
+</div>
+<div class="prettify-tags">{{Tags}}</div>
+</div>
+<script src="_minimalTags.js"></script>
+
+<script type="text/javascript">
+(function () {
+  let hint = document.querySelector("div.pinyin > a.hint");
+  let py = document.querySelector("div.pinyin > div.hint");
+  hint.style.display = "none";
+  py.style.display = "block";
+})();
+</script>
