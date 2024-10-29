@@ -1,38 +1,84 @@
 :root {
+	--flexoki-black:       #100F0F;
+	--flexoki-paper:       #FFFCF0;
+
+	--flexoki-950:         #1C1B1A;
+	--flexoki-900:         #282726;
+	--flexoki-850:         #343331;
+	--flexoki-800:         #403E3C;
+	--flexoki-700:         #575653;
+	--flexoki-600:         #6F6E69;
+	--flexoki-500:         #878580;
+	--flexoki-300:         #B7B5AC;
+	--flexoki-200:         #CECDC3;
+	--flexoki-150:         #DAD8CE;
+	--flexoki-100:         #E6E4D9;
+	--flexoki-50:          #F2F0E5;
+
+	--flexoki-red-600:     #AF3029;
+	--flexoki-red-400:     #D14D41;
+
+	--flexoki-orange-600:  #BC5215;
+	--flexoki-orange-600-hsl: hsl(22,80%,48%);
+	--flexoki-orange-400:  #DA702C;
+
+	--flexoki-yellow-900:  #4D3A0B;
+	--flexoki-yellow-600:  #AD8301;
+	--flexoki-yellow-400:  #D0A215;
+	--flexoki-yellow-100:  #FCEEB8;
+
+	--flexoki-green-600:   #66800B;
+	--flexoki-green-400:   #879A39;
+
+	--flexoki-cyan-950:    #142625;
+	--flexoki-cyan-600:    #24837B;
+	--flexoki-cyan-400:    #3AA99F;
+	--flexoki-cyan-50:     #EBF2E7;
+
+	--flexoki-blue-600:    #205EA6;
+	--flexoki-blue-400:    #4385BE;
+
+	--flexoki-purple-600:  #5E409D;
+	--flexoki-purple-400:  #8B7EC8;
+	
+	--flexoki-magenta-600: #A02F6F;
+	--flexoki-magenta-400: #CE5D97;
+  }
+:root {
 	/* Flexoki Day */
-	--tx: #100f0f;
-	--tx-2: #6f6e69;
-	--tx-3: #b7b5ac;
-	--ui: #e6e4d9;
-	--ui-2: #dad8ce;
-	--ui-3: #cecdc3;
-	--bg: #fffcf0;
-	--bg-2: #f2f0e5;
-	--red: #af3029;
-	--orange: #bc5215;
-	--yellow: #ad8301;
-	--green: #66800b;
-	--cyan: #24837b;
-	--blue: #205ea6;
-	--purple: #5e409d;
-	--pink: #a02f6f;
+	--tx: var(--flexoki-black);
+	--tx-2: var(--flexoki-600);
+	--tx-3: var(--flexoki-300);
+	--ui: var(--flexoki-100);
+	--ui-2: var(--flexoki-150);
+	--ui-3: var(--flexoki-200);
+	--bg: var(--flexoki-paper);
+	--bg-2: var(--flexoki-50);
+	--red:  var(--flexoki-red-600);
+	--orange: var(--flexoki-orange-600-hsl);
+	--yellow: var(--flexoki-yellow-600);
+	--green: var(--flexoki-green-600);
+	--cyan: var(--flexoki-cyan-600);
+	--blue: var(--flexoki-blue-600);
+	--purple: var(--flexoki-purple-600);
+	--pink: var(--flexoki-magenta-600);
 }
 .nightMode {
 	/* Flexoki Night */
-	--tx: #cecdc3;
-	--tx-2: #878580;
-	--tx-3: #575653;
-	--ui: #282726;
-	--ui-2: #343331;
-	--ui-3: #403e3c;
-	--bg: #100f0f;
-	--bg-2: #1c1b1a;
-	--red: #d14d41;
-	--orange: #da702c;
-	--yellow: #d0a215;
-	--green: #879a39;
-	--cyan: #3aa99f;
-	--blue: #4385be;
-	--purple: #8b7ec8;
-	--pink: #ce5d97;
+	--tx: var(--flexoki-200);
+	--tx-2: var(--flexoki-500);
+	--tx-3: var(--flexoki-700);
+	--ui: var(--flexoki-900);
+	--ui-2: var(--flexoki-850);
+	--ui-3: var(--flexoki-800);
+	--bg: var(--flexoki-black);
+	--bg-2:var(--flexoki-950);
+	--red:  var(--flexoki-red-400);
+	--orange: var(--flexoki-orange-400);
+	--yellow: var(--flexoki-yellow-400);
+	--green: var(--flexoki-green-400);
+	--cyan: var(--flexoki-cyan-400);
+	--blue: var(--flexoki-blue-400);
+	--purple: var(--flexoki-purple-400);
+	--pink: var(--flexoki-magenta-400);
 }
