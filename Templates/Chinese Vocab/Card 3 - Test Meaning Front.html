@@ -29,7 +29,8 @@ return false;"">Pinyin</a>
 		const simp = '{{text:Simplified}}'.trim();
 		const trad = '{{text:Traditional}}'.trim();
 		const py = '{{text:Pinyin}}'.trim();
-		
+		const bq = document.getElementsByTagName("blockquote");
+
 		function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
 			if (simp != trad) {
 				const add = document.getElementById("conditionalContent");
@@ -38,11 +39,10 @@ return false;"">Pinyin</a>
 		};
 
 		function findKeyword() { // Searches for vocab words and adds the keyword class
-			const ex = document.querySelectorAll('[id^="example"] blockquote');
-			if (ex.length > 0) {
-				for (const e of ex) {
+			//const ex = document.querySelectorAll('[id^="example"] blockquote');
+			if (bq.length > 0) {
+				for (const e of bq) {
 					const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
-					console.log(reKeywords)
 					e.innerHTML = e.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
 				}
 			}

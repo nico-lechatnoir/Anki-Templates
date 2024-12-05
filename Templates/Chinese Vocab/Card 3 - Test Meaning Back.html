@@ -30,11 +30,9 @@
 	(function () {
 		let isBack = document.getElementById("answer");
 		if (isBack) {
-			let hint = document.querySelector("div.pinyin > a.hint");
-			let py = document.querySelector("div.pinyin > div.hint");
-			for (const ex of document.querySelectorAll(".prettify-field--front [id^=example]")) { ex.remove(); }
-			hint.style.display = "none";
-			py.style.display = "inline";
+			document.querySelector("div.pinyin > a.hint").style.display = "none";
+			document.querySelector("div.pinyin > div.hint").style.display = "inline";
+			document.querySelector("#example0").remove();
 		}
 	})();
 </script>
