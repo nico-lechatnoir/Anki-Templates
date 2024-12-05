@@ -192,10 +192,9 @@ ruby:hover rt {
 }
 
 /* Orange */
-.tone2 {
+.tone2{
 	color: var(--orange, #ffa500);
 }
-
 /* Green */
 .tone3 {
 	color: var(--green, #008000);
@@ -335,13 +334,35 @@ section#moreInfo *::before{
 /*#region ================================== SOUND */
 /* Centers Pinyin and offsets sound button */
 
-.sound .replay-button {margin: 0px;}
-
+.replay-button svg {
+	width: var(--fs-md);
+	height: var(--fs-md);
+}
 .replay-button svg circle {
-	fill: var(--ui-2);
+	fill: none;
+	stroke: none;
 }
 .replay-button svg path {
 	fill: var(--tx-2);
+}
+
+#male, #female {display:none;}
+button.replay-button{
+    --canvas: var(--bg);
+    background: var(--canvas);
+    border-radius: var(--border-radius-medium, 12px);
+    padding: 4px 8px;
+    border: 1px solid var(--ui-3);
+    box-shadow: 0px 1px 3px var(--ui-2);
+	--button-gradient-start: var(--bg);
+    --button-gradient-end: var(--ui);
+	font-size:var(--fs-base);
+	margin:0;
+}
+
+.pinyin > button.replay-button {
+	position:absolute;
+	margin-left: var(--fs-xs);
 }
 
 /*#endregion =============================== */

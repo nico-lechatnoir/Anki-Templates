@@ -5,17 +5,31 @@
 	<div class="prettify-field prettify-field--front">
 		<div id="example0" class="english hide-bq">{{English}}</div>
 		<div class="pinyin">
-			<a class="hint" href="#" onclick="this.style.display='none'; document.getElementById('hintLength').style.display='inherit'; return false;"># of Char</a>
-			<a id="hintLength" class="hint" href="#" style="display: none" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inherit'; return false;"></a>
-			<p id="hintPinyin" class="hint" style="display: none">{{Pinyin}}</p>
+			<a id="firstHint" class="hint" href="#" onclick="getNum()"># Char(s)</a>
+			<div id="hintPinyin" class="hint" style="display: none">{{Pinyin}}</div>
+			<button id='playSound' class="replay-button soundLink" type="button" style="visibility:hidden;"
+				onclick="playBoth()">
+				<svg class="desktop-only playImage" viewBox="0 0 64 64">
+					<path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path>
+				</svg>
+				<span class="mobile-only">🔊</span>
+			</button>
 		</div>
 		<span lang="zh-CN">{{type:Simplified}}</span>
 	</div>
 
-	<script>
-		(function () {
-			// Helps to Create a 2 step hint showing length of words before Hanzi
-			let simp = `{{text:Simplified}}`.trim();
-			document.getElementById("hintLength").innerHTML = `${simp.length} Char(s)`;
-		})();
-	</script>
+<script>
+function getNum() {
+	// Create a 2 step hint showing length of words before Hanzi
+	let clue = document.getElementById('firstHint');
+	if (clue.innerText.startsWith('#')) {
+		let simp = `{{text:Simplified}}`.trim().length;
+		clue.innerText = clue.innerText.replace('#', simp);
+		const re = /\((s)\)/g;
+		clue.innerText = (simp > 1) ? clue.innerText.replace(re, '$1') : clue.innerText.replace(re, '');
+	} else {
+		clue.style.display = "none";
+		document.getElementById("hintPinyin").style.display = "inline";
+	}
+}
+</script>

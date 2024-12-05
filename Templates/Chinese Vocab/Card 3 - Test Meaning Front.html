@@ -1,41 +1,62 @@
 <div class="prettify-flashcard">
 	<header id="header">
 		<span class="card-type">{{Card}}</span>
-		
 	</header>
 	<div class="prettify-field prettify-field--front">
-		<div class="hanzi" id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div>
-		<div id="pinyin" class="pinyin">{{hint:Pinyin}}</div>
-		<div class="sound">{{^Sound (Male)}}{{tts zh_CN speed=1:Simplified}}{{/Sound (Male)}} {{Sound (Male)}}{{Sound (Female)}}</div>
-	<div id="example0" class="english only-bq only-hanzi">{{English}}</div>
+		<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span></div>
+		<div id="pinyin" class="pinyin">
+			<a id="firstHint" class="hint" href="#" onclick="this.style.display='none';
+document.getElementById('hintPinyin').style.display='inline';
+return false;"">Pinyin</a>
+			<div id=" hintPinyin" class="hint" style="display: none">{{Pinyin}}
+		</div>
+		<button id='playSound' class="replay-button soundLink" type="button" onclick="playBoth()">
+			<svg class="desktop-only playImage" viewBox="0 0 64 64">
+				<path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path>
+			</svg>
+			<span class="mobile-only">🔊</span>
+		</button>
 	</div>
-	<script>
-		(function () {
-			// Checks to see if Traditional Characters are different and inserts if not same
-			let simp = "{{Simplified}}";
-			let trad = "{{Traditional}}";
-			if (simp !== trad) {
-				let add = document.getElementById("conditionalContent");
-				add.innerHTML += '<span lang="zh-Hant">|{{Color Traditional}}</span>';
-			}
-		})();
-	</script>
-<script>
-	for (const el of document.querySelectorAll(".only-bq[id^=example]")) {
-		const quotes = el.querySelectorAll("blockquote");
-		el.replaceChildren();
-		for (let q of quotes) {el.appendChild(q);}
-}
-</script>
+	<div class="sound">
+		<span id='male'>{{Sound (Male)}}</span><span id='female'>{{Sound (Female)}}</span>
+	</div>
+
+	<div id="example0" class="english only-bq only-hanzi">{{English}}</div>
+</div>
 
 <script>
-	for (const el of document.querySelectorAll('[id^=example]')){
-	  if (el.getElementsByTagName("blockquote").length > 0) {
-			let simp = `{{text:Simplified}}`.trim();
-			let trad = `{{text:Traditional}}`.trim();
-			let py = `{{text:Pinyin}}`.trim();
-			const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
-			el.innerHTML = el.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
-		  }
-	};
-	</script>
+	(function () {
+		const simp = '{{text:Simplified}}'.trim();
+		const trad = '{{text:Traditional}}'.trim();
+		const py = '{{text:Pinyin}}'.trim();
+		function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
+			if (simp != trad) {
+				const add = document.getElementById("conditionalContent");
+				add.innerHTML += '<span id="trad" lang="zh-Hant">|{{Color Traditional}}</span>';
+			}
+		};
+		function onlyBlockquote() {
+			for (const el of document.querySelectorAll(".only-bq[id^=example]")) {
+				const quotes = el.querySelectorAll("blockquote");
+				el.replaceChildren();
+				for (let q of quotes) { el.appendChild(q); }
+			}
+		}
+		function findKeyword() { // Searches for vocab words and adds the keyword class
+			const ex = document.getElementById("example0");
+			if (ex.getElementsByTagName("blockquote").length > 0) {
+				const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
+				ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
+			}
+		}
+		onlyBlockquote()
+		findKeyword()
+		addTrad()
+	})()
+	function playBoth() {
+		var maleAudio = document.querySelector("#male .soundLink, #male .replaybutton");
+		var femaleAudio = document.querySelector("#female .soundLink, #female .replaybutton");
+		maleAudio.click()
+		setTimeout(function () { femaleAudio.click(); }, 1000);
+	}
+</script>

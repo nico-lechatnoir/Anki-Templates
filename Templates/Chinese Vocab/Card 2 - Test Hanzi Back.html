@@ -1,9 +1,12 @@
 {{FrontSide}}
 
-<hr class="prettify-divider answer" id="answer"/>
+<hr class="prettify-divider answer" id="answer" />
 <div class="prettify-field prettify-field--back">
-		<div class="sound">{{^Sound (Male)}}{{tts zh_CN speed=1:Traditional}}{{/Sound (Male)}} {{Sound (Male)}}{{Sound (Female)}}</div>
-	<div class="hanzi" id="conditionalContent"><span lang="zh-CN">{{Color Hanzi}}</span></div>
+	<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span></div>
+	<div class="sound">
+		<span id='male'>{{Sound (Male)}}</span><span id='female'>{{Sound (Female)}}</span>
+	</div>
+
 	<section id="moreInfo" lang="zh-CN">
 		{{#Also Written}}<div class="also">{{Also Written}}</div>{{/Also Written}}
 		{{#Simplified Classifier}}<div class="classifier">{{Simplified Classifier}}</div>{{/Simplified Classifier}}
@@ -12,50 +15,61 @@
 	</section>
 </div>
 <footer>
-{{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-  <div class="link">
-    <a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}"><span>MDBG</span></a>
-    <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img alt="Pleco" src="_pleco.png"><span>Pleco</span></a>
-    <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img alt="Tatoeba" src="_tatoeba.png"><span>Tatoeba</span></a>
+	{{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
+	<div class="link">
+		<a class="desktop-only" id="MDBG"
+			href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}"><span>MDBG</span></a>
+		<a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img
+				alt="Pleco" src="_pleco.png"><span>Pleco</span></a>
+		<a class="desktop-only" id="Hanzii"
+			href="https://hanzii.net/search/word/{{text:Simplified}}"><span>Hanzii</span></a>
+		<a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img
+				alt="Tatoeba" src="_tatoeba.png"><span>Tatoeba</span></a>
 	</div>
 </footer>
 </div>
-	<script type="text/javascript" src="_minimalTags.js"></script>
+<script type="text/javascript" src="_minimalTags.js"></script>
 
 <script>
-	(function () {
-		// Checks to see if Traditional Characters are different and inserts if not same
-		let simp = '{{Simplified}}';
-		let trad = '{{Traditional}}';
+(function () {
+	const simp = '{{text:Simplified}}'.trim();
+	const trad = '{{text:Traditional}}'.trim();
+	const py = '{{text:Pinyin}}'.trim();
+	function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
 		if (simp != trad) {
-			let add = document.getElementById('conditionalContent');
-			add.innerHTML += '<span lang="zh-Hant">|{{Color Traditional}}</span>';
+			const add = document.getElementById("conditionalContent");
+			add.innerHTML += '<span id="trad" lang="zh-Hant">|{{Color Traditional}}</span>';
 		}
-	})()
-</script>
-<script>
-		(function () {
-			// Searches for vocab words and adds the .keyword class for extra styling
-			const ex = document.getElementById("example0");
-			if (ex.getElementsByTagName("blockquote").length > 0) {
-				let simp = `{{Simplified}}`.trim();
-				let trad = `{{Traditional}}`.trim();
-				let py = `{{Pinyin}}`.replace(/<[^>]+>/gi, '').trim();
-				const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
-				ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
-			}
-		})();
-</script>
-<script>
-	(function () {
-		let isBack = document.getElementById('answer');
-		if (isBack) {
-			let hint = document.querySelector("div.pinyin > a:nth-child(1)");
-			let py = document.getElementById('hintPinyin');
- 			let el = document.getElementById('example0');
-			hint.style.display = 'none';
-       el.classList.remove("hide-bq");
-			py.style.display = 'block';
+	};
+	function findKeyword() { // Searches for vocab words and adds the keyword class
+		const ex = document.getElementById("example0");
+		if (ex.getElementsByTagName("blockquote").length > 0) {
+			const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
+			ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
 		}
-	})()
+	}
+	function checkBack() {
+	const isBack = document.getElementById('answer');
+	if (isBack) {
+		const hint = document.getElementById('firstHint');
+		const py = document.getElementById('hintPinyin');
+		const el = document.getElementById('example0');
+		const btn = document.getElementById('playSound');
+		btn.style.visibility = 'visible';
+		hint.style.display = 'none';
+		el.classList.remove("hide-bq");
+		py.style.display = 'inline';
+		}
+	}
+	checkBack()
+	findKeyword()
+	addTrad()
+})()
+
+function playBoth() {
+	var maleAudio = document.querySelector("#male .soundLink, #male .replaybutton");
+	var femaleAudio = document.querySelector("#female .soundLink, #female .replaybutton");
+	maleAudio.click()
+	setTimeout(function () { femaleAudio.click(); }, 1000);
+}
 </script>
