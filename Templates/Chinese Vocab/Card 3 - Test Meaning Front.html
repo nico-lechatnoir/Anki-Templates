@@ -25,38 +25,45 @@ return false;"">Pinyin</a>
 </div>
 
 <script>
-	(function () {
+(function () {
 		const simp = '{{text:Simplified}}'.trim();
 		const trad = '{{text:Traditional}}'.trim();
 		const py = '{{text:Pinyin}}'.trim();
+		
 		function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
 			if (simp != trad) {
 				const add = document.getElementById("conditionalContent");
 				add.innerHTML += '<span id="trad" lang="zh-Hant">|{{Color Traditional}}</span>';
 			}
 		};
-		function onlyBlockquote() {
-			for (const el of document.querySelectorAll(".only-bq[id^=example]")) {
+
+		function findKeyword() { // Searches for vocab words and adds the keyword class
+			const ex = document.querySelectorAll('[id^="example"] blockquote');
+			if (ex.length > 0) {
+				for (const e of ex) {
+					const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
+					console.log(reKeywords)
+					e.innerHTML = e.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
+				}
+			}
+		}
+	
+		function onlyBlockquote(){
+				for (const el of document.querySelectorAll(".only-bq[id^=example]")) {
 				const quotes = el.querySelectorAll("blockquote");
 				el.replaceChildren();
-				for (let q of quotes) { el.appendChild(q); }
-			}
+				for (let q of quotes) {el.appendChild(q);}
 		}
-		function findKeyword() { // Searches for vocab words and adds the keyword class
-			const ex = document.getElementById("example0");
-			if (ex.getElementsByTagName("blockquote").length > 0) {
-				const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
-				ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
-			}
-		}
-		onlyBlockquote()
-		findKeyword()
-		addTrad()
-	})()
-	function playBoth() {
-		var maleAudio = document.querySelector("#male .soundLink, #male .replaybutton");
-		var femaleAudio = document.querySelector("#female .soundLink, #female .replaybutton");
-		maleAudio.click()
-		setTimeout(function () { femaleAudio.click(); }, 1000);
 	}
+	onlyBlockquote()
+	addTrad();
+	findKeyword();
+})();
+
+function playBoth() {
+	var maleAudio = document.querySelector("#male .soundLink, #male .replaybutton");
+	var femaleAudio = document.querySelector("#female .soundLink, #female .replaybutton");
+	maleAudio.click()
+	setTimeout(function () {femaleAudio.click();}, 1000);
+}
 </script>
