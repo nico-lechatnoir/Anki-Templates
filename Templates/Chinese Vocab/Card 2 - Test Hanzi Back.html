@@ -2,7 +2,7 @@
 
 <hr class="prettify-divider answer" id="answer" />
 <div class="prettify-field prettify-field--back">
-	<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span></div>
+	<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-Hant">|{{Color Traditional}}</span></div>
 	<div class="sound">
 		<span id='male'>{{Sound (Male)}}</span><span id='female'>{{Sound (Female)}}</span>
 	</div>
@@ -37,12 +37,9 @@
 	const py = '{{text:Pinyin}}'.trim();
 	const bq = document.getElementsByTagName("blockquote");
 
-	function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
-		if (simp != trad) {
-			const add = document.getElementById("conditionalContent");
-			add.innerHTML += '<span id="trad" lang="zh-Hant">|{{Color Traditional}}</span>';
-		}
-	};
+		function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
+			if (simp == trad) document.getElementById("trad").remove();
+		};
 	function findKeyword() { // Searches for vocab words and adds the keyword class
 		if (bq.length > 0) {
 			for (const e of bq) {

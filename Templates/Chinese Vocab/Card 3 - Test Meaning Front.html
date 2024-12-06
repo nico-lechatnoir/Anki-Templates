@@ -3,12 +3,10 @@
 		<span class="card-type">{{Card}}</span>
 	</header>
 	<div class="prettify-field prettify-field--front">
-		<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span></div>
+		<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-Hant">|{{Color Traditional}}</span></div>
 		<div id="pinyin" class="pinyin">
-			<a id="firstHint" class="hint" href="#" onclick="this.style.display='none';
-document.getElementById('hintPinyin').style.display='inline';
-return false;"">Pinyin</a>
-			<div id=" hintPinyin" class="hint" style="display: none">{{Pinyin}}
+			<a id="firstHint" class="hint" href="#" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inline'; return false;">Pinyin</a>
+			<div id="hintPinyin" class="hint" style="display: none">{{Pinyin}}
 		</div>
 		<button id='playSound' class="replay-button soundLink" type="button" onclick="playBoth()">
 			<svg class="desktop-only playImage" viewBox="0 0 64 64">
@@ -32,14 +30,10 @@ return false;"">Pinyin</a>
 		const bq = document.getElementsByTagName("blockquote");
 
 		function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
-			if (simp != trad) {
-				const add = document.getElementById("conditionalContent");
-				add.innerHTML += '<span id="trad" lang="zh-Hant">|{{Color Traditional}}</span>';
-			}
+			if (simp == trad) document.getElementById("trad").remove();
 		};
 
 		function findKeyword() { // Searches for vocab words and adds the keyword class
-			//const ex = document.querySelectorAll('[id^="example"] blockquote');
 			if (bq.length > 0) {
 				for (const e of bq) {
 					const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
