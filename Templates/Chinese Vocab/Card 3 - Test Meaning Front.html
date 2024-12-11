@@ -4,7 +4,7 @@
 	</header>
 	<div class="prettify-field prettify-field--front">
 		<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-Hant">|{{Color Traditional}}</span></div>
-		<div id="pinyin" class="pinyin">
+		<div class="pinyin">
 			<a id="firstHint" class="hint" href="#" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inline'; return false;">Pinyin</a>
 			<div id="hintPinyin" class="hint" style="display: none">{{Pinyin}}
 		</div>
@@ -15,49 +15,15 @@
 			<span class="mobile-only">🔊</span>
 		</button>
 	</div>
-	<div class="sound">
-		<span id='male'>{{Sound (Male)}}</span><span id='female'>{{Sound (Female)}}</span>
-	</div>
 
-	<div id="example0" class="english only-bq only-hanzi">{{English}}</div>
+<div id="example0" class="english only-hanzi"></div>
 </div>
 
-<script>
-(function () {
-		const simp = '{{text:Simplified}}'.trim();
-		const trad = '{{text:Traditional}}'.trim();
-		const py = '{{text:Pinyin}}'.trim();
-		const bq = document.getElementsByTagName("blockquote");
-
-		function addTrad() { // Checks to see if Traditional Characters are different and inserts if not same
-			if (simp == trad) document.getElementById("trad").remove();
-		};
-
-		function findKeyword() { // Searches for vocab words and adds the keyword class
-			if (bq.length > 0) {
-				for (const e of bq) {
-					const reKeywords = new RegExp(String.raw`(<b>)?(\s?(?:${simp}|${trad}|${py})\s?)(<\/b>)?`, "gi");
-					e.innerHTML = e.innerHTML.replace(reKeywords, '<span class="keyword">$2</span>');
-				}
-			}
-		}
-	
-		function onlyBlockquote(){
-				for (const el of document.querySelectorAll(".only-bq[id^=example]")) {
-				const quotes = el.querySelectorAll("blockquote");
-				el.replaceChildren();
-				for (let q of quotes) {el.appendChild(q);}
-		}
-	}
-	onlyBlockquote()
-	addTrad();
-	findKeyword();
-})();
-
-function playBoth() {
-	var maleAudio = document.querySelector("#male .soundLink, #male .replaybutton");
-	var femaleAudio = document.querySelector("#female .soundLink, #female .replaybutton");
-	maleAudio.click()
-	setTimeout(function () {femaleAudio.click();}, 1000);
-}
-</script>
+<div class="hide" id="jsRef">
+	<div class="sound"><span id='male'>{{Sound (Male)}}</span><span id='female'>{{Sound (Female)}}</span></div>
+	<span id="simplified">{{text:Simplified}}</span>
+	<span id="traditional">{{text:Traditional}}</span>
+	<span id="pinyin">{{text:Pinyin}}</span>
+	<span id="english">{{English}}</span>
+	<script type="text/javascript" src="_ChineseVocab.js"></script>
+</div>

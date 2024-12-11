@@ -12,27 +12,17 @@
 </div>
 <footer>
 	{{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-	<div class="link">
-		<a class="desktop-only" id="MDBG"
-			href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}"><span>MDBG</span></a>
-		<a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img
-				alt="Pleco" src="_pleco.png"><span>Pleco</span></a>
-		<a class="desktop-only" id="Hanzii"
-			href="https://hanzii.net/search/word/{{text:Simplified}}"><span>Hanzii</span></a>
-		<a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img
-				alt="Tatoeba" src="_tatoeba.png"><span>Tatoeba</span></a>
+  <div class="link">
+    <a class="desktop-only" id="MDBG"
+      href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}">MDBG</a>
+    <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img alt="Pleco"
+        src="_pleco.png"></a>
+    <a class="desktop-only" id="Hanzii"
+      href="https://hanzii.net/search/word/{{text:Simplified}}">Hanzii</a>
+    <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img
+        alt="Tatoeba" class="mobile-only" src="_tatoeba.png"><span class="desktop-only">Tatoeba</span></a>
+  </div>
 </footer>
 </div>
 
 <script type="text/javascript" src="_minimalTags.js"></script>
-
-<script>
-	(function () {
-		let isBack = document.getElementById("answer");
-		if (isBack) {
-			document.querySelector("div.pinyin > a.hint").style.display = "none";
-			document.querySelector("div.pinyin > div.hint").style.display = "inline";
-			document.querySelector("#example0").remove();
-		}
-	})();
-</script>
