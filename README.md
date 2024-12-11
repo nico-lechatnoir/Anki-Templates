@@ -4,7 +4,7 @@ This is my small collection of Anki Templates and links to any other helpful res
 
 # General Styling
 
-I apply the **[Core Card Styling](/General%20Styles/core-card.css)** to all cards to add uniformity and declare standardized responsive fonts sizes. The [Utopia design grid](/General%20Styles/Utopia%20design%20grid.css) is another responsive font and spacing file with the same parameters as the [Core Card](/General%20Styles/core-card.css).
+I apply the **[Core Card Styling](/General%20Styles/core-card.css)** to all cards to add uniformity and declare standardized responsive fonts sizes.
 
 [Flexoki Theme](/General%20Styles/flexoki-theme.css) was adapted from [kepano/flexoki](https://github.com/kepano/flexoki.git)
 
@@ -24,8 +24,7 @@ Two card Types, Basic (and Reversed) and Cloze.
 
 ## Chinese Vocab Cards
 
-Currently under construction.
-- [ ] Complete formatting and styling of the cards
+Currently a WIP but is functional
 
 ## [Chinese Grammar Wiki](/Templates/Chinese%20Grammar%20Wiki/README.md)
 
