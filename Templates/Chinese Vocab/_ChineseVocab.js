@@ -70,20 +70,20 @@ function formatCard() {
 		const isBack = document.getElementById('answer');
 		if (isBack) {
 			switch (cardType) {
-				case 'card1': // Test Pinyin
+				case 'Test Pinyin': // Test Pinyin
 					const el = document.getElementById('example0');
 					el.classList.remove('only-hanzi');
 					el.firstElementChild.style.display = 'none';
 					el.lastElementChild.style.display = 'block';
 					playBoth();
 					break;
-				case 'card2': // Test Hanzi
+				case 'Test Hanzi':
 					document.getElementById('firstHint').style.display = 'none';
 					document.getElementById('hintPinyin').style.display = 'inline';
 					document.getElementById('example0').classList.remove('hide-bq');
 					playBoth();
 					break;
-				case 'card3': // Test Meaning
+				case 'Test Meaning':
 					document.querySelector('div.pinyin > a.hint').style.display = 'none';
 					document.querySelector('div.pinyin > div.hint').style.display = 'inline';
 					document.getElementById('example0').style.display = 'none';
@@ -92,18 +92,16 @@ function formatCard() {
 		}
 	}
 	function whichCard() {
-		const cardClasses = document.body.classList;
-		const cardType = cardClasses[1];
-		// card1 is Test Pinyin, card2 is Test Hanzi, card2 is Test Meaning
+		const cardType = document.getElementById('cardType').textContent;
 		checkTrad();
 		findKeywords();
-		if (cardType==='card3'){
+		if (cardType==='Test Meaning'){
 			onlyBlockquote();
 			playBoth();
 		}
 		isBack(cardType);
 	}
-	whichCard()
+	whichCard();
 };
 
 if (document.readyState === 'loading') {
