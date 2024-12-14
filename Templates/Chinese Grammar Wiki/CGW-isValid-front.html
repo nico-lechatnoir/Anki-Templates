@@ -1,12 +1,24 @@
 {{#Example Type}}
-<div class="prettify-flashcard">
-<div class="prettify-field prettify-field--front">
-	<header>
-		<div id="question" class="question">Is this sentence grammatically correct?</div>
-		<div id="exType" class="{{Example Type}} isHidden"></div>
-	</header>
-	<div class="hanzi">{{中文}}</div>
-	<div class="pinyin">{{hint::Pinyin}}</div>
-	{{tts zh_CN hypertts_preset=Front_realtime_1 voices=HyperTTS:中文}}
-</div>
+	<div class="prettify-flashcard">
+	<div class="prettify-field prettify-field--front">
+		<header>
+			<div id="question" class="question">Is this sentence grammatically correct?</div>
+			<div id="exType" class="{{Example Type}} hide"></div>
+		</header>
+		<div class="hanzi">{{中文}}</div>
+		{{#Pinyin}}<div class="pinyin">{{hint::Pinyin}}</div>{{/Pinyin}}
+		{{tts zh_CN hypertts_preset=Front_realtime_1 voices=HyperTTS:中文}}
+	</div>
+	<script>
+		(function () {
+			const reHanzi = new RegExp(/\p{Script=Hani}+/, 'gu');
+			const grammar = '{{text:Grammar Construct}}'.match(reHanzi)
+			if (grammar){
+				const hanzi = grammar.sort().filter((v, i, a) => a[i - 1] !== v).join('|');
+				const reKeywords = new RegExp(hanzi, 'g');
+				let ex = document.querySelector('.hanzi');
+				ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$&</span>');
+			}
+		})();
+	</script>
 {{/Example Type}}

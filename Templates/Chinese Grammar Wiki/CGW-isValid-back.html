@@ -1,25 +1,27 @@
-{{FrontSide}}
-<hr class="prettify-divider prettify-divider--answer" id="answer" />
+  {{FrontSide}}
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
 
-<div class="prettify-field prettify-field--back">
-  <div class="lessonInfo">
-    <div class="notes">{{Notes}}</div>
-    <div class="pattern">{{Grammar Construct}}</div>
-    <div class="article"><a href={{Source URL}}>{{Article Title}}</a></div>
+  <div class="prettify-field prettify-field--back">
+    <div class="english">{{English}}</div>
+    <section class="lessonInfo">
+      {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
+      {{#Grammar Construct}}<div class="pattern">{{Grammar Construct}}</div>{{/Grammar Construct}}
+      <div class="article"><a href="{{text:Source URL}}">{{Article Title}}</a></div>
+    </section>
   </div>
-</div>
-<div class="prettify-tags">{{Tags}}</div>
+  {{#Tags}}<div class="prettify-tags">{{Tags}}</div>{{/Tags}}
 </div>
 <script src="_minimalTags.js"></script>
-<script type="text/javascript">
+<script>
   (function () {
-    let qst = document.getElementById("question").classList;
-    let ans = document.getElementById("exType").classList;
-    qst.add("isHidden");
-    ans.remove("isHidden");
-    let hint = document.querySelector("div.pinyin > a.hint");
-    let py = document.querySelector("div.pinyin > div.hint");
-    hint.style.display = "none";
-    py.style.display = "block";
+    const qst = document.getElementById('question').classList;
+    const ans = document.getElementById('exType').classList;
+    qst.toggle("hide");
+    ans.toggle("hide");
+    const PY = document.getElementById('pinyin');
+    if (PY){
+      PY.querySelector("a.hint").style.display = 'none';
+      PY.querySelector("div.hint").style.display = "block";
+    }
   })();
 </script>

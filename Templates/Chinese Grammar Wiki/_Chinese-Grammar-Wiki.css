@@ -10,7 +10,7 @@
 	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-cn-mob), var(--font-ui);
 	font-variant-east-asian: simplified;
 }
-.isHidden {display:none;}
+.hide {display:none;}
 
 /* FRONT */
 /* Chinese Fonts*/
@@ -24,7 +24,8 @@
 .pinyin {
 	font-size: var(--fs-base);
 }
-.keyword {color:red;}
+.keyword {color:#a02f6f;}
+.nightMode .keyword {color:#ce5d97;}
 
 /* ONLY for IS Valid Card Types */
 header {
