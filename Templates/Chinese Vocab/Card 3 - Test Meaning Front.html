@@ -3,28 +3,27 @@
 		<span class="card-type">{{Card}}</span>
 	</header>
 	<div class="prettify-field prettify-field--front">
-		<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-Hant">|{{Color Traditional}}</span></div>
+		<div class="hanzi" id="conditionalContent">
+			<span id="simp" lang="zh-CN">{{Color Hanzi}}</span>
+			<span id="trad" lang="zh-Hant">|{{Color Traditional}}</span>
+		</div>
 		<div class="pinyin">
 			<a id="firstHint" class="hint" href="#" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inline'; return false;">Pinyin</a>
-			<div id="hintPinyin" class="hint" style="display: none">{{Pinyin}}
+			<div id="hintPinyin" class="hint" style="display: none">{{Pinyin}}</div>
+			<button id="playSound" class="replay-button soundLink tappable" type="button" onclick="playBoth()">
+				<svg class="desktop-only playImage" viewBox="0 0 64 64"><path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path></svg>
+				<span class="mobile-only">🔊</span>
+			</button>
 		</div>
-		<button id='playSound' class="replay-button soundLink tappable" type="button" onclick="playBoth()">
-			<svg class="desktop-only playImage" viewBox="0 0 64 64">
-				<path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path>
-			</svg>
-			<span class="mobile-only">🔊</span>
-		</button>
+		<div id="example0" class="english only-hanzi"></div>
 	</div>
 
-<div id="example0" class="english only-hanzi"></div>
-</div>
-
-<div class="hide" id="jsRef">
-	<div class="sound"><span id='male'>{{Sound (Male)}}</span><span id='female'>{{Sound (Female)}}</span></div>
-	<span id="simplified">{{text:Simplified}}</span>
-	<span id="traditional">{{text:Traditional}}</span>
-	<span id="pinyin">{{text:Pinyin}}</span>
-	<span id="english">{{English}}</span>
-	<span id="cardType">{{text:Card}}</span>
-	<script type="text/javascript" src="_ChineseVocab.js"></script>
-</div>
+	<div class="hide" id="jsRef">
+		<div class="sound"><span id="male">{{Sound (Male)}}</span><span id="female">{{Sound (Female)}}</span></div>
+		<span id="simplified">{{text:Simplified}}</span>
+		<span id="traditional">{{text:Traditional}}</span>
+		<span id="pinyin">{{text:Pinyin}}</span>
+		<span id="english">{{English}}</span>
+		<span id="cardType">{{text:Card}}</span>
+		<script type="text/javascript" src="_ChineseVocab.js"></script>
+	</div>
