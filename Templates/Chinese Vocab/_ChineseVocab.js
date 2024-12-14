@@ -2,13 +2,13 @@ function playBoth() {
 	var maleAudio = document.querySelector('#male .soundLink, #male .replaybutton');
 	var femaleAudio = document.querySelector('#female .soundLink, #female .replaybutton');
 	maleAudio.click()
-	setTimeout(function () { femaleAudio.click(); }, 1000);
+	setTimeout(()=>{femaleAudio.click();}, 1000);
 }
 function getNum() {
 	// Create a 2 step hint showing length of words before Hanzi
 	let clue = document.getElementById('firstHint');
 	if (clue.innerText.startsWith('#')) {
-		let simp =  document.getElementById('simplified').textContent.trim().length;
+		let simp = document.getElementById('simplified').textContent.trim().length;
 		clue.innerText = clue.innerText.replace('#', simp);
 		const re = /\((s)\)/g;
 		clue.innerText = (simp > 1) ? clue.innerText.replace(re, '$1') : clue.innerText.replace(re, '');
@@ -18,17 +18,17 @@ function getNum() {
 	}
 }
 function detectAnkiPlatform() {
-    if (window.anki && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.cb !== undefined) {
-        return 'AnkiMobile';
-    } else if (document.querySelector('span.align-middle') && document.querySelector('span.align-middle').textContent.includes('AnkiWeb')) {
-        return 'AnkiWeb';
-    } else if (typeof AnkiDroidJS !== 'undefined') {
-        return 'AnkiDroid';
-    } else if (typeof pycmd !== 'undefined') {
-        return 'AnkiDesktop';
-    } else {
-        return 'Unknown';
-    }
+	if (window.anki && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.cb !== undefined) {
+		return 'AnkiMobile';
+	} else if (document.querySelector('span.align-middle') && document.querySelector('span.align-middle').textContent.includes('AnkiWeb')) {
+		return 'AnkiWeb';
+	} else if (typeof AnkiDroidJS !== 'undefined') {
+		return 'AnkiDroid';
+	} else if (typeof pycmd !== 'undefined') {
+		return 'AnkiDesktop';
+	} else {
+		return 'Unknown';
+	}
 }
 
 function formatCard() {
@@ -42,15 +42,17 @@ function formatCard() {
 		const el = document.getElementById('trad');
 		if (el && simplified === traditional) el.remove();
 	}
-	function findKeywords() { // Searches for vocab words and adds the keyword class
+	function findKeywords() {
+		// Searches for vocab words and adds the keyword class
 		if (blockquoteEL.length > 0) {
 			const reKeywords = (detectAnkiPlatform()==='AnkiMobile') ? new RegExp(`(?:<b(?:.*[^>])?>)?(\\s?${simplified}|${traditional}|${pinyin}\\s?)(?:<\/b>)?`, 'gi') : new RegExp(`(?:<b>)?(\\s?${simplified}|${traditional}|${pinyin}\\s?)(?:<\/b>)?`, 'gi');
 			for (const bq of blockquoteEL) {
 				bq.innerHTML = bq.innerHTML.replace(reKeywords, '<span class="keyword">$1</span>');
 			}
 		}
-	}	
+	}
 	function onlyBlockquote() {
+		// Insets only contents of blockquotes into new element
 		const qtEl = document.getElementById('english');
 		const quotes = qtEl.querySelectorAll('blockquote');
 		const insert = document.getElementById('example0');
@@ -66,48 +68,53 @@ function formatCard() {
 			*/
 		}
 	}
-	function isBack(cardType) {
-		const isBack = document.getElementById('answer');
-		if (isBack) {
-			switch (cardType) {
-				case 'Test Pinyin': // Test Pinyin
-					const el = document.getElementById('example0');
-					el.classList.remove('only-hanzi');
-					el.firstElementChild.style.display = 'none';
-					el.lastElementChild.style.display = 'block';
-					playBoth();
-					break;
-				case 'Test Hanzi':
-					document.getElementById('firstHint').style.display = 'none';
-					document.getElementById('hintPinyin').style.display = 'inline';
-					document.getElementById('example0').classList.remove('hide-bq');
-					playBoth();
-					break;
-				case 'Test Meaning':
-					document.querySelector('div.pinyin > a.hint').style.display = 'none';
-					document.querySelector('div.pinyin > div.hint').style.display = 'inline';
-					document.getElementById('example0').style.display = 'none';
-					break;
+	const cardType = document.getElementById('cardType').textContent.trim();
+	const isBack = document.getElementById('answer');
+
+	switch (cardType) {
+		case 'Test Pinyin': // Test Pinyin
+			checkTrad();
+			findKeywords();
+			if (isBack) {
+				const el = document.getElementById('example0');
+				el.classList.remove('only-hanzi');
+				el.firstElementChild.style.display = 'none';
+				el.lastElementChild.style.display = 'block';
 			}
-		}
-	}
-	function whichCard() {
-		const cardType = document.getElementById('cardType').textContent;
-		checkTrad();
-		findKeywords();
-		if (cardType==='Test Meaning'){
-			onlyBlockquote();
+			break;
+		case 'Test Hanzi':
+			if (isBack) {
+				checkTrad();
+				findKeywords();
+				document.getElementById('firstHint').style.display = 'none';
+				document.getElementById('hintPinyin').style.display = 'inline';
+				document.getElementById('example0').classList.remove('hide-bq');
+			}
+			break;
+		case 'Test Meaning':
+			checkTrad();
+			findKeywords();
+			if (!isBack){
+				onlyBlockquote();
+			} else {
+				document.querySelector('div.pinyin > a.hint').style.display = 'none';
+				document.querySelector('div.pinyin > div.hint').style.display = 'inline';
+				document.getElementById('example0').style.display = 'none';
+			}
+			break;
+		default:
+			checkTrad();
+			findKeywords();
 			playBoth();
-		}
-		isBack(cardType);
-	}
-	whichCard();
+		};
+	if (isBack) playBoth();
 };
+
 
 if (document.readyState === 'loading') {
 	// Loading hasn't finished yet
 	document.addEventListener('DOMContentLoaded', formatCard);
-  } else {
+} else {
 	// `DOMContentLoaded` has already fired
 	formatCard();
-  }
+}
