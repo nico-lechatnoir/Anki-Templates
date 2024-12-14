@@ -24,8 +24,7 @@ Two card Types, Basic (and Reversed) and Cloze.
 
 ## Chinese Vocab Cards
 
-Currently under construction.
-- [ ] Complete formatting and styling of the cards
+Currently a WIP but is functional
 
 ## [Chinese Grammar Wiki](/Templates/Chinese%20Grammar%20Wiki/README.md)
 
