@@ -1,14 +1,14 @@
 function playBoth() {
-	var maleAudio = document.querySelector('#male .soundLink, #male .replaybutton');
-	var femaleAudio = document.querySelector('#female .soundLink, #female .replaybutton');
-	maleAudio.click()
-	setTimeout(()=>{femaleAudio.click();}, 1000);
+	const maleAudio = document.querySelector('#male .soundLink, #male .replaybutton');
+	const femaleAudio = document.querySelector('#female .soundLink, #female .replaybutton');
+	maleAudio.click();
+	setTimeout(() => { femaleAudio.click(); }, 1000);
 }
 function getNum() {
 	// Create a 2 step hint showing length of words before Hanzi
-	let clue = document.getElementById('firstHint');
+	const clue = document.getElementById('firstHint');
 	if (clue.innerText.startsWith('#')) {
-		let simp = document.getElementById('simplified').textContent.trim().length;
+		const simp = document.getElementById('simplified').textContent.trim().length;
 		clue.innerText = clue.innerText.replace('#', simp);
 		const re = /\((s)\)/g;
 		clue.innerText = (simp > 1) ? clue.innerText.replace(re, '$1') : clue.innerText.replace(re, '');
@@ -45,32 +45,31 @@ function formatCard() {
 	function findKeywords() {
 		// Searches for vocab words and adds the keyword class
 		if (blockquoteEL.length > 0) {
-			const reKeywords = (detectAnkiPlatform()==='AnkiMobile') ? new RegExp(`(?:<b(?:.*[^>])?>)?(\\s?${simplified}|${traditional}|${pinyin}\\s?)(?:<\/b>)?`, 'gi') : new RegExp(`(?:<b>)?(\\s?${simplified}|${traditional}|${pinyin}\\s?)(?:<\/b>)?`, 'gi');
+			const reKeywords = (detectAnkiPlatform() === 'AnkiMobile') ? new RegExp(`(?:<b(?:.*[^>])?>)?(\\s?${simplified}|${traditional}|${pinyin}\\s?)(?:<\/b>)?`, 'gi') : new RegExp(`(?:<b>)?(\\s?${simplified}|${traditional}|${pinyin}\\s?)(?:<\/b>)?`, 'gi');
 			for (const bq of blockquoteEL) {
 				bq.innerHTML = bq.innerHTML.replace(reKeywords, '<span class="keyword">$1</span>');
 			}
 		}
 	}
 	function onlyBlockquote() {
-		// Insets only contents of blockquotes into new element
-		const qtEl = document.getElementById('english');
-		const quotes = qtEl.querySelectorAll('blockquote');
-		const insert = document.getElementById('example0');
-		for (let q of quotes) {
-			insert.append(q);
-			/* insert by level
-			const hanzi = q.firstElementChild
-			const pyText = (q.children.length == 3) ? q.children[1] : undefined;
-			const translation = q.lastElementChild;
-			const bq = document.createElement('blockquote');
-			bq.appendChild(hanzi);
-			insert.append(hanzi);
-			*/
+		// Inserts only contents of blockquotes into new element
+		if (blockquoteEL.length > 0) {
+			const insert = document.getElementById('example0');
+			for (let q of blockquoteEL) {
+				insert.append(q);
+				/* insert by level
+				const hanzi = q.firstElementChild
+				const pyText = (q.children.length == 3) ? q.children[1] : undefined;
+				const translation = q.lastElementChild;
+				const bq = document.createElement('blockquote');
+				bq.appendChild(hanzi);
+				insert.append(hanzi);
+				*/
+			}
 		}
 	}
 	const cardType = document.getElementById('cardType').textContent.trim();
 	const isBack = document.getElementById('answer');
-
 	switch (cardType) {
 		case 'Test Pinyin': // Test Pinyin
 			checkTrad();
@@ -94,7 +93,7 @@ function formatCard() {
 		case 'Test Meaning':
 			checkTrad();
 			findKeywords();
-			if (!isBack){
+			if (!isBack) {
 				onlyBlockquote();
 			} else {
 				document.querySelector('div.pinyin > a.hint').style.display = 'none';
@@ -106,7 +105,7 @@ function formatCard() {
 			checkTrad();
 			findKeywords();
 			playBoth();
-		};
+	};
 	if (isBack) playBoth();
 };
 
