@@ -1,54 +1,20 @@
 <div class="prettify-flashcard">
-    <div class="prettify-deck">{{Deck}}</div>
-    <div class="prettify-field prettify-field--front">{{cloze:Text}}</div>
-    
-    {{#Back Extra}}{{#Example}}<div class="prettify-divider prettify-divider--answer"></div>{{/Example}}{{/Back Extra}}
-    {{^Back Extra}}{{#Example}}<div class="prettify-divider prettify-divider--answer"></div>{{/Example}}{{/Back Extra}}
-    {{^Example}}{{#Back Extra}}<div class="prettify-divider prettify-divider--answer"></div>{{/Back Extra}}{{/Example}}
-    <!-- Conditionals that only generate a divider if there is more information in Back Extra, or Example Fields -->
+  <div class="prettify-deck">{{Deck}}</div>
+  <div class="prettify-field prettify-field--front">{{cloze:Text}}</div>
   
-    <div class="prettify-field prettify-field--back">
-        {{#Back Extra}}{{Back Extra}}{{/Back Extra}}
-        {{#Example}}<div class=example>{{Example}}</div>{{/Example}}
-    </div>
-   {{#Tags}}<div class="prettify-tags">{{Tags}}</div>{{/Tags}}
+{{#Back Extra}}{{#Example}}<div class="prettify-divider prettify-divider--answer"></div>{{/Example}}{{/Back Extra}}
+{{^Back Extra}}{{#Example}}<div class="prettify-divider prettify-divider--answer"></div>{{/Example}}{{/Back Extra}}
+{{^Example}}{{#Back Extra}}<div class="prettify-divider prettify-divider--answer"></div>{{/Back Extra}}{{/Example}}
+ <!-- Conditionals that only generate a divider if there is more information in Back Extra, or Example Fields -->
+
+  <div class="prettify-field prettify-field--back">
+		{{#Back Extra}}{{Back Extra}}{{/Back Extra}}
+		{{#Example}}<div class=example>{{Example}}</div>{{/Example}}
+	</div>
+ {{#Tags}}<div class="prettify-tags">{{Tags}}</div>{{/Tags}}
 </div>
 
-<script>
-	// Split hierarchical tags
-	var tagsContainerEl = document.querySelectorAll('.prettify-tags > *')
-	if (tagsContainerEl.length > 0) {
-		var tags = []
-		tagsContainerEl.forEach((tagEl) => {
-			tagEl.classList.add('prettify-tag')
-			tags.push(tagEl.innerHTML)
-			tags.forEach((tag) => {
-				var childTag = tag.split('::').filter(Boolean)
-				tagEl.innerHTML = childTag[childTag.length - 1].trim()
-			})
-		})
-	} else {
-		tagsContainerEl = document.querySelector('.prettify-tags')
-		var tags = tagsContainerEl.innerHTML.split(' ').filter(Boolean)
-		var html = ''
-		tags.forEach((tag) => {
-			var childTag = tag.split('::').filter(Boolean)
-			html +=
-				"<span class='prettify-tag'>" +
-				childTag[childTag.length - 1] +
-				'</span>'
-		})
-		tagsContainerEl.innerHTML = html
-	}
-</script>
+<script src="_minimalDeck.js"></script>
+<script src="_minimalTags.js"></script>
 
-<script>
-    // Breadcrumbs to current deck
-    var deckEl = document.querySelector('.prettify-deck')
-    var subDecks = deckEl.innerHTML.split('::').filter(Boolean)
-    html = []
-    subDecks.forEach((subDeck) => {
-		html.push("<span class='prettify-subdeck'>" + subDeck + '</span>')
-    })
-    deckEl.innerHTML = html.join('&nbsp;/&nbsp;')
-</script>
+
