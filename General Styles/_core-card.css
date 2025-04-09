@@ -39,12 +39,12 @@
 	padding-bottom: var(--fs-base, 18px);
 }
 */
-.replay-button svg {
+a.replay-button svg {
 	width: var(--fs-md, 22px);
 	height: var(--fs-md, 22px);
 	opacity: 0.75;
 }
-.mobile:not(.ipad) .replay-button svg {
+.mobile:not(.ipad) a.replay-button svg {
 	width: var(--fs-base, 1rem);
 	height: var(--fs-base, 1rem);
 } 
