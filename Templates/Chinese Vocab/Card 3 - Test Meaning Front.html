@@ -3,18 +3,22 @@
 		<span class="card-type">{{Card}}</span>
 	</header>
 	<div class="prettify-field prettify-field--front">
-		<div class="hanzi" id="conditionalContent"><span id="simp" lang="zh-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-Hant">|{{Color Traditional}}</span></div>
+		<div class="hanzi" id="conditionalContent">
+			<span id="simp" lang="zh-cmn-Hans-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-cmn-Hant-TW" class="hide">|{{Color Traditional}}</span>
+		</div>
 		<div class="pinyin">
 			<a id="firstHint" class="hint" href="#" onclick="this.style.display='none'; document.getElementById('hintPinyin').style.display='inline'; return false;">Pinyin</a>
 			<div id="hintPinyin" class="hint" style="display: none">{{Pinyin}}</div>
 			<button id="playSound" class="replay-button soundLink tappable" type="button" onclick="playBoth()">
-				<svg class="desktop-only playImage" viewBox="0 0 64 64"><path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path></svg>
-				<span class="mobile-only">🔊</span>
+				<svg class="playImage lucide lucide-volume2-icon lucide-volume-2" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round">
+					<path class="fill" stroke-linejoin="miter" stroke-width="1" d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+					<path class="line" fill="none" d="M16 9a5 5 0 0 1 0 6" />
+					<path class="line" fill="none" d="M19.364 18.364a9 9 0 0 0 0-12.728" />
+				</svg>
 			</button>
 		</div>
 		<div id="example0" class="english only-hanzi"></div>
 	</div>
-
 	<div class="hide" id="jsRef">
 		<div class="sound"><span id="male">{{Sound (Male)}}</span><span id="female">{{Sound (Female)}}</span></div>
 		<span id="simplified">{{text:Simplified}}</span>

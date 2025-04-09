@@ -1,36 +1,38 @@
-  {{FrontSide}}
-  <hr class="prettify-divider answer" id="answer" />
+{{FrontSide}}
+<hr class="prettify-divider answer" id="answer" />
 
-  <div class="prettify-field prettify-field--back">
-    <div class="pinyin">{{Pinyin}}
-      <button id="playSound" class="replay-button soundLink tappable" type="button" onclick="playBoth()">
-        <svg class="desktop-only playImage" viewBox="0 0 64 64"><path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path></svg>
-        <span class="mobile-only">🔊</span>
-      </button>
-    </div>
-    <div class="sound hide">
-      <span id="male">{{Sound (Male)}}</span><span id="female">{{Sound (Female)}}</span>
-    </div>
-
-    <section id="moreInfo" lang="zh-CN">
-      {{#Also Written}}<div class="also">{{Also Written}}</div>{{/Also Written}}
-      {{#Simplified Classifier}}<div class="classifier">{{Simplified Classifier}}</div>{{/Simplified Classifier}}
-      {{Frequency}}
-      {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
-    </section>
+<div class="prettify-field prettify-field--back">
+  <div class="pinyin">{{Pinyin}}
+    <button id="playSound" class="replay-button soundLink tappable" type="button" onclick="playBoth()">
+      <svg class="playImage lucide lucide-volume2-icon lucide-volume-2" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round">
+        <path class="fill" stroke-linejoin="miter" stroke-width="1" d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+        <path class="line" fill="none" d="M16 9a5 5 0 0 1 0 6" />
+        <path class="line" fill="none" d="M19.364 18.364a9 9 0 0 0 0-12.728" />
+      </svg>
+    </button>
   </div>
-  <footer>
-    {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
-    <div class="link">
-      <a class="desktop-only" id="MDBG"
-        href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}">MDBG</a>
-      <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img
-          alt="Pleco" src="_pleco.png"></a>
-      <a class="desktop-only" id="Hanzii" href="https://hanzii.net/search/word/{{text:Simplified}}">Hanzii</a>
-      <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img
-          alt="Tatoeba" class="mobile-only" src="_tatoeba.png"><span class="desktop-only">Tatoeba</span></a>
-    </div>
-  </footer>
+  <div class="sound hide"><span id="male">{{Sound (Male)}}</span><span id="female">{{Sound (Female)}}</span></div>
+
+  <section id="moreInfo" lang="zh-cmn-Hans-CN"">
+    {{#Also Written}}<div class=" also">{{Also Written}}</div>{{/Also Written}}
+    {{#Simplified Classifier}}<div class="classifier">{{Simplified Classifier}}</div>{{/Simplified Classifier}}
+    {{Frequency}}
+    {{#Opposite}}<div class="opposite">{{Opposite}}</div>{{/Opposite}}
+    {{#Synonym}}<div class="synonym">{{Synonym}}</div>{{/Synonym}}
+    {{#Compound}}<div class="compound">{{Compound}}</div>{{/Compound}}
+    {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
+  </section>
+</div>
+<footer>
+  {{#Tags}}<span class="prettify-tags">{{Tags}}</span>{{/Tags}}
+  <div class="link">
+    <a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}">MDBG</a>
+    <a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img alt="Pleco" src="_pleco.png"></a>
+    <a class="desktop-only" id="Hanzii" href="https://hanzii.net/search/word/{{text:Simplified}}">Hanzii</a>
+    <a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}&to="><img alt="Tatoeba" class="mobile-only" src="_tatoeba.png"><span class="desktop-only">Tatoeba</span></a>
+  </div>
+</footer>
 </div>
 
 <script src="_minimalTags.js"></script>
+<script>setTimeout(playBoth, 100);</script>
