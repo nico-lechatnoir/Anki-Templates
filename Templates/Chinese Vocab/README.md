@@ -4,7 +4,7 @@ Cards are created with the help of [Gustaf-C/anki-chinese-support-3](https://git
 
 ## Card Styling
 
-All styling should be called as `@import url('Chinese-Vocab.min.css');` from the card styling options and should be stored in the media folder. It will also internally call the [Core Card CSS](/General%20Styles/core-card.css) and [Flexoki Theme CSS](/General%20Styles/flexoki-theme.css) to set basic styling settings, font sizes and families and it will also need to be downloaded.
+All styling should be called as `@import url('Chinese-Vocab.min.css');` from the card styling options and should be stored in the media folder. It will also internally call the [Core Card CSS](/General%20Styles/_core-card.css) and [Flexoki Theme CSS](/General%20Styles/_flexoki-theme.css) to set basic styling settings, font sizes and families and it will also need to be downloaded.
 
 ## Note Types
 
@@ -57,7 +57,6 @@ All styling should be called as `@import url('Chinese-Vocab.min.css');` from the
 #### Front
 
 <img src="images/TestMeaning_Front.png" width="500px" />
-
 
 #### Back
 

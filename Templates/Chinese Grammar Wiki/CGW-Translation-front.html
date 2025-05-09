@@ -8,13 +8,14 @@
 	<script>
 		(function () {
 			const reHanzi = new RegExp(/\p{Script=Hani}+/, 'gu');
-			const grammar = '{{text:Grammar Construct}}'.match(reHanzi)
+			const grammar = '{{text:Grammar Construct}}'.match(reHanzi);
 			if (grammar){
 				const hanzi = grammar.sort().filter((v, i, a) => a[i - 1] !== v).join('|');
 				const reKeywords = new RegExp(hanzi, 'g');
-				let ex = document.querySelector('.hanzi');
+				const ex = document.querySelector('.hanzi');
 				ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$&</span>');
 			}
 		})();
 	</script>
 {{/Example Type}}
+

@@ -18,7 +18,7 @@
 	font-size: var(--fs-xl);
 }
 .mobile:not(.ipad) .hanzi {
-	font-size: var(--fs-lg);
+	font-size: var(--fs-md);
 }
 
 .pinyin {

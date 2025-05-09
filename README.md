@@ -1,40 +1,48 @@
-# Intro
+# Anki Templates
 
 This is my small collection of Anki Templates and links to any other helpful resources I have found.
 
-# General Styling
+I apply the **[Core Card Styling](/General%20Styles/_core-card.css)** to all cards to add uniformity and declare standardized responsive fonts sizes.
 
-I apply the **[Core Card Styling](/General%20Styles/core-card.css)** to all cards to add uniformity and declare standardized responsive fonts sizes.
-
-[Flexoki Theme](/General%20Styles/flexoki-theme.css) was adapted from [kepano/flexoki](https://github.com/kepano/flexoki.git)
+[Flexoki Theme](/General%20Styles/_flexoki-theme.css) was adapted from [kepano/flexoki](https://github.com/kepano/flexoki.git) and includes the extended theme.
 
 # Templates
 
-## [Minimal Style](/Templates/Minimal/README.md)
+## [Minimal Style](Templates/Minimal/README.md)
 
 Two card Types, Basic (and Reversed) and Cloze.
 
 ### Front
 
-<img src="/Templates/Minimal/readme-Resources/minimal-basic-front.png" width="450px" />
+<img src="Templates/Minimal/images/minimal-basic-front.png" width="450px" />
 
 ### Back
 
-<img src="/Templates/Minimal/readme-Resources/minimal-basic-back.png" width="450px" />
+<img src="Templates/Minimal/images/minimal-basic-back.png" width="450px" />
 
-## Chinese Vocab Cards
+## [Chinese Vocab](/Templates/Chinese%20Vocab/README.md)
 
-Currently a WIP but is functional
+There are 3 different cards types: `Test Pinyin`, `Test Hanzi`, `Test Meaning`.
 
-## [Chinese Grammar Wiki](/Templates/Chinese%20Grammar%20Wiki/README.md)
+### Test Hanzi Front
+<img src="Templates/Chinese Vocab/images/TestHanzi_Front.png" width="450px"/>
 
+### Test Hanzi Front
+
+<img src="Templates/Chinese Vocab/images/TestHanzi_Back.png" width="450px"/>
+
+
+
+## [Chinese Grammar Wiki](Templates/Chinese%20Grammar%20Wiki/README.md)
+
+ Cards can either ask for a translation or if the sentence is grammatically correct.
 ### Front
 
-<img src="Templates/Chinese Grammar Wiki/readme-Resources/Chinese-Grammar-Translation-Front.png" width="450px"/>
+<img src="Templates/Chinese Grammar Wiki/images/Chinese-Grammar-Translation-Front.png" width="450px"/>
 
 ### Back
 
-<img src="Templates/Chinese Grammar Wiki/readme-Resources/Chinese-Grammar-Translation-Back.png" width="450px"/>
+<img src="Templates/Chinese Grammar Wiki/images/Chinese-Grammar-Translation-Back.png" width="450px"/>
 
 # Add-ons Used
 
