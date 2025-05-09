@@ -19,6 +19,7 @@
 	--font-monospace: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
 	--font-math: MJXZERO, MJXTEX, STIXGeneral, "Arial Unicode MS", serif;
 
+	/* Spacing */
 	--size-2-1: 2px;
   --size-2-2: 4px;
   --size-2-3: 6px;

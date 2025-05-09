@@ -21,7 +21,7 @@ html:not(.mobile) .card {
 /* -------------------------------------------------- FLASHCARD */
 .prettify-flashcard {
 	background-color: var(--bg);
-	border-radius: 8px;
+	border-radius: var(--size-4-2);
 	border: 1px solid var(--ui);
 	box-shadow: var(--ui) 0px 7px 14px 0px, var(--ui) 0px 3px 6px 0px;
 	line-height: 1.5;
@@ -106,7 +106,7 @@ footer {
 .prettify-tag {
 	all: initial;
 	background-color: var(--bg-2);
-	border-radius: 0.3em;
+	border-radius: var(--size-4-1);
 	padding: 0.25em;
 	word-break: break-word;
 	font-size: var(--fs-sm);
@@ -144,7 +144,7 @@ footer {
 .prettify-divider {
 	background-color: transparent;
 	border: none;
-	border-bottom: 1.5px dashed var(--ui-3);
+	border-bottom: var(--size-2-1) dashed var(--ui);
 	margin: 1em;
 	padding: 0;
 }
@@ -251,12 +251,16 @@ ruby:hover rt {
 	font-size: var(--fs-base);
 }
 
-/*Noun, Adj Pleco*/
+/*#region ======================== CLASSIFIERS */
 .en-cl {
 	font-weight: bold;
 	font-size: var(--fs-sm);
 	text-transform: uppercase;
 	color: var(--tx-3);
+}
+
+div.en-cl {
+	margin-bottom: var(--size-2-2);
 }
 
 span.en-cl {
@@ -267,32 +271,26 @@ span.en-cl {
 	margin-right: 0.5ch;
 }
 
-.english > .en-cl:not(:first-child) {
-	margin-top: 0.8em;
+.en-cl:not(:first-child) {
+	margin-top: var(--size-4-2);
 }
 
 /* Fades List numbers */
 .english :is(ol, ul) {
-	margin: 0.3em 0;
-	padding-inline-start: 16px;
+	margin: 0;
+	padding-inline-start: var(--size-4-4);
 }
 
-.english li::marker,
-.english :not(blockquote) ~ b {
+.english li::marker {
 	color: var(--tx-3);
 	font-size: var(--fs-sm);
 }
 
-/* Fades List Numbers in lists imported from Pleco as text */
-.english :not(blockquote) ~ b {
-	font-weight: 400;
-	margin-right: 4px;
-}
+/*#endregion ===================== */
 
-/* Formats examples included with Pleco */
-
+/*#region ======================== EXAMPLES */
 .english blockquote {
-	border-left: 2px solid var(--ui);
+	border-left: var(--size-2-1) solid var(--ui);
 	padding-left: 1em;
 	margin: 0.5em 0em;
 	font-size: var(--fs-sm);
@@ -312,16 +310,16 @@ span.en-cl {
 	font-weight: 500;
 }
 
-.english blockquote > p:first-child {
+.english blockquote>p:first-child {
 	color: var(--tx);
 	font-size: var(--fs-base);
 }
 
-.english.only-hanzi blockquote > :not(p:first-child) {
+.english.only-hanzi blockquote> :not(p:first-child) {
 	display: none;
 }
 
-.english.no-py blockquote:has(> p:nth-child(3)) > p:nth-child(2) {
+.english.no-py blockquote:has(> p:nth-child(3))>p:nth-child(2) {
 	display: none;
 }
 
@@ -330,14 +328,16 @@ span.en-cl {
 }
 
 /* Animations */
-.english blockquote > p {
+.english blockquote>p {
 	transition: var(--transition-medium) ease;
 }
 
-.english blockquote > :not(p:first-child):hover {
+.english blockquote> :not(p:first-child):hover {
 	color: var(--tx);
+	font-size: var(--fs-base);
 }
 
+/*#endregion ===================== */
 /*#endregion =============================== */
 
 /*#region ================================== BACK SIDE INFO */
@@ -414,17 +414,18 @@ button.replay-button {
 	--canvas: var(--bg);
 	background: var(--canvas);
 	border-radius: var(--border-radius-large, 15px);
-	padding: 3px 12px;
+	padding: var(--size-4-1) var(--size-4-3);
 	border: 1px solid var(--ui);
 	box-shadow: 0px 2px 1px -1px var(--ui), 0px 1px 1px 0px var(--ui), 0px 1px 3px 0px var(--ui);
 	--button-gradient-start: var(--bg);
 	--button-gradient-end: var(--ui);
 	font-size: var(--fs-base);
-	display:inline-flex;
-	align-items:center;
+	display: inline-flex;
+	align-items: center;
 	justify-content: center;
 }
-button.replay-button:hover{
+
+button.replay-button:hover {
 	border: 1px solid var(--ui-3);
 	box-shadow: 0px 3px 1px -2px var(--ui-2), 0px 2px 2px 0px var(--ui-2), 0px 1px 5px 0px var(--ui-2);
 }
@@ -445,7 +446,7 @@ button.replay-button:hover{
 	fill: none;
 }
 
-.pinyin > button.replay-button {
+.pinyin>button.replay-button {
 	position: absolute;
 	margin-left: var(--fs-xs);
 }
@@ -509,11 +510,11 @@ code#typeans:not(:has(*)) {
 }
 
 /* Hides text if completely Correct and displays a check mark instead */
-code#typeans > .typeGood:only-child {
+code#typeans>.typeGood:only-child {
 	visibility: collapse;
 }
 
-code#typeans > .typeGood:only-child::after {
+code#typeans>.typeGood:only-child::after {
 	display: inline;
 	visibility: visible;
 	position: relative;
@@ -524,7 +525,7 @@ code#typeans > .typeGood:only-child::after {
 
 /* Hides any comparisons */
 #typeans #typearrow,
-#typeans #typearrow ~ * {
+#typeans #typearrow~* {
 	display: none
 }
 
