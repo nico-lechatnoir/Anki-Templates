@@ -17,7 +17,7 @@ This card will always be generated.
 
 |Front| Back|
 |:---:|:---:|
-|<img src="./readme-Resources/minimal-basic-front.png" width="700px" />|<img src="./readme-Resources/minimal-basic-back.png" width="700px" />|
+|<img src="images/minimal-basic-front.png" width="500px" />|<img src="images/minimal-basic-back.png" width="500px" />|
 
 #### Reversed (Optional)
 
@@ -27,7 +27,7 @@ You will need to add this field to the default Minimal Basic Note Type which can
 
 |Front| Back|
 |:---:|:---:|
-|<img src="./readme-Resources/minimal-basic-reversed-front.png" width="700px" />|<img src="./readme-Resources/minimal-basic-reversed-back.png" width="700px" />|
+|<img src="images/minimal-basic-reversed-front.png" width="500px" />|<img src="images/minimal-basic-reversed-back.png" width="500px" />|
 
 ### Minimal Cloze
 
@@ -40,7 +40,7 @@ There are only 3 fields:
 
 |Front| Back|
 |:---:|:---:|
-|<img src="./readme-Resources/minimal-cloze-front.png" width="700px" />|<img src="./readme-Resources/minimal-cloze-back.png" width="700px" />|
+|<img src="images/minimal-cloze-front.png" width="500px" />|<img src="images/minimal-cloze-back.png" width="500px" />|
 
 #### Definition
 For cards that may have a term and definition the both can be entered into the `Text` field and should be wrapped as a `div` like the example below.
@@ -54,4 +54,4 @@ The term will show as bolded text where the definition will smaller text. See ex
 
 |Front| Back|
 |:---:|:---:|
-|<img src="./readme-Resources/minimal-cloze-def-front.png" width="700px" />|<img src="./readme-Resources/minimal-cloze-def-back.png" width="700px" />|
+|<img src="images/minimal-cloze-def-front.png" width="500px" />|<img src="images/minimal-cloze-def-back.png" width="500px" />|
