@@ -4,8 +4,7 @@ This is my small collection of Anki Templates and links to any other helpful res
 
 I apply the **[Core Card Styling](/General%20Styles/_core-card.css)** to all cards to add uniformity and declare standardized responsive fonts sizes.
 
-[Flexoki Theme](/General%20Styles/_flexoki-theme.css) was adapted from [kepano/flexoki](https://github.com/kepano/flexoki.git) and includes the extended theme.
-
+[Flexoki Theme](/General%20Styles/_flexoki-theme.css) was adapted from [kepano/flexoki](https://github.com/kepano/flexoki.git) and includes the extended theme. You can also refer to [nico-lechatnoir/Flexoki-for-Anki](https://github.com/nico-lechatnoir/Flexoki-for-Anki) to see the basic styling options.
 # Templates
 
 ## [Minimal Style](Templates/Minimal/README.md)
