@@ -3,17 +3,45 @@ Version: 0.1.3
 - GitHub: https://github.com/pranavdeshai
 
 Lasted updated 2024-05-08
+*/
+
+/* -------------------------------------------------- FONTS */
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 65.5% 100%;
+		font-display: swap;
+    src: url("_NotoSans_VF_wdth_wght.ttf") format("truetype-variations");
+    src: url("_NotoSans_VF_wdth_wght.ttf") format(truetype) tech(variations);
+}
+
+@font-face {
+    font-family: "Noto Sans";
+		font-style: italic;
+		font-weight: 100 900;
+    font-stretch: 65.5% 100%;
+		font-display: swap;
+    src: url("_NotoSansItalic_VF_wdth_wght.ttf") format("truetype-variations");
+    src: url("_NotoSansItalic_VF_wdth_wght.ttf") format(truetype) tech(variations);
+}
 
 /* -------------------------------------------------- PREFERENCES */
 
 :root {
 	--card-max-width: 40em;
 	--card-text-align: left;
-	--font-family: Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+	--font-family: "Noto Sans", Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+	--fs-xxs: clamp(0.512rem, 0.0274vi + 0.5065rem, 0.5277rem);
+	--fs-xs: clamp(0.64rem, 0.1104vi + 0.6179rem, 0.7035rem);
 	--fs-sm: clamp(0.8rem, 0.2395vi + 0.7521rem, 0.9377rem);
 	--fs-base: clamp(1rem, 0.4348vi + 0.913rem, 1.25rem);
 	--fs-md: clamp(1.25rem, 0.7239vi + 1.1052rem, 1.6663rem);
 	--fs-lg: clamp(1.5625rem, 1.1454vi + 1.3334rem, 2.2211rem);
+	--fs-xl: clamp(1.9531rem, 1.7524vi + 1.6026rem, 2.9607rem);
+	--fs-xxl: clamp(2.4414rem, 2.6178vi + 1.9178rem, 3.9467rem);
+	--fs-xxxl: clamp(3.0518rem, 3.842vi + 2.2834rem, 5.2609rem);
 	--img-width: 50%;
 	--img-brightness: 0.75;
 	--img-filter: none;
@@ -141,7 +169,7 @@ html:not(.mobile) .card {
 
 /* Only Applies to Cloze Cards */
 .prettify-field--front .term {
-	font-weight: bold;
+	font-weight: 600;
 }
 .prettify-field--front .def {
 	font-size: var(--fs-base);
@@ -160,6 +188,7 @@ html:not(.mobile) .card {
 	color: var(--text-fg-faint);
 	font-size: var(--fs-sm);
 	white-space: nowrap;
+	font-stretch: 87.5%;
 }
 .mobile:not(.ipad) .prettify-deck {
 	margin: 1rem;
@@ -194,6 +223,7 @@ html:not(.mobile) .card {
 	margin: 0 0.5em 0.5em 0;
 	padding: 0.25em;
 	word-break: break-word;
+	font-stretch: 87.5%;
 }
 
 /* .prettify-tag:hover {

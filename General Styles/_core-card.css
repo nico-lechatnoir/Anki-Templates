@@ -1,3 +1,44 @@
+/* FONTS */
+@font-face {
+    font-family: "Inter Variable";
+    font-style: normal;
+		font-weight: 100 900;
+		font-display: swap;
+    src: url('_Inter_VF_opsz_wght.ttf') format('truetype-variations');
+    src: url('_Inter_VF_opsz_wght.ttf') format(truetype) tech(variations);
+
+}
+
+@font-face {
+    font-family: "Inter Variable";
+		font-style: italic;
+		font-weight: 100 900;
+		font-display: swap;
+    src: url("_InterItalic_VF_opsz_wght.ttf") format("truetype-variations");
+    src: url("_InterItalic_VF_opsz_wght.ttf") format(truetype) tech(variations);
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 65.5% 100%;
+		font-display: swap;
+    src: url("_NotoSans_VF_wdth_wght.ttf") format("truetype-variations");
+    src: url("_NotoSans_VF_wdth_wght.ttf") format(truetype) tech(variations);
+}
+
+@font-face {
+    font-family: "Noto Sans";
+		font-style: italic;
+		font-weight: 100 900;
+    font-stretch: 65.5% 100%;
+		font-display: swap;
+    src: url("_NotoSansItalic_VF_wdth_wght.ttf") format("truetype-variations");
+    src: url("_NotoSansItalic_VF_wdth_wght.ttf") format(truetype) tech(variations);
+}
+
+
 :root {
 	/* Calculated from 
 	https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=320&minRatio=1.25&maxFontSize=20&maxWidth=1240&maxRatio=1.333&steps=xxs%2Cxs%2Csm%2Cbase%2Cmd%2Clg%2Cxl%2Cxxl%2Cxxxl&baseStep=base&prefix=fs&decimals=2&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1240
@@ -14,11 +55,11 @@
 
 	/* Font Stacks */
 	--font-ui:  -apple-system, system-ui, sans-serif;
-	--font-sans-serif: "Helvetica Neue", Helvetica, Inter, Roboto, Arial, sans-serif;
+	--font-sans-serif: "Noto Sans","Helvetica Neue", Helvetica, "Inter Variable", Inter, Roboto, Arial, sans-serif;
 	--font-serif: Georgia, "Times New Roman", Times, serif;
 	--font-monospace: "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", ui-monospace, monospace;
 	--font-math: MJXZERO, MJXTEX, STIXGeneral, "Arial Unicode MS", serif;
-
+	
 	/* Spacing */
 	--size-2-1: 2px;
   --size-2-2: 4px;
