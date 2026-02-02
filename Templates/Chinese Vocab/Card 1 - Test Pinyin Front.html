@@ -1,6 +1,7 @@
 <div class="prettify-flashcard">
 	<header>
-		<span class="card-type">{{Card}}</span>
+		<span class="prettify-deck">{{Deck}}</span>
+		<span id="cardType" class="card-type">{{Card}}</span>
 	</header>
 	<div class="prettify-field prettify-field--front">
 		<div class="hanzi" id="conditionalContent">
@@ -14,6 +15,6 @@
 		<span id="traditional">{{text:Traditional}}</span>
 		<span id="pinyin">{{text:Pinyin}}</span>
 		<span id="english">{{English}}</span>
-		<span id="cardType">{{text:Card}}</span>
-		<script type="text/javascript" src="_ChineseVocab.js"></script>
+		<script type="text/javascript" src="_ChineseVocab.min.js"></script>
+		<script type="text/javascript" src="_minimalDeck.js"></script>
 	</div>

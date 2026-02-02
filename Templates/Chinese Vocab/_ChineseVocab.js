@@ -18,9 +18,11 @@ function getNum() {
 		clue.innerText = clue.innerText.replace('#', simp);
 		const re = /\((s)\)/g;
 		clue.innerText = (simp > 1) ? clue.innerText.replace(re, '$1') : clue.innerText.replace(re, '');
+		return simp;
 	} else {
 		clue.style.display = 'none';
 		document.getElementById('hintPinyin').style.display = 'inline';
+		return false;
 	}
 }
 function detectAnkiPlatform() {
@@ -65,8 +67,8 @@ function formatCard() {
 	const cardType = document.getElementById('cardType').textContent.trim();
 	const isBack = document.getElementById('answer');
 	const platform = detectAnkiPlatform();
-	//console.log(simplified, traditional, pinyin, blockquoteEL, cardType, isBack, platform)
-
+	//console.log(simplified, traditional, pinyin, blockquoteEL, cardType, isBack, platform);
+	
 	function checkTrad() {
 		// Checks to see if Traditional Characters are different and removes they are the same
 		const el = document.getElementById('trad');
