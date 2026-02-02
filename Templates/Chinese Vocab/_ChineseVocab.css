@@ -352,7 +352,7 @@ section#moreInfo {
 	text-align: left;
 }
 
-section#moreInfo *::before {
+.header {
 	font-family: var(--font-sans-serif);
 	font-size: var(--fs-sm);
 	color: var(--tx-3);
@@ -360,45 +360,26 @@ section#moreInfo *::before {
 	text-transform: uppercase;
 	margin-right: 1ch;
 }
-
-.mobile section#moreInfo *::before {
+.indent {
+  padding-left: var(--size-4-3);
+}
+.mobile .header {
 	margin-right: 0.5ch;
 }
 
-.also,
-.classifier,
-.freq {
-	text-align: center;
-}
-
-.classifier::before {
-	content: "M:";
-}
-
-.also::before {
-	content: "Alt:";
-}
-
-.compound::before {
-	content: "Compound:";
-}
-
-.opposite::before {
-	content: "Opposite:";
-}
-
-.synonym::before {
-	content: "Synonym:";
-}
-
-.mobile :is(.compound, .opposite, .synonym) {
+.mobile :is(#compound, #opposite, #synonym) {
 	font-size: var(--fs-base);
 }
 
+.freq, #classifier, #alsoWritten{
+text-align: center;
+}
 .freq {
 	text-transform: capitalize;
 	color: var(--tx-2);
 	font-size: var(--fs-base);
+	border-bottom:1px dashed var(--ui);
+	padding-bottom: var(--size-4-2);
 }
 
 .freq.freq-unknown {
@@ -407,7 +388,7 @@ section#moreInfo *::before {
 
 .notes {
 	font-size: var(--fs-base);
-	font-family: var(--font-sans-serif), var(--font-zh-CN) !important;
+	font-family: var(--font-sans-secoderif), var(--font-zh-CN) !important;
 }
 
 /*#endregion =============================== */

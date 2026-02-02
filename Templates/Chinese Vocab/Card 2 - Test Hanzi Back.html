@@ -5,15 +5,15 @@
 	<div class="hanzi" id="conditionalContent">
 		<span id="simp" lang="zh-cmn-Hans-CN">{{Color Hanzi}}</span><span id="trad" lang="zh-cmn-Hant-TW" class="hide">|{{Color Traditional}}</span>
 	</div>
-	<section id="moreInfo" lang="zh-cmn-Hans-CN">
-		{{#Also Written}}<div class="also">{{Also Written}}</div>{{/Also Written}}
-		{{#Simplified Classifier}}<div class="classifier">{{Simplified Classifier}}</div>{{/Simplified Classifier}}
-		{{Frequency}}
-		{{#Opposite}}<div class="opposite">{{Opposite}}</div>{{/Opposite}}
-		{{#Synonym}}<div class="synonym">{{Synonym}}</div>{{/Synonym}}
-		{{#Compound}}<div class="compound">{{Compound}}</div>{{/Compound}}
-		{{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
-	</section>
+  <section id="moreInfo" lang="zh-cmn-Hans-CN">
+    {{#Simplified Classifier}}<div id="classifier" class="infoSection"><span class="header">CL</span>{{Simplified Classifier}}</div>{{/Simplified Classifier}}
+    {{#Also Written}}<div id="alsoWritten" class="infoSection"><span class="header">Alt</span>{{Also Written}}</div>{{/Also Written}}
+    {{#Frequency}}{{Frequency}}{{/Frequency}}
+    {{#Opposite}}<div id="opposite" class="infoSection"><span class="header">Opposite</span>{{Opposite}}</div>{{/Opposite}}
+    {{#Synonym}}<div id="synonym" class="infoSection"><span class="header">Synonym</span>{{Synonym}}</div>{{/Synonym}}
+    {{#Compound}}<div id="compound" class="infoSection"><span class="header">Compound</span>{{Compound}}</div>{{/Compound}}
+    {{#Notes}}<div id="notes" class="infoSection"><div class="header">Notes</div><div class="indent">{{Notes}}</div></div>{{/Notes}}
+  </section>
 </div>
 <footer>
 	<span class="prettify-tags">{{Tags}}</span>
