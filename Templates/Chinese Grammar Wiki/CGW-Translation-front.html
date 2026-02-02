@@ -1,18 +1,19 @@
 {{^Example Type}}
 <div class="prettify-flashcard">
 	<div class="prettify-field prettify-field--front">
-		<div class="hanzi">{{中文}}</div>
+		<div class="hanzi" id="example">{{中文}}</div>
 		{{#Pinyin}}<div class="pinyin" id="pinyin">{{hint::Pinyin}}</div>{{/Pinyin}}
 		{{tts zh_CN hypertts_preset=Front_realtime_0 voices=HyperTTS:中文}}
 	</div>
 	<script>
 		(function () {
 			const reHanzi = new RegExp(/\p{Script=Hani}+/, 'gu');
-			const grammar = '{{text:Grammar Construct}}'.match(reHanzi);
+			const grammar = '{{Grammar Construct}}'.match(reHanzi);
 			if (grammar){
-				const hanzi = grammar.sort().filter((v, i, a) => a[i - 1] !== v).join('|');
+				const hanzi = [...new Set(grammar)].join('|');
+				//console.log(grammar, hanzi)
 				const reKeywords = new RegExp(hanzi, 'g');
-				const ex = document.querySelector('.hanzi');
+				const ex = document.getElementById('example');
 				ex.innerHTML = ex.innerHTML.replace(reKeywords, '<span class="keyword">$&</span>');
 			}
 		})();

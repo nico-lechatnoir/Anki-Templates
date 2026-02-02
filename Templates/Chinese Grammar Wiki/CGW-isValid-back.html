@@ -4,10 +4,11 @@
   <div class="prettify-field prettify-field--back">
     <div class="english">{{English}}</div>
     <section class="lessonInfo">
-      {{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
-      {{#Grammar Construct}}<div class="pattern">{{Grammar Construct}}</div>{{/Grammar Construct}}
+      {{#Grammar Construct}}<div class="pattern" id="pattern">{{Grammar Construct}}</div>{{/Grammar Construct}}
       <div class="article"><a href="{{text:Source URL}}">{{Article Title}}</a></div>
+{{#Notes}}<div class="notes">{{Notes}}</div>{{/Notes}}
     </section>
+
   </div>
   {{#Tags}}<div class="prettify-tags">{{Tags}}</div>{{/Tags}}
 </div>
@@ -16,6 +17,8 @@
   (function () {
     const qst = document.getElementById('question').classList;
     const ans = document.getElementById('exType').classList;
+		const pat = document.getElementById('pattern');
+		(!pat.innerText) ? pat.classList.toggle('hide'):null;
     qst.toggle("hide");
     ans.toggle("hide");
     const PY = document.getElementById('pinyin');

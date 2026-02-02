@@ -1,36 +1,57 @@
 @import url("_core-card.css");
 @import url("_minimal.css");
+
 :root {
 	--font-cn-pc: "Kaiti SC", KaiTi, "Noto Serif SC", "MS Mincho", "ＭＳ 明朝", serif;
 	--font-cn-mob: "Noto Serif SC", "Noto Serif Simp", HYQIHei, serif;
 	--card-text-align: center;
 }
+
 /* Universal Styling */
-.card .prettify-flashcard{
-	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-cn-mob), var(--font-ui);
-	font-variant-east-asian: simplified;
+.card .prettify-flashcard {
+	font-family: var(--font-sans-serif), var(--font-cn-pc), var(--font-cn-mob), var(--font-ui), sans-serif;
+	font-variant-east-asian: simplified proportional-width;
 }
-.hide {display:none;}
+
+.hide {
+	display: none;
+}
 
 /* FRONT */
 /* Chinese Fonts*/
 .hanzi {
-	font-size: var(--fs-xl);
+	font-size: var(--fs-lg);
 }
+
 .mobile:not(.ipad) .hanzi {
-	font-size: var(--fs-md);
+	font-size: var(--fs-base);
 }
 
 .pinyin {
 	font-size: var(--fs-base);
 }
-.keyword {color:#a02f6f;}
-.nightMode .keyword {color:#ce5d97;}
+.mobile:not(.ipad) .pinyin {
+	font-size: var(--fs-sm);
+}
+
+
+.keyword {
+	color: #a02f6f;
+}
+
+.nightMode .keyword {
+	color: #ce5d97;
+}
+
+.notes {
+	text-align: left;
+	margin-top: 12px;
+}
 
 /* ONLY for IS Valid Card Types */
 header {
 	margin-bottom: 2rem;
-	color:var(--text-fg-faint);
+	color: var(--text-fg-faint);
 	font-size: var(--fs-base);
 }
 
@@ -51,12 +72,16 @@ header {
 }
 
 /* BACK */
-.english {color:var(--text-fg);}
+.english {
+	color: var(--text-fg);
+}
+
 .english + .lessonInfo {
 	margin-top: 1rem;
 }
+
 .article {
-	font-size:var(--fs-sm);
+	font-size: var(--fs-sm);
 	margin-top: 4px;
 }
 
