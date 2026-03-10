@@ -7,19 +7,19 @@
     {{#Simplified Classifier}}<div id="classifier" class="infoSection"><span class="header">CL</span>{{Simplified Classifier}}</div>{{/Simplified Classifier}}
     {{#Also Written}}<div id="alsoWritten" class="infoSection"><span class="header">Alt</span>{{Also Written}}</div>{{/Also Written}}
     {{#Frequency}}{{Frequency}}{{/Frequency}}
+		{{#Synonym}}<div id="synonym" class="infoSection"><span class="header">Synonym</span>{{Synonym}}</div>{{/Synonym}}
     {{#Opposite}}<div id="opposite" class="infoSection"><span class="header">Opposite</span>{{Opposite}}</div>{{/Opposite}}
-    {{#Synonym}}<div id="synonym" class="infoSection"><span class="header">Synonym</span>{{Synonym}}</div>{{/Synonym}}
-    {{#Compound}}<div id="compound" class="infoSection"><span class="header">Compound</span>{{Compound}}</div>{{/Compound}}
+    {{#Compound}}<div id="compound" class="infoSection"><div class="header">Compound</div><div class="indent">{{Compound}}</div></div>{{/Compound}}
     {{#Notes}}<div id="notes" class="infoSection"><div class="header">Notes</div><div class="indent">{{Notes}}</div></div>{{/Notes}}
-  </section>
+ </section>
 </div>
 <footer>
 	<span class="prettify-tags">{{Tags}}</span>
 	<div class="link">
-		<a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb={{text:Simplified}}"><img alt="MDBG" src="_mdbg.png"></a>
+				<a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?wdqb={{text:Simplified}}"><img alt="MDBG" src="_mdbg.png"></a>
 		<a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img alt="Pleco" src="_pleco.png"></a>
 		<a class="desktop-only" id="Hanzii" href="https://hanzii.net/search/word/{{text:Simplified}}"><img alt="Hanzii" src="_Hanzii.png"></a>
-		<a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}"><img alt="Tatoeba" class="mobile-only" src="_tatoeba.png"></a>
+		<a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}"><img alt="Tatoeba" src="_tatoeba.png"></a>
 	</div>
 </footer>
 </div>
