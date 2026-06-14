@@ -29,3 +29,30 @@
 		<script type="text/javascript" src="_ChineseVocab.min.js"></script>
 		<script type="text/javascript" src="_minimalDeck.js"></script>
 	</div>
+
+<script>
+(async function () {
+  const BODY = await document.body;
+	const back = await document.getElementById('answer');
+  //console.log('initalizing', BODY.getAttribute('listener'));
+  if (BODY.getAttribute('listener') !== true || !back) {
+    //console.log('Creating Listener and setting attribute as true');
+    BODY.addEventListener("keydown", showHint, true);
+    BODY.setAttribute('listener', true);
+  }
+  //console.log('Check listener Attribute', BODY.getAttribute('listener'))
+  function showHint(e) {
+    //console.log(e);
+    const hint = document.getElementById('firstHint');
+    if (back || hint.style.display === 'none') {
+      //console.log('remove Listener');
+      return BODY.removeEventListener('keydown', showHint, true);
+    }
+    else if (e.ctrlKey && e.code === 'KeyH' && !back) {
+      //console.log('Ctrl + h buttons pressed');
+      hint.click();
+      return BODY.removeEventListener('keydown', showHint, true);
+    }
+  }
+})();
+</script>

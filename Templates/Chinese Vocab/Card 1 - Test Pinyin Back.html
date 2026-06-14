@@ -27,9 +27,11 @@
 	<span class="prettify-tags">{{Tags}}</span>
 	<div class="link">
 		<a class="desktop-only" id="MDBG" href="https://www.mdbg.net/chinese/dictionary?wdqb={{text:Simplified}}"><img alt="MDBG" src="_mdbg.png"></a>
-		<a class="mobile-only" id="plecoMobile" href="plecoapi://x-callback-url/df?hw={{text:Simplified}}"><img alt="Pleco" src="_pleco.png"></a>
+		<a class="mobile-only" id="plecoMobile"
+href="plecoapi://x-callback-url/s?q={{text:Simplified}}&mode=df&hw={{text:Simplified}}&py={{text:Pinyin}}&x-source=anki"><img alt="Pleco" src="_pleco.png"></a>
 		<a class="desktop-only" id="Hanzii" href="https://hanzii.net/search/word/{{text:Simplified}}"><img alt="Hanzii" src="_Hanzii.png"></a>
 		<a id="Tatoeba" href="https://tatoeba.org/en/sentences/search?from=cmn&query={{text:Simplified}}"><img alt="Tatoeba" src="_tatoeba.png"></a>
+ <a id="WriteHanzi" onclick="writeHanzi()"><img src="_pencil-line.svg"></a>
 
 	</div>
 </footer>
@@ -39,4 +41,77 @@
 <script>
 	//(detectAnkiPlatform() !== 'AnkiDesktop') ? setTimeout(playBoth, 100): null;
 	setTimeout(playBoth, 100);
-</script>z
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+<script>
+  async function generateDiv() {
+    let xie = document.getElementById('xieHanzi');
+    if (!xie) {
+      const insert = document.querySelector(".prettify-flashcard");
+      const card = document.createElement('div');
+      card.id = "xieHanzi";
+      card.classList = 'prettify-flashcard';
+      card.innerHTML = '<header>Write Hanzi</header><div class="prettify-field prettify-field--back tappable" id="charDisplay"><div id="character-target" style="display:flex;flex-flow: row wrap;gap:4px;"></div><div id="buttons"><button id="animate-button" class="replay-button">Animate</button><button id="quiz-button" class="replay-button">Quiz</button></div>';
+      insert.after(card);
+      xie = card;
+    }
+    return xie;
+  }
+  async function writeHanzi() {
+    const xieHanzi = await generateDiv();
+    const charList = '{{text:Simplified}}'.split('');
+    let char = [];
+    const target = document.getElementById('character-target');
+    const nightMode = document.body.className.includes('nightMode');
+    const plaform = detectAnkiPlatform();
+
+    const settings = {
+      width: 120,
+      height: 120,
+      padding: 5,
+      showCharacter: false,
+      showOutline: true,
+      strokeAnimationSpeed: 2,
+      delayBetweenStrokes: 10, // milliseconds
+      radicalColor: '#A02F6F', //pink-2
+      strokeColor: '#6F6E69', //tx-2
+      outlineColor: '#B7B5AC', //tx-3
+      showHintAfterMisses: 3, //QUIZ Setings
+      highlightColor: '#8B7EC8', //purple-400
+      drawingColor: '#6F6E69',
+      drawingWidth: 40,
+    };
+    if (nightMode) {
+      settings.radicalColor = '#CE5D97'; //pink-2
+      settings.strokeColor = '#B7B5AC'; //flexoki-300
+      settings.outlineColor = '#575653'; //tx-3
+      settings.drawingColor = '#B7B5AC', // flexoki-300
+        settings.highlightColor = '#5E409D'; //purple-600
+    }
+    if (plaform === 'AnkiDroid' || plaform === 'AnkiMobile') {
+      settings.width = 90;
+      settings.height = 90;
+    }
+    if (charList.length > target.children.length) {
+      charList.forEach((c) => {
+        char.push(HanziWriter.create('character-target', c, settings));
+      });
+      document.getElementById("animate-button").addEventListener('click', chainAnimations);
+      document.getElementById("quiz-button").addEventListener('click', makeQuiz);
+    }
+
+    async function chainAnimations() {
+      char.forEach(c => c.hideCharacter());
+      for (let i = 0; i < char.length; i++) {
+        await char[i].animateCharacter();
+      }
+    }
+    async function makeQuiz() {
+      const quizSet = {}
+      for (let i = 0; i < char.length; i++) {
+        await char[i].quiz();
+      }
+    }
+  }
+</script>

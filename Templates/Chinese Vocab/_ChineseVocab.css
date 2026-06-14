@@ -17,6 +17,7 @@ html:not(.mobile) .card {
 .card::-webkit-scrollbar {
 	display: none;
 }
+ol, ul { margin:0; padding-inline-start: 14px;}
 
 /* -------------------------------------------------- FLASHCARD */
 .prettify-flashcard {
@@ -261,8 +262,12 @@ ruby:hover rt {
 	font-size: var(--fs-sm);
 	text-transform: uppercase;
 	color: var(--tx-3);
+	--bg-cl: hsl(from var(--purple-2) h s l / 0.1);
+	padding: 0 var(--size-4-1);
+	background-color:  var(--bg-cl);
+	border-radius: var(--size-4-1);
+	width:fit-content;
 }
-
 div.en-cl {
 	margin-bottom: var(--size-2-2);
 }
@@ -366,29 +371,44 @@ section#moreInfo {
 .mobile .header {
 	margin-right: 0.5ch;
 }
+#compound > .indent,
+#notes > .indent {
+	font-size: var(--fs-base);
+}
 
 .mobile :is(#compound, #opposite, #synonym) {
 	font-size: var(--fs-base);
 }
+.android .compound {font-size: var(--fs-sm);}
 
-.freq, #classifier, #alsoWritten{
-text-align: center;
+
+.freq, #classifier, #alsoWritten {
+	text-align: center;
 }
 .freq {
 	text-transform: capitalize;
 	color: var(--tx-2);
 	font-size: var(--fs-base);
-	border-bottom:1px dashed var(--ui);
-	padding-bottom: var(--size-4-2);
+}
+
+.freq:has(+ .infoSection){
+border-bottom:1px dashed var(--ui);
+padding-bottom: var(--size-4-2);
 }
 
 .freq.freq-unknown {
 	display: none;
 }
 
+.freq:has(+ .infoSection){
+	margin-bottom: var(--size-4-1);
+}
+
+
+
 .notes {
 	font-size: var(--fs-base);
-	font-family: var(--font-sans-secoderif), var(--font-zh-CN) !important;
+	font-family: var(--font-sans-serif), var(--font-zh-CN) !important;
 }
 
 /*#endregion =============================== */
@@ -513,6 +533,56 @@ code#typeans>.typeGood:only-child::after {
 #typeans #typearrow,
 #typeans #typearrow~* {
 	display: none
+}
+
+/*#endregion =============================== */
+
+/*#region ================================== WRITE HANZI */
+#character-target > svg {
+	background:url(_grid.svg) no-repeat;
+}
+
+.nightMode #character-target > svg {
+	background:url(_gridNight.svg) no-repeat;
+}
+
+#charDisplay {
+	display: flex;
+	flex-flow: row wrap;
+	align-items:center;
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+#character-target{
+	flex: 4 1 fit-content;
+	max-width: 504px;
+	align-items: center;
+	justify-content: center;
+}
+
+#buttons{
+	flex: 1 1 120px;
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	gap:4px;
+}
+#buttons > .replay-button {
+	/* This is the secret sauce: */
+	/* By setting basis to 140px (just slightly smaller than the sidebar's basis), they will stack vertically when the sidebar is 150px wide. When the sidebar wraps and grows to 100%, they will fit horizontally. */
+	flex: 1 1 110px; 
+	padding: var(--size-4-2) var(--size-4-1);
+	max-width: 250px;
+	font-size: var(--fs-sm);
+	color:var(--tx-2);
+}
+#xieHanzi {
+	margin-top: 0.5rem;
+	padding-bottom: var(--padding); 
+}
+.nightMode #WriteHanzi {
+		filter: invert(50%) sepia(40%);
 }
 
 /*#endregion =============================== */
