@@ -351,10 +351,18 @@ span.en-cl {
 /*#endregion =============================== */
 
 /*#region ================================== BACK SIDE INFO */
-section#moreInfo {
+
+#classifier, #alsoWritten {
 	font-size: var(--fs-md);
-	margin-top: var(--fs-base);
-	text-align: left;
+}
+.freq {
+	text-transform: capitalize;
+	color: var(--tx-2);
+	font-size: var(--fs-base);
+}
+
+.freq.freq-unknown {
+	display: none;
 }
 
 .header {
@@ -365,49 +373,24 @@ section#moreInfo {
 	text-transform: uppercase;
 	margin-right: 1ch;
 }
-.indent {
-  padding-left: var(--size-4-3);
-}
 .mobile .header {
 	margin-right: 0.5ch;
 }
-#compound > .indent,
-#notes > .indent {
+.indent {
+  padding-left: var(--size-4-3);
+}
+
+section#moreInfo {
 	font-size: var(--fs-base);
+	text-align: left;
 }
 
-.mobile :is(#compound, #opposite, #synonym) {
-	font-size: var(--fs-base);
+section#moreInfo > .infoSection {
+	border-top: 1px solid var(--ui);
+	padding: var(--size-4-2) 0;
 }
-.android .compound {font-size: var(--fs-sm);}
-
-
-.freq, #classifier, #alsoWritten {
-	text-align: center;
-}
-.freq {
-	text-transform: capitalize;
-	color: var(--tx-2);
-	font-size: var(--fs-base);
-}
-
-.freq:has(+ .infoSection){
-border-bottom:1px dashed var(--ui);
-padding-bottom: var(--size-4-2);
-}
-
-.freq.freq-unknown {
-	display: none;
-}
-
-.freq:has(+ .infoSection){
-	margin-bottom: var(--size-4-1);
-}
-
-
 
 .notes {
-	font-size: var(--fs-base);
 	font-family: var(--font-sans-serif), var(--font-zh-CN) !important;
 }
 
